@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css" media="screen">
+         button {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(0,0,255,0.5);
+            text-align: center;
+            font: 15px/100px "Microsoft Yahei";
+            color: #fff;
+            border: 0;
+            position: fixed;
+            top: 200px;
+            right: 200px;
+        }
+        ul,li {
+            list-style: none;
+        }
+        ul {
+            width: 800px;
+            margin: 10px auto;
+        }
+        li {
+            padding: 20px;
+            margin: 10px;
+            width: 650px;
+            text-align: center;
+            height: 520px;
+            border: 1px solid rgba(25,2,25,0.3);
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/ajax-function-pro.js"></script>
+    <!-- 引入模板插件 -->
+    <script type="text/javascript" src='js/template-native.js'></script>
+    <!-- 定义模板 -->
+   <!-- 用<%%>书写js代码，用于循环，长度是包装好的js对象的items属性 -->
+   <script id='template' type='text/template'>
+   <%for(var i=0;i<items.length;i++) {%>
+        <li>
+            <div>
+                <img src="<%=items[i].path %>" alt="">
+                <div>
+                    <span><%=items[i].name %></span><br>
+                    <i><%=items[i].star %></i><br>
+                    <i><%=items[i].message %></i><br>
+                </div>
+            </div>
+        </li>
+    <%}%>
+    </script>
+</head>
+<body>
+    <button>获得更多</button>
+    <ul>
+        <li>
+             <img src="images/vol.840.jpg" alt="">
+                <div>
+                    <span>vol.857 日落黄昏时</span><br>
+                    <i>258</i><br>
+                    <i>233</i><br>
+                </div>
+        </li>
+    </ul>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                $.ajax({
+                    url: 'template.php',
+                    type: 'post',
+                    success: function(data) {
+                        var jsonArr = JSON.parse(data);
+                        //将JSONArr数组包装成js对象
+                        var obj = {
+                            items: jsonArr
+                        }
+                        //调用模板引擎方法，填充数据
+                        var str = template('template',obj);
+                        //将jQuery的ul元素转化为js对象，用get(0)
+                        //jQuery的html()方法，可以用来获取该元素内的内容
+                        //也可以加参数，用来设置内容
+                        //append()方法，将str的内容放在ul元素内
+                        $("ul").append(str);
+                        console.log(str)
+                        // console.log($("ul").html());
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

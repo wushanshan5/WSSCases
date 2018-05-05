@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css" media="screen">
+        button {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(0,0,255,0.5);
+            text-align: center;
+            font: 15px/100px "Microsoft Yahei";
+            color: #fff;
+            border: 0;
+            position: fixed;
+            top: 200px;
+            right: 200px;
+        }
+        ul,li {
+            list-style: none;
+        }
+        ul {
+            width: 800px;
+            margin: 10px auto;
+        }
+        li {
+            padding: 20px;
+            margin: 10px;
+            width: 650px;
+            text-align: center;
+            height: 520px;
+            border: 1px solid rgba(25,2,25,0.3);
+        }
+    </style>
+    <script src="js/ajax-function-pro.js"></script>
+    <!-- 引入模板插件 -->
+    <script type="text/javascript" src='js/template-native.js'></script>
+    <!-- 定义模板 -->
+    <script id='template' type='text.template'>
+        <li>
+            <div>
+                <img src="<%=path %>" alt="">
+                <div>
+                    <span><%=name %></span><br>
+                    <i><%=star %></i><br>
+                    <i><%=message %></i><br>
+                </div>
+            </div>
+        </li>
+    </script>
+</head>
+<body>
+    <button>获得更多</button>
+    <ul>
+        <li>
+             <img src="images/vol.840.jpg" alt="">
+                <div>
+                    <span>vol.857 日落黄昏时</span><br>
+                    <i>258</i><br>
+                    <i>233</i><br>
+                </div>
+        </li>
+    </ul>
+    <script>
+        var btn = document.querySelector("button");
+        var ul = document.querySelector("ul");
+        btn.onclick = function () {
+             ajaxFunctionPro({
+                data: "",
+                method: "post",
+                url: "template.php",
+                success: function(data) {
+                    //将服务器端数据（json字符串）转换成对应的js对象
+                    var content = JSON.parse(data);
+                    var str = "";//定义一个空字符串，来接收填充好的内容
+                    //利用插件的template()方法填充数据
+                    for(var i=0;i<content.length;i++) {
+                        str += template('template',content[i]);
+                    }
+                    ul.innerHTML += str;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
