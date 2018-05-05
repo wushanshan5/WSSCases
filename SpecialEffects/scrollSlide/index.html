@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body,ul,li {
+            padding: 0;
+            margin: 0;
+        }
+        .father {
+            width: 790px;
+            height: 340px;
+            padding: 5px;
+            margin: 100px auto;
+            border: 1px solid #000;
+        }
+        .box {
+            position: relative;
+            width: 790px;
+            height: 340px;
+            overflow: hidden;
+        }
+        ul {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 600%;
+            height: 340px;
+            list-style: none;
+        }
+        li {
+            float: left;
+        }
+        .square {
+            position: absolute;
+            bottom: 10px;
+            right: 40px;
+        }
+        .square span {
+            display: inline-block;
+            height: 16px;
+            font: 500 12px/16px "Microsoft YaHei";
+            text-align: center;
+            width: 16px;
+            margin: 0 3px;
+            background-color: #9dff43;
+            cursor: pointer;
+        }
+        .square .current {
+            background-color: darkorange;
+        }
+        .box .left {
+            left: 0;
+         }
+        .box .right {
+            right: 0;
+
+        }
+        .box .right,.box .left {
+            position: absolute;
+            display: none;
+            width: 50px;
+            height: 60px;
+            background-color: rgba(1,1,1,.5);
+    /*这种方法的opacity属性不会被继承，因此里面的文字也不会出现半透明*/
+            top: 50%;
+            text-align: center;
+            font: 800 20px/60px "Consolas";
+            margin-top: -30px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .left:hover,.right:hover {
+            background-color: rgba(1,1,1,.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="box">
+        <ul>
+            <li><img src="images/pic1.jpg" alt=""></li>
+            <li><img src="images/pic2.jpg" alt=""></li>
+            <li><img src="images/pic3.jpg" alt=""></li>
+            <li><img src="images/pic4.jpg" alt=""></li>
+            <li><img src="images/pic5.jpg" alt=""></li>
+        </ul>
+        <div class="square">
+            <span class="current">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        <div class="left">&lt;</div>
+        <div class="right">&gt;</div>
+    </div>
+    </div>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            //1.获取相关事件源
+            var box = document.getElementsByClassName("box")[0];
+            var left = document.getElementsByClassName("left")[0];
+            var right = document.getElementsByClassName("right")[0];
+            var ul = document.getElementsByTagName("ul")[0];
+            var square = document.getElementsByClassName("square")[0];
+            var spanArr = square.children;
+            var liWidth = ul.children[0].offsetWidth;
+            var index = 0;//记录图片
+            var square = 0;//记录方块
+            var queue = 0;//记录顺序
+            var timer = null;
+            var newLi = ul.children[0].cloneNode(true);
+            ul.appendChild(newLi);
+            timer = setInterval(autoPlay,3000);
+
+
+            //鼠标放在图片上左右箭头出现，离开图片鼠标消失
+            box.onmouseenter = function () {
+                left.style.display = "block";
+                right.style.display = "block";
+                clearInterval(timer);
+            }
+            box.onmouseleave = function () {
+                left.style.display = "none";
+                right.style.display = "none";
+                timer = setInterval(autoPlay,3000);
+            }
+            for(var i=0;i<spanArr.length;i++){
+                spanArr[i].index = i;
+                spanArr[i].onmouseover = function () {
+                    slide(ul,-(this.index)*liWidth);
+                    index = this.index;
+                    square = this.index;
+                    for(var j=0;j<spanArr.length;j++){
+                        spanArr[j].className = "";
+                    }
+                    this.className = "current";
+                }
+            }
+            left.onclick = function () {
+                index--;
+                square--;
+                if(square<0){
+                    square = spanArr.length-1;
+                }
+                if(index<0){
+                    ul.style.left = -liWidth*5+"px";
+                    index = 4;
+                }
+                slide(ul,-liWidth*index);
+                for(var j=0;j<spanArr.length;j++){
+                    spanArr[j].className = "";
+                }
+                spanArr[square].className = "current";
+
+            }
+            right.onclick = function () {
+                autoPlay();
+            }
+            //设置自动播放方法，减少代码量
+            function autoPlay() {
+                index++;
+                square++;
+                queue++;
+                if(square>=spanArr.length){
+                    square = 0;
+                }
+                if(index>5){
+                    ul.style.left = "0px";
+                    index = 1;
+                }
+                slide(ul,-liWidth*index);
+                for(var j=0;j<spanArr.length;j++){
+                    spanArr[j].className = "";
+                }
+                spanArr[square].className = "current";
+
+            }
+
+            //设置定时器，无缝滚动
+            function slide(ele,target) {
+                //先要进行判断，是往右滑动还是往左滑动
+                clearInterval(ele.timer);
+                ele.timer = setInterval(function () {
+                    var speed = ele.offsetLeft>target?-10:10;
+                    ele.style.left = ele.offsetLeft+speed+"px";
+                    if(Math.abs(ele.offsetLeft-target)<=Math.abs(speed)){
+                        ele.style.left = target+"px";
+                        clearInterval(ele.timer);
+                    }
+                },5);
+            }
+        }
+    </script>
+
+</body>
+</html>
