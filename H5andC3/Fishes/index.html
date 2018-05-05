@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body {
+            height: 100%;
+            background-color: #ADD8E6;
+            overflow: hidden;
+        }
+        .shark1 {
+            width: 100%;
+            height: 100%;
+            background: url("images/shark1.png") no-repeat top;
+            animation: dong1 2s steps(7) infinite;
+        }
+        .shark2 {
+            width: 100%;
+            height: 100%;
+            background: url("images/shark2.png") no-repeat top;
+            animation: dong1 2s steps(7) infinite;
+        }
+        .fish {
+            width: 100%;
+            height: 100%;
+            background: url("images/fish8.png") no-repeat top;
+            animation: dong2 1s steps(7) infinite;
+        }
+        .sharkbox1 {
+            width: 508px;
+            height: 270px;
+            animation: move1 30s linear infinite;
+        }
+        .sharkbox2 {
+            width: 508px;
+            height: 270px;
+            animation: move2 30s linear infinite;
+        }
+        .fishbox1 {
+            width: 174px;
+            height: 126px;
+            animation: move3 30s linear infinite;
+        }
+        @keyframes dong1 {
+            0% {
+                background-position: top;
+            }
+            100% {
+                background-position: 0 -1890px;
+            }
+        }
+        @keyframes dong2 {
+            0% {
+                background-position: top;
+            }
+            100% {
+                background-position: 0 -882px;
+            }
+        }
+        @keyframes move1 {
+            0% {
+            }
+            25% {
+                transform: translate(900px,0) rotate(20deg);
+            }
+            50% {
+                transform: translate(900px,600px) rotate(90deg);
+            }
+            75% {
+                transform: translate(0,600px) rotate(135deg);
+            }
+            100% {
+                transform: translate(0,100px) rotate(240deg);
+            }
+        }
+        @keyframes move2 {
+            0% {}
+            75% {
+                transform: translate(800px,600px) rotate(135deg);
+            }
+            100% {
+                transform: translate(0,100px) rotate(240deg);
+            }
+        }
+        @keyframes move3 {
+            0% {}
+            100% {
+                transform: translate(1000px) rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sharkbox1">
+        <div class="shark1"></div>
+    </div>
+    <div class="sharkbox2">
+        <div class="shark2"></div>
+    </div>
+    <div class="fishbox1">
+        <div class="fish"></div>
+    </div>
+    <div class="box"></div>
+</body>
+</html>
