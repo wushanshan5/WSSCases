@@ -1,0 +1,301 @@
+//当鼠标放在nav-area的京东的字体上，出现地图
+var navArea = document.getElementsByClassName("nav-area")[0];
+var navAreaPlaces = document.getElementsByClassName("nav-area-places")[0];
+var navAreaSpan = navArea.getElementsByTagName("span")[0];
+navArea.onmouseover = function () {
+    navAreaPlaces.style.display = "block";
+}
+navArea.onmouseout = function () {
+    navAreaPlaces.style.display = "none";
+}
+
+
+//当鼠标点击navAreaPlaces中的某一个，背景颜色变为红色,并将该a链接的内容赋值给navArea的span
+var placeA = navAreaPlaces.getElementsByTagName("a");
+for(var i=0;i<placeA.length;i++){
+    placeA[i].onclick = function () {
+        for(var j=0;j<placeA.length;j++){
+            placeA[j].className = "";
+        }
+        navAreaSpan.innerHTML = this.innerHTML;
+        this.className = "place-bg";
+    }
+}
+
+
+//当鼠标放在我的京东上面时出现详细信息
+var list = document.getElementsByClassName("list")[0];
+var listMyjd = list.getElementsByClassName("list-myjd")[0];
+var myjdInfo = list.getElementsByClassName("list-myjd-info")[0];
+listMyjd.onmouseover = function () {
+    myjdInfo.style.display = "block";
+}
+listMyjd.onmouseout = function () {
+    myjdInfo.style.display = "none";
+}
+
+//同上，客户服务
+var customerServer = list.getElementsByClassName("list-customerservice")[0];
+var serviceInfo = customerServer.getElementsByClassName("service-info")[0];
+customerServer.onmouseover = function () {
+    serviceInfo.style.display = "block";
+}
+customerServer.onmouseout = function () {
+    serviceInfo.style.display = "none";
+}
+
+//同上，网页导航部分
+var listGuide = list.getElementsByClassName("list-guide")[0];
+var listGuideInfo = list.getElementsByClassName("list-guide-info")[0];
+listGuide.onmouseover = function () {
+    listGuideInfo.style.display = "block";
+}
+listGuide.onmouseout = function () {
+    listGuideInfo.style.display = "none";
+}
+
+//手机京东部分
+var phoneJd = list.getElementsByClassName("phonejd")[0];
+var twoCodeInfo = phoneJd.getElementsByClassName("twoCode-info")[0];
+phoneJd.onmouseover = function () {
+    twoCodeInfo.style.display = "block";
+}
+phoneJd.onmouseout = function () {
+    twoCodeInfo.style.display = "none";
+}
+//购物车部分
+var carBox = document.getElementsByClassName("car-box")[0];
+var car = carBox.getElementsByClassName("car")[0];
+var carInfo = carBox.getElementsByClassName("car-info")[0];
+carBox.onmouseover = function () {
+    car.style.paddingBottom = "2px";
+    car.style.borderBottom = "0";
+    carInfo.style.display = "block";
+}
+carBox.onmouseout = function () {
+    car.style.paddingBottom = "0";
+    car.style.border = "1px solid #E3E4E5";
+    carInfo.style.display = "none";
+}
+//1.点击topbannner里的x，关闭该广告
+var topBanner = document.getElementsByClassName("top-banner")[0];
+var closeTopBanner = topBanner.getElementsByClassName("close")[0];
+closeTopBanner.onclick = function () {
+    topBanner.style.display = "none";
+}
+
+
+
+
+//slider部分
+//slide-left-info部分和slide-right部分
+var slider = document.getElementsByClassName("slider")[0];
+var slideLeft = slider.getElementsByClassName("slide-left")[0];
+var slideLeftLiArr = slideLeft.getElementsByTagName("li");
+var slideRight = slider.getElementsByClassName("slide-right")[0];
+var slideLeftinfoArr = slider.getElementsByClassName("slide-left-info");
+for(var i=0;i<slideLeftLiArr.length;i++){
+    slideLeftLiArr[i].index = i;
+    slideLeftLiArr[i].onmouseover = function () {
+        slideRight.style.display = "none";
+        for(var j=0;j<slideLeftinfoArr.length;j++){
+            slideLeftinfoArr[j].style.display = "none";
+        }
+        slideLeftinfoArr[this.index].style.display = "block";
+    }
+    slideLeftLiArr[i].onmouseout = function () {
+        slideRight.style.display = "block";
+        for(var q=0;q<slideLeftinfoArr.length;q++){
+            slideLeftinfoArr[q].style.display = "none";
+        }
+    }
+}
+
+
+//2.幻灯片播放
+var slide = slider.getElementsByClassName("slide")[0];
+var slidePart1 = document.getElementsByClassName("slide-part1")[0];
+var slidePart1Left = document.getElementsByClassName("slide-part1-left")[0];
+var slidePart1Right = document.getElementsByClassName("slide-part1-right")[0];
+var slideImg = slide.getElementsByTagName("img")[0];
+var number2 = slide.getElementsByClassName("number2")[0];
+var iArr = number2.children;
+//（1）.定义一个json来放将要换的picture
+var slideJson = {"1":"pic1.jpg","2":"pic2.jpg","3":"pic3.jpg","4":"pic4.jpg","5":"pic5.jpg","6":"pic6.jpg","7":"pic5.jpg","8":"pic5.jpg"};
+//求出slideJson中的最大值和最小值，便于之后的切换
+var max = 1;
+var min = 1;
+for(var i in slideJson){
+    if(i>max){
+        max = i;
+    }
+    if(i<min){
+        min = i;
+    }
+}
+//（2）.当鼠标在图片外时自动切换图片，当鼠标在图片内时，清除定时器
+//定义一个定时器，来切换图片
+var num = 1;//定时器非常重要，值不能随意的更改
+var timer1 = null;
+timer1 = setInterval(scroll,1000);
+//不能用scroll(slideImg),直接放函数名，否则onmouseover，out方法将出现问题
+
+//1.让鼠标放slide-part1上，箭头出现，否则消失
+slidePart1.onmouseover = function () {
+    slidePart1Left.style.display = "block";
+    slidePart1Right.style.display = "block";
+    clearInterval(timer1);
+}
+
+slidePart1.onmouseout = function () {
+    timer1 = setInterval(scroll,1000);
+    slidePart1Left.style.display = "none";
+    slidePart1Right.style.display = "none";
+
+}
+
+//①图片的自动切换
+function scroll() {
+    num++;
+    if(num>max){
+        num = min;
+    }
+    slideImg.src = "images/"+slideJson[num];
+    relaToNumber(iArr);
+}
+//（3）.点击切换箭头，进行跳转（左箭头slidePart1Left，右箭头slidePart1Right）
+slidePart1Left.onclick = function () {
+    scrollLeft(slideImg,iArr);
+    relaToNumber(iArr);
+}
+slidePart1Right.onclick = function () {
+    scrollRight(slideImg,iArr);
+    relaToNumber(iArr);
+}
+//向左转换图片
+function scrollLeft(ele) {
+    num--;
+    if(num<min){
+        num = max;
+    }
+    ele.src = "images/"+slideJson[num];
+}
+//向右转换图片
+function scrollRight(ele) {
+    num++;
+    if(num>max){
+        num = min;
+    }
+    ele.src = "images/"+slideJson[num];
+    relaToNumber(iArr);
+}
+//（4）.点击number的i标签，也能进行切换
+for(var i=0;i<iArr.length;i++){
+    iArr[i].onmouseover = function () {
+        num = parseInt(this.id);
+        slideByNumber(slideImg,num);
+        relaToNumber(iArr);
+    }
+}
+function slideByNumber(ele,target) {
+    ele.src = "images/"+slideJson[target];
+}
+//将i标签的类名全部重置
+function relaToNumber(ele) {
+    for(var k=0;k<ele.length;k++){
+        ele[k].className = "";
+        if(num == ele[k].id){
+            ele[k].className = "i-hover";
+        }
+    }
+}
+
+
+
+
+//welcome 部分
+//1.促销和公告之间的转换
+var welcome = document.getElementsByClassName("welcome")[0];
+var bargin = welcome.getElementsByClassName("a1")[0];
+var notice = welcome.getElementsByClassName("a2")[0];
+var content1 = welcome.getElementsByClassName("content1")[0];
+var content2 = welcome.getElementsByClassName("content2")[0];
+//鼠标放在促销或 公告上，呈现不一样的内容
+bargin.onmouseover = function () {
+    bargin.id = "tab-hover";
+    notice.id = "";
+    content1.style.display = "block";
+    content2.style.display = "none";
+}
+notice.onmouseover = function () {
+    bargin.id = "";
+    notice.id = "tab-hover";
+    content1.style.display = "none";
+    content2.style.display = "block";
+}
+
+
+
+//welcome icon部分，当鼠标放在话费机票等i标签时，转换到icon-info页面
+var icon = document.getElementsByClassName("icon")[0];
+var iconUl = icon.getElementsByTagName("ul")[0];
+var iconInfo = icon.getElementsByClassName("icon-info")[0];
+var iconLiArr = icon.getElementsByTagName("li");
+var iconTab = iconInfo.getElementsByClassName("icon-info-tab")[0];
+var tabI = iconTab.children;
+var icontimer = null
+for(var i=0;i<tabI.length;i++){
+    tabI[i].onmouseover = function () {
+        //排他思想，干掉所有人，留下我自己
+        for(var k=0;k<tabI.length;k++){
+            tabI[k].className = ""
+        }
+        this.className = "tab-i-hover";
+    }
+}
+
+//点击话费机票酒店游戏---使得对应icon-info界面出现，ul消失
+for(var i=0;i<4;i++){
+    iconLiArr[i].onclick = function () {
+        //利用计数器来将i值传递给tabI
+            iconInfo.style.display = "block";
+            iconUl.style.display = "none";
+        for(var j=0;j<tabI.length;j++){
+            tabI[j].className = "";
+        }
+        tabI[parseInt(this.className)].className = "tab-i-hover";
+    }
+}
+
+
+
+
+//close-info 点击x，将回到ul界面
+var closeInfo = iconInfo.getElementsByClassName("close-info")[0];
+closeInfo.onclick = function () {
+    iconInfo.style.display = "none";
+    iconUl.style.display = "block";
+    clearTimeout(icontimer);
+}
+
+
+//当鼠标悬停在话费，机票，游戏，酒店上时出现相对应的内容
+var activityArr = iconInfo.getElementsByClassName("activity");
+var iconIArr = iconInfo.getElementsByTagName("i");
+
+for(var i=0;i<iconIArr.length;i++){
+    iconIArr[i].onmouseover = function () {
+        activityArr[i].style.display = "block";
+        for(var j=0;j<activityArr.length && i!=j;j++){
+            activityArr[j].style.display = "none";
+        }
+    }
+ }
+
+
+
+ //鼠标悬停在话费充值，流量充值，套餐变更时，切换phone，flowfee，package界面
+var phone = document.getElementsByClassName("phone")[0];
+var flowfee = document.getElementsByClassName("flowfee")[0];
+var package= document.getElementsByClassName("package")[0];
+var activity1AArr = activityArr[0].getElementsByTagName("a");
