@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body {
+            padding: 0;
+            margin: 0;
+            background: url("images/bg.gif");
+        }
+        .wall {
+            padding: 10px;
+            width: 940px;
+            height: 650px;
+            margin: 0 auto;
+            background: url("images/content_bg.jpg");
+            position: relative;
+        }
+        div .tip {
+            position: absolute;
+            top: 100px;
+            left: 200px;
+            cursor: pointer;
+        }
+        div div .p1 {
+            height: 28px;
+            width: 217px;
+            background: url("images/tip1_h.gif");
+            position: relative;
+            padding-left: 10px;
+            padding-top: 40px;
+            font-size: 12px;
+        }
+        div div .p2 {
+            height: 40px;
+            background: url("images/tip1_c.gif");
+            width: 212px;
+            padding-left: 15px;
+        }
+        div div .p3 {
+            height: 73px;
+            background: url("images/tip1_f.gif");
+            width: 207px;
+            padding-right: 20px;
+            line-height: 73px;
+            position: relative;
+        }
+        .p3 img {
+            position: absolute;
+            left: 10px;
+            top: 20px;
+        }
+        .content {
+            font-size: 12px;
+        }
+        .name {
+            font-size: 14px;
+            color: #c0f;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="wall">
+        <div id="tip1" class="tip">
+            <div class="p1">
+                第[11254]条心愿
+            </div>
+            <div class="p2">
+                <span class="content">我希望明年长高十厘米！！！</span>
+            </div>
+            <div class="p3">
+                <img src="images/bpic_1.gif" alt="">
+                <span class="name">不愿意透露姓名的吕先生</span>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        //0.设置计数器
+        var index = 1;
+        //1.创建多个新的tip
+        var tip = document.getElementsByClassName("tip")[0];
+        for(var i=0;i<10;i++){
+            var newtip = tip.cloneNode(true);
+            tip.parentNode.appendChild(newtip);
+            //2.为新产生的tip随机产生一个位置，即更改他们的top值，和left值
+            var topValue = parseInt(Math.random()*420);
+            var leftValue = parseInt(Math.random()*710);
+            newtip.style.top = topValue + "px";
+            newtip.style.top = topValue + "px";
+            newtip.style.left = leftValue + "px";
+            newtip.id = newtip.id + 1;
+            newtip.onclick = fn;
+        }
+        //对于原来的tip，有两种方法(二选一)
+        //1.删除
+        tip.parentNode.removeChild(tip);//自杀
+        //2.给它变换位置
+//        tip.style.top = parseInt(Math.random()*420) + "px";
+//        tip.style.left = parseInt(Math.random()*710) + "px";
+        //绑定事件，当点击某个tip时，该tip要在最上面，即z-index更大
+        tip.onclick = fn;
+        function fn() {
+            this.style.zIndex = index;
+            //由于z-index值是CSS中的属性，所有要用this.style.index来设置
+            index++;
+        }
+    </script>
+</body>
+</html>

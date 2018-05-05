@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body {
+            background: url("images/bg.gif");
+        }
+        div.content {
+            width: 960px;
+            height: 627px;
+            background: url("images/content_bg.jpg");
+            margin: 0 auto;
+            position: relative;
+        }
+        .tip {
+            height: 200px;
+            width: 227px;
+            position: absolute;
+            cursor: pointer;
+        }
+        .head {
+            height: 68px;
+            background: url("images/tip1_h.gif");
+            cursor: move;
+        }
+        .conten {
+            height: 40px;
+            background: url("images/tip1_c.gif");
+        }
+        .foot {
+            height: 73px;
+            background: url("images/tip1_f.gif");
+        }
+        #time {
+            font-size: 13px;
+            position: absolute;
+            top: 40px;
+            left: 5px;
+        }
+        #word {
+            width: 200px;
+            font-size: 12px;
+            position: absolute;
+            left: 10px;
+        }
+        #name {
+            font-size: 12px;
+            position: absolute;
+            right: 15px;
+            font-size: 14px;
+            color: #cc00ff;
+            top: 140px;
+        }
+        .close {
+            position: absolute;
+            right: 40px;
+            top: 35px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <!--<div class="tip">-->
+            <!--<div class="head">-->
+                <!--<span id="time">第[1111]条&nbsp;&nbsp;2016-9-45 12:40:00</span>-->
+                <!--<span id="close">x</span>-->
+            <!--</div>-->
+            <!--<div class="conten">-->
+                <!--<span id="word">见风使舵多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多多或或胡寻不所过</span>-->
+            <!--</div>-->
+            <!--<div class="foot">-->
+                <!--<span id="name">lidi</span>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+    <script type="text/javascript">
+        var tip = [
+            {"number":"00101","date":"2016-09-25","content":"一i 发。实施打击看看时间，看看书","name":"lily"},
+            {"number":"00102","date":"2016-09-25","content":"通天塔发。实施打击看看时间，看看书","name":"王一"},
+            {"number":"00103","date":"2016-09-25","content":"南大街打击看看时间，看看书","name":"lily"},
+            {"number":"00104","date":"2016-09-25","content":"明滚滚滚发。实见到你看时间，看看书","name":"carly"},
+            {"number":"00105","date":"2016-09-25","content":"登记的。实施打击看看时间，看看书","name":"jing"},
+            {"number":"00106","date":"2016-09-25","content":"明日打发。实施打击看看时间，看看书","name":"lily"},
+            {"number":"00107","date":"2016-09-25","content":"小女生。实施打击看看时间，看看书","name":"lojngs"},
+            {"number":"00108","date":"2016-09-25","content":"明日打发。实施打击看看时间，看看书","name":"网吧"},
+            {"number":"00109","date":"2016-09-25","content":"打发打发女款ILO。实施打击看看时间，看看书","name":"而应"},
+            {"number":"00110","date":"2016-09-25","content":"明擦擦擦。实施打击看看时间，看看书","name":"木"}
+        ];
+        var index = 1;
+        var con = document.getElementsByClassName("content")[0];
+        for(var i in tip){
+            var newtip = document.createElement("div");
+            newtip.className = "tip";
+            newtip.id = "tip"+i;
+            var topValue = parseInt(Math.random()*400);
+            var leftValue = parseInt(Math.random()*700);
+            newtip.style.top = topValue+"px";
+            newtip.style.left = leftValue+"px";
+            con.appendChild(newtip);
+            newtip.innerHTML += "<div class=\"head\">" +
+                                    "<span id=\"time\">第["+tip[i].number+"]条&nbsp;&nbsp;"+tip[i].date+"</span><span class=\"close\">×</span>" +
+                                " </div>" +
+                                "<div class=\"conten\">" +
+                                    "<span id=\"word\">"+tip[i].content+"</span>\n" +
+                                "</div>" +
+                                "<div class=\"foot\">" +
+                                    "<span id=\"name\">"+tip[i].name+"</span>" +
+                                "</div>" ;
+            newtip.onclick = fn;
+//            var clo = newtip.getElementById("close");
+//            clo.onclick = function () {
+//                con.removeChild(this.parentNode.parentNode);
+//            }
+            var clo = newtip.getElementsByClassName("close")[0];
+            clo.onclick = function () {
+                con.removeChild(this.parentNode.parentNode);
+            }
+            var db = newtip.getElementsByClassName("head")[0];
+            db.ondblclick = function () {
+//                双击head部分关闭tip
+                con.removeChild(this.parentNode);
+            }
+        }
+        function fn() {
+            this.style.zIndex = index;
+            index++;
+        }
+
+    </script>
+</body>
+</html>
