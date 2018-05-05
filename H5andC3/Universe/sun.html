@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body {
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+        }
+        .sun {
+            width: 60px;
+            height: 60px;
+            background-color: orange;
+            box-shadow: 0 0 30px 10px yellow;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .earth {
+            width: 250px;
+            height: 250px;
+            border: 1px solid #aaa;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            animation: gun 6s infinite linear;
+        }
+        .earth::before {
+            /*用伪元素充当地球*/
+            width: 30px;
+            height: 30px;
+            background-color: blue;
+            border-radius: 50%;
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 0;
+            transform: translate(-50%,-50%);
+        }
+        .moon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            position: absolute;
+            border: 1px solid #ccc;
+            top: 50%;
+            left: 0;
+            transform: translate(-50%,-50%);
+            animation: gun 4s infinite linear;
+        }
+        .moon::before {
+            /*用伪元素充当地球*/
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 0;
+            transform: translate(-50%,-50%);
+        }
+        .venus {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            position: absolute;
+            border: 1px solid #ccc;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            animation: gun 8s infinite linear;
+        }
+        .venus::before {
+            /*用伪元素充当地球*/
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 0;
+            transform: translate(-50%,-50%);
+        }
+        .mars {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            position: absolute;
+            border: 1px solid #ccc;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            animation: gun 10s infinite linear;
+        }
+        .mars::before {
+            /*用伪元素充当地球*/
+            width: 40px;
+            height: 40px;
+            background-color: blueviolet;
+            border-radius: 50%;
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 0;
+            transform: translate(-50%,-50%);
+        }
+        @keyframes gun {
+            0% {
+                /*有多种变换时，rotate要放在最后，放在前面，会将位置改变，影响效果*/
+                /*在这里 如果不加上translate(-50%,-50%)，之前的会被清空，导致位置混乱*/
+                transform: translate(-50%,-50%) rotate(0);
+
+            }
+            100% {
+                transform:  translate(-50%,-50%) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sun">
+        <div class="earth">
+            <div class="moon"></div>
+        </div>
+        <div class="venus"></div>
+        <div class="mars"></div>
+    </div>
+</body>
+</html>

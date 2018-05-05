@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body {
+            height: 100%;
+            background: url("images/universe-bg.jpg");
+        }
+        div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+        }
+        .sun {
+            width: 40px;
+            height: 40px;
+            background-color: yellow;
+            box-shadow: 0 0 20px 10px rgba(255,255,0,0.5);
+            margin: -20px 0 0 -20px;
+            animation: sunDong 10s infinite linear;
+        }
+        @keyframes sunDong {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .earth {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #ccc;
+            margin: -75px 0 0 -75px;
+            animation: sunDong 8s infinite linear;
+        }
+        .earth::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            left: 0;
+            top: 50%;
+            border-radius: 50%;
+            background-color: blue;
+            z-index: 2;
+            margin: -5px 0 0 -5px;
+        }
+        .star1 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin: -100px 0 0 -100px;
+            animation: sunDong 15s infinite linear;
+        }
+        .star1::before {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: 0;
+            top: 50%;
+            border-radius: 50%;
+            background-color: red;
+            z-index: 2;
+            margin: -8px 0 0 -8px;
+        }
+        .star2 {
+            width: 250px;
+            height: 250px;
+            border: 1px solid #ccc;
+            margin: -125px 0 0 -125px;
+            animation: sunDong 25s infinite linear;
+        }
+        .star2::before {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: 0;
+            top: 50%;
+            border-radius: 50%;
+            background-color: green;
+            z-index: 2;
+            margin: -8px 0 0 -8px;
+        }
+        .star3 {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: -150px 0 0 -150px;
+            animation: sunDong 35s infinite linear;
+        }
+        .star3::before {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: 0;
+            top: 50%;
+            border-radius: 50%;
+            background-color: darkmagenta;
+            z-index: 2;
+            margin: -8px 0 0 -8px;
+        }
+        .star4 {
+            width: 350px;
+            height: 350px;
+            border: 1px solid #ccc;
+            margin: -175px 0 0 -175px;
+            animation: sunDong 45s infinite linear;
+        }
+        .star4::before {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: 0;
+            top: 50%;
+            border-radius: 50%;
+            background-color: lightskyblue;
+            z-index: 2;
+            margin: -8px 0 0 -8px;
+        }
+        .star5 {
+            width: 400px;
+            height: 400px;
+            border: 1px solid #ccc;
+            margin: -200px 0 0 -200px;
+            animation: sunDong 60s infinite linear;
+        }
+        .star5::before {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: 0;
+            top: 50%;
+            border-radius: 50%;
+            background-color: orange;
+            z-index: 2;
+            margin: -8px 0 0 -8px;
+        }
+        .star6 {
+            width: 450px;
+            height: 450px;
+            border: 1px solid #ccc;
+            margin: -225px 0 0 -225px;
+            animation: sunDong 75s infinite linear;
+        }
+        .star6::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            left: 50%;
+            bottom: 0;
+            border-radius: 50%;
+            background-color: pink;
+            z-index: 2;
+            margin: 0 0 -10px -5px;
+        }
+        .star7 {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #ccc;
+            margin: -250px 0 0 -250px;
+            animation: sunDong 95s infinite linear;
+        }
+        .star7::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            right: 0;
+            top: 50%;
+            border-radius: 50%;
+            background-color: greenyellow;
+            z-index: 2;
+            margin: -10px -5px 0 0;
+        }
+        .star8 {
+            width: 550px;
+            height: 550px;
+            border: 1px solid #ccc;
+            margin: -275px 0 0 -275px;
+            animation: sunDong 110s infinite linear;
+        }
+        .star8::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            left: 50%;
+            top: 0;
+            border-radius: 50%;
+            background-color: purple;
+            z-index: 2;
+            margin: -10px 0 0 -5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sun"></div>
+    <div class="earth">
+        <div class="moon"></div>
+    </div>
+    <div class="star1"></div>
+    <div class="star2"></div>
+    <div class="star3"></div>
+    <div class="star4"></div>
+    <div class="star5"></div>
+    <div class="star6"></div>
+    <div class="star7"></div>
+    <div class="star8"></div>
+</body>
+</html>
