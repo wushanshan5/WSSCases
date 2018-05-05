@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body,ul,li {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            margin: 100px auto;
+            width: 790px;
+            height: 340px;
+            background: url("images/pic1.jpg");
+            position: relative;
+        }
+        .left:hover,.right:hover {
+            background-color: rgba(0,0,0,.3);
+        }
+        .left,.right {
+            display: none;
+            position: absolute;
+            width: 45px;
+            height: 60px;
+            text-align: center;
+            font: 800 20px/60px "Microsoft YaHei";
+            top: 50%;
+            margin-top: -25px;
+            background-color: rgba(0,0,0,.6);
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .left {
+            left: 0px;
+        }
+        .right {
+            right: 0px;
+        }
+        .ul {
+            width: 165px;
+            height: 22px;
+            padding-left: 10px;
+            position: absolute;
+            list-style: none;
+            bottom: 20px;
+            border-radius: 20px;
+            background-color: rgba(0,0,0,.4);
+            left: 50%;
+            margin-left: -80px;
+        }
+        div i {
+            opacity: 1;
+            float: left;
+            margin: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 10px;
+            background-color: #fff;
+            text-align: center;
+        }
+        .current {
+            background-color: #DB2323;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="ul">
+            <i class="current" id="1"></i>
+            <i id="2"></i>
+            <i id="3"></i>
+            <i id="4"></i>
+            <i id="5"></i>
+            <i id="6"></i>
+            <i id="7"></i>
+        </div>
+        <div class="left">&lt;</div>
+        <div class="right">&gt;</div>
+    </div>
+
+
+    <script type="text/javascript">
+        //1.获取相关事件源
+        var left = document.getElementsByClassName("left")[0];
+        var right = document.getElementsByClassName("right")[0];
+        var box = document.getElementsByClassName("box")[0];
+        var ul = document.getElementsByClassName("ul")[0];
+        var liArr = ul.children;
+        var timer = null;
+        var num = 1;//计数器(用来匹配json中的1,2,3,4)
+        var colorJson = {"1":"pic1.jpg","2":"pic2.jpg","3":"pic3.jpg","4":"pic4.jpg","5":"pic5.jpg","6":"pic1.jpg","7":"pic2.jpg"};
+        //得到json中最大的数值
+        var max = 1;
+        var min = 1;
+        for(var a in colorJson){
+            if(a>max){
+                max = a;
+            }
+            if(a<min){
+                min = a;
+            }
+        }
+        //2.绑定事件
+        //事件：1.鼠标在box上，不轮播，在box外，轮播，所以定时器设在onmouseover事件上，在onmouseout事件上清除定时器
+        timer = setInterval(carousel,3000);
+        box.onmouseout = function () {
+            timer = setInterval(carousel,3000);
+            left.style.display = "none";
+            right.style.display = "none";
+        }
+        box.onmouseover = function () {
+            clearInterval(timer);
+            left.style.display = "block";
+            right.style.display = "block";
+        }
+        left.onclick = function () {
+            num--;
+            if(num<min){
+                num = max;
+            }
+            box.style.background = "url(images/"+colorJson[num]+")";
+            relaToPage(liArr);
+        }
+        right.onclick = function () {
+            num++;
+            if(num>max){
+                num = min;
+            }
+            box.style.background = "url(images/"+colorJson[num]+")";
+            relaToPage(liArr);
+        }
+        //轮播方法
+        function carousel() {
+            num++;
+            if(num>max){
+            num = min;
+            }
+            box.style.background = "url(images/"+colorJson[num]+")";
+            relaToPage(liArr);
+        }
+        //3.li标签会随页面改变
+        function relaToPage(ele) {
+            //将num和li标签联系起来
+            for(var j=0;j<ele.length;j++){
+                ele[j].className = "";
+                //这里的num是string类型，而ele[j].value是number类型，所以不能用全等===
+                if(num == ele[j].id){
+                    ele[j].className = "current";
+                }
+            }
+        }
+        //4.点击li标签，跳转到对应界面
+        for(var l=0;l<liArr.length;l++){
+            liArr[l].onmouseover = function () {
+                num = this.id;
+                for(var i=0;i<liArr.length;i++){
+                    liArr[i].className = "";
+                }
+                this.className = "current";
+                box.style.background = "url(images/"+colorJson[num]+")";
+
+            }
+        }
+    </script>
+</body>
+</html>
