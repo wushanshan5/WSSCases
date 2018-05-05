@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul,li,body {
+            padding: 0;
+            margin: 0;
+        }
+        ul,li {
+            list-style: none;
+        }
+        li {
+            cursor: pointer;
+            float: left;
+            padding-right: 10px;
+        }
+        ul {
+            width: 1000px;
+            margin: 50px auto;
+            height: 200px;
+        }
+        li>img {
+            width: 316px;
+            height: 170px;
+            /*将盒模型设置为內减模式*/
+            box-sizing: border-box;
+            /*使用了该属性，img标签加了border后，所占的面积不会变化，而是会减小内容的大小*/
+        }
+        li>img:hover {
+            border: 5px solid #aaa;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><img src="images/1.jpg" alt=""></li>
+        <li><img src="images/2.jpg" alt=""></li>
+        <li><img src="images/3.jpg" alt=""></li>
+    </ul>
+</body>
+</html>
