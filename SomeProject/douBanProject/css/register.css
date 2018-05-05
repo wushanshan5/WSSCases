@@ -1,0 +1,206 @@
+/* protocol 部分start*/
+.protocol {
+    background-color: #fff;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -410px;
+    padding: 0 20px;
+    width: 760px;
+    height: 525px;
+    border: 10px solid rgba(0,0,0,.2);
+    border-radius: 5px;
+}
+.protocol .close {
+    color: #5A6699;
+    top: 0;
+    right: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    position: absolute;
+}
+.protocol>h2 {
+    font: 900 20px/30px "Microsoft YaHei";
+    color: #111111;
+}
+.protocol>p {
+    font: 12px/30px "Microsoft YaHei";
+}
+.protocol>p>a {
+    color: #1E679E;
+}
+.protocol>span {
+    font: 700 12px/20px "Microsoft YaHei";
+    color: #111111;
+}
+.protocol-content {
+    font: 12px/20px "Microsoft YaHei";
+    width: 718px;
+    padding: 20px;
+    height: 260px;
+    border: 1px solid #CCCCCC;
+    margin: 20px auto 0 auto;
+    overflow: auto;
+}
+.protocol>input {
+    position: absolute;
+    cursor: pointer;
+    bottom: 15px;
+    left: 50%;
+    margin-left: -44px;
+    width: 88px;
+    height: 40px;
+    background-color: #3BA94D;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+}
+/* protocol 部分end*/
+
+/* css初始化*/
+.download-app a:hover,.login-form a:hover,.footer a:hover,.protocol a:hover {
+    background-color: #003399;
+    color: #fff !important;
+}
+/* css初始化*/
+
+
+
+/*.douban 部分start*/
+#douban {
+    text-indent: -555em;
+    display: inline-block;
+    margin: 30px 14px 0 0;
+    width: 154px;
+    height: 30px;
+    background-image: url("../images/logo.png");
+}
+.douban-number {
+    vertical-align: bottom;
+    font: 24px/25px "Microsoft YaHei";
+    color: #269337;
+}
+.douban-login {
+    padding: 30px 0;
+    font: 800 25px/40px "Microsoft YaHei";
+    color: #494949;
+}
+/*.douban 部分end*/
+
+/*login-form 部分start*/
+.login-form {
+    width: 600px;
+}
+.login-form span {
+    padding-left: 60px;
+    font: 400 12px/20px "Microsoft YaHei";
+    color: #808080;
+}
+.login-form-tel {
+    padding-left: 50px !important;
+    width: 155px !important;
+}
+.login-form-tel+span {
+    position: relative;
+    left: -260px;
+}
+.login-form .login-form-guess {
+    padding-left: 0px;
+}
+.login-form-choose {
+    color: #336699;
+    font: 12px/20px "Microsoft YaHei";
+}
+.login-form>label {
+    display: inline-block;
+    width: 60px;
+    height: 50px;
+    text-align: center;
+    font: 14px/40px "Microsoft YaHei";
+}
+.login-form>input {
+    padding-left: 8px;
+    width: 205px;
+    border: 1px solid #C9C9C9;
+    height: 28px;
+    border-radius: 3px;
+}
+.login-form>input[type="button"] {
+    background-color: #fff;
+    width: 90px;
+}
+.login-form>input[type="submit"] {
+    width: 80px;
+    height: 31px;
+    border-radius: 3px;
+    margin: 20px 0px 20px 100px;
+    color: #fff;
+    background-color: #3FA156;
+    border: 1px solid #528641;
+}
+.login-form-validate {
+    width: 85px !important;
+}
+.inp1+i,.inp2+i,.inp3+i,.inp4+input+i {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+}
+.inp1+i+em,.inp2+i+em,.inp3+i+em,.inp4+input+i+em {
+    font: 11px/15px "Microsoft YaHei";
+}
+    /*设置正则样式*/
+    .regular-error {
+        background: url("../images/icon-regularExpression.gif") bottom center;
+    }
+    .regular-right {
+        background: url("../images/icon-regularExpression.gif") top center;
+    }
+    .regular-font-error {
+        color: red;
+    }
+    .regular-font-right {
+        color: #888888;
+    }
+/*login-form 部分end*/
+
+/*download-app 部分start*/
+.download-app {
+    padding-right: 50px;
+    float: right;
+}
+.download-app>i,.download-app>a {
+    font: 12px/35px "Microsoft YaHei";
+    color: #999;
+}
+.download-app>a {
+    color: #336699;
+}
+/*download-app 部分end*/
+
+/* dashed-line 部分start*/
+.dashed-line {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px dashed #DDDDDD;
+}
+/* dashed-line 部分end*/
+
+/* footer 部分start*/
+.copy {
+    padding: 10px 0 30px;
+    float: left;
+    color: #999999;
+    font: 12px/20px "Microsoft YaHei";
+}
+.list {
+    padding: 10px 0 30px;
+    float: right;
+    color: #999999;
+    width: 480px;
+}
+.list>a {
+    color: #336699;
+    font: 12px/20px "Microsoft YaHei";
+}
+/* footer 部分end*/

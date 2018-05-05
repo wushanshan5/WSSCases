@@ -1,0 +1,296 @@
+/*noting 部分start*/
+
+ /*noting-part 部分start*/
+ .noting-part {
+     float: left;
+     font: 13px/20px "Microsoft YaHei";
+     width: 675px;
+     padding-right: 50px;
+ }
+.noting-part>h2 {
+    padding-top: 35px;
+    font: 600 25px/60px "Microsoft YaHei";
+    color: #494949;
+}
+.noting-part>p {
+    display: inline-block;
+    padding: 10px 0;
+    color: #999999;
+    font: 13px/30px "Microsoft YaHei";
+}
+.noting-part>label {
+    font: 14px/45px "Microsoft YaHei";
+}
+.noting-part-choice {
+    margin-bottom: 20px;
+    float: right;
+    width: 147px;
+    background-color: #F5F5F5;
+    height: 24px;
+}
+.noting-part-sign {
+    height: 38px;
+    width: 673px;
+    padding-left: 8px;
+    border: 1px solid #ccc;
+}
+.noting-part-choice>a {
+    display: inline-block;
+    width: 48px;
+    text-align: center;
+    height: 24px;
+    font: 13px/24px "Microsoft YaHei";
+    color: #333333;
+    border: 1px solid #ccc;
+    margin-left: -1px;
+}
+.noting-part-choice>a:first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.noting-part-choice>a:last-child {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.noting-part-choice>a:hover {
+    background-color: #fff;
+}
+.noting-part-title {
+    width: 580px;
+    padding-left: 8px;
+    outline: none;
+    height: 28px;
+    font: 13px/20px "Microsoft YaHei";
+    border: 1px solid #CCCCCC;
+}
+.noting-part-content {
+    outline: none;
+    resize: none;
+    height: 460px;
+    width: 580px;
+    padding-left: 8px;
+    font: 13px/20px "Microsoft YaHei";
+    border: 1px solid #ccc;
+}
+.noting-part-usual-kinds>a,.noting-part-whole>a,.noting-part>a,.noting-part-choice1 a {
+    font: 13px/20px "Microsoft YaHei";
+    color: #3377AA;
+    margin: 5px;
+}
+.noting-part-usual-kinds>a:hover,.noting-part-whole>a:hover,.noting-part>a:hover,.noting-part-choice1 a:hover {
+    color: #ffffff;
+    background-color: #3377AA;
+}
+.noting-part-usual {
+    display: none;
+    height: 70px;
+    padding-top: 15px;
+}
+.noting-part-usual>p,.noting-part-whole>p {
+    float: left;
+    color: #999999;
+    font: 13px/30px "Microsoft YaHei";
+}
+.noting-part-usual-kinds {
+    float: left;
+    width: 535px;
+}
+.noting-part-whole {
+    height: 40px;
+    padding-top: 10px;
+}
+.noting-part-whole>a {
+    float: left;
+}
+.noting-part-whole>p:last-child {
+    cursor: pointer;
+    float: right;
+}
+.noting-part-whole>p>i {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 6px solid #fff;
+    border-left: 6px solid #ccc;
+}
+.noting-part input[type="button"] {
+    width: 52px;
+    height: 25px;
+    cursor: pointer;
+    margin: 30px 15px 70px 0;
+    border-radius: 3px;
+}
+.noting-part-look,.noting-part-cancel {
+    color: #333333;
+    border: 1px solid #999999;
+    background-color: #E9E9E9;
+}
+.noting-part-cancel {
+    float: right;
+}
+.noting-part-look:hover {
+    background-color: rgba(233,233,233,.8);
+}
+.noting-part-conmit {
+    color: #fff;
+    border: 1px solid #528641;
+    background-color: #3FA156;
+}
+.noting-part-conmit:hover {
+    background-color: rgba(63,161,86,.8);
+}
+
+ /*三个模态框*/
+.noting-part-choice1,.noting-part-choice2,.noting-part-choice3 {
+    display: none;
+    top: 200px;
+    left: 50%;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 9px solid #C1C1C1;
+}
+.noting-part-choice-title {
+    height: 44px;
+    color: #006600;
+    width: 100%;
+    background-color: #EBF5EB;
+    font: 15px/44px "Microsoft YaHei";
+}
+.noting-part-choice-btn {
+    width: 150px;
+    margin: 0 auto;
+}
+.noting-part-choices>p {
+    color: #666;
+    padding-left: 20px;
+}
+.noting-part-choice1 {
+    margin-left: -324px;
+    width: 648px;
+    height: 433px;
+}
+.noting-part-choice2,.noting-part-choice3 {
+    width: 400px;
+    height: 237px;
+    margin-left: -200px;
+}
+.noting-part-choice3 {
+    height: 257px;
+}
+.noting-part-choice2>p {
+    padding: 20px;
+}
+.noting-part-choices>label {
+    display: inline-block;
+    padding-top: 10px;
+    font: 13px/20px "Microsoft YaHei";
+    padding-left: 20px;
+}
+.noting-part-choices>input[type="text"] {
+    width: 361px;
+    margin-left: 20px;
+    margin-top: 10px;
+    height: 27px;
+    border: 1px solid #999;
+}
+.noting-part-choice-btn>input[type="button"] {
+    width: 55px;
+    height: 28px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    background-color: #F4F4F4;
+    color: #333;
+    text-align: center;
+    font: 13px/28px "Microsoft YaHei";
+}
+.noting-part-choice-file {
+    position: relative;
+    margin: 15px;
+    width: 614px;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    height: 236px;
+}
+.noting-part-choice-file>p,.noting-part-choice-file>span {
+    position: absolute;
+    left: 50%;
+}
+.noting-part-choice-file>input {
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.noting-part-choice-file>p {
+    font: 20px/38px "Microsoft YaHei";
+    color: #666666;
+}
+.noting-part-choice-p1 {
+    margin-left: -90px;
+    top: 45px;
+}
+.noting-part-choice-p2 {
+    top: 78px;
+    margin-left: -10px;
+}
+.noting-part-choice-file>span {
+    margin-left: -112px;
+    top: 120px;
+    font: 12px/30px "Microsoft YaHei";
+    color: red;
+}
+.noting-part-choice-file a {
+    color: #3377AA;
+}
+.noting-part-choice-file a:hover {
+    background-color: #3377AA;
+    color: #ffffff;
+}
+.noting-part-choices>i {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: #C6BAB4;
+}
+.noting-part-choices>i:hover {
+    color: red;
+}
+ /*noting-part 部分end*/
+
+ /*noting-advertising 部分start*/
+ .noting-advertising {
+     float: left;
+     width: 315px;
+ }
+.noting-advertising>span {
+    display: block;
+    font: 13px/42px "Microsoft YaHei";
+    color: #ffffff;
+    padding-left: 50px;
+    width: 120px;
+    cursor: pointer;
+    height: 42px;
+    margin: 60px 0 40px 0;
+    background-image: url("../personal-images/noting-pic1.png");
+    background-position: 0 0;
+}
+.noting-advertising>span:hover {
+    background-position: 0 -42px;
+}
+ .noting-advertising>a {
+     color: #3377AA;
+     font: 13px/50px "Microsoft YaHei";
+ }
+ .noting-advertising>p {
+     font: 13px/20px "Microsoft YaHei";
+     color: #AAAAAA;
+ }
+.noting-advertising>a:hover {
+    color: #fff;
+    background-color: #3377AA;
+}
+ /*noting-advertising 部分end*/
+
+/*noting 部分end*/

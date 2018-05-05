@@ -1,0 +1,761 @@
+ /*CSS初始化*/
+ .books-leftpart a:hover,.books-rightpart a:hover {
+     background-color: #3377AA;
+     color: #fff;
+ }
+ .center {
+     width: 1060px;
+ }
+
+ /*nav 部分start*/
+ .nav {
+     height: 28px;
+     background-color: #545652;
+ }
+ .nav-kinds {
+     width: 570px;
+     float: left;
+ }
+ .nav-login {
+     width: 230px;
+     float: right;
+ }
+ .nav-kinds>a,.nav-login>a {
+     display: inline-block;
+     padding: 0 12px;
+     color: #D5D5D5;
+     font: 12px/28px "Microsoft YaHei";
+ }
+ .nav-kinds>a:hover,.nav-login>a:hover {
+     color: #fff;
+ }
+ .nav-kinds-last {
+     position: relative;
+ }
+ .nav-kinds-more {
+     display: none;
+     position: absolute;
+     width: 80px;
+     height: 45px;
+     text-align: center;
+     line-height: 45px;
+     border: 1px solid #D5D5D5;
+     left: 0px;
+     border-top: 0;
+     color: #444;
+ }
+ .nav-login-firsta {
+     position: relative;
+ }
+ .nav-doubanApp {
+     display: none;
+     color: #000;
+     position: absolute;
+     left: -15px;
+     text-align: center;
+     width: 180px;
+     height: 407px;
+     padding: 30px 20px;
+     background-color: #fff;
+     border: 1px solid #D5D5D5;
+     border-top: 0;
+ }
+ .nav-doubanApp>h3 {
+     font: 700 20px/35px "Microsoft YaHei";
+ }
+  .nav-doubanApp>p {
+      font: 14px/40px "Microsoft YaHei";
+  }
+  .nav-doubanApp>i {
+      font: 12px/20px "Microsoft YaHei";
+      color: #3377AA;
+  }
+ /*nav 部分end*/
+
+ /*search 部分start*/
+ .search {
+     height: 116px;
+     background-color: #F6F6F1;
+ }
+ .search-logo {
+     margin-top: 22px;
+     display: inline-block;
+     width: 115px;
+     height: 27px;
+     background: url("../images/reading-read.png");
+     text-indent: -5555em;
+ }
+ .search-logo+input {
+     padding-left: 15px;
+     width: 440px;
+     height: 31px;
+     border: 0;
+     border-bottom: 1px solid #D1D1D1;
+     background-color: #fff;
+     border-radius: 2px;
+     margin-left: 30px;
+ }
+ .search-button {
+     position: relative;
+     top: -1px;
+     display: inline-block;
+     width: 35px;
+     height: 31px;
+     vertical-align: bottom;
+     background-color: #9F9D94;
+     border: 1px solid #99978E;
+     border-top-right-radius: 2px;
+     border-bottom-right-radius: 2px;
+     color: #fff !important;
+ }
+ .reading-top>img {
+     position: absolute;
+     top: 35px;
+     right: 230px;
+     width: 190px;
+     height: 90px;
+ }
+ .divide-line {
+     margin-top: 20px;
+     height: 10px;
+     border-top: 1px solid #E9E9E2;
+ }
+ .search-classify>a {
+     font-size: 13px;
+     margin-right: 15px;
+     color: #614E3C;
+ }
+ .search-classify>a:hover {
+     background-color: #614E3C;
+     color: #fff;
+ }
+ /*search 部分end*/
+
+ /*advertise-pic1 部分start*/
+ .advertise-pic1 {
+     padding: 20px 0;
+ }
+ .advertise-pic1 img {
+     width: 100%;
+ }
+ /*advertise-pic1 部分end*/
+
+ /*books 部分start*/
+ .books-leftpart,.books-rightpart {
+     float: left;
+ }
+ .books-leftpart {
+     width: 680px;
+     margin-right: 60px;
+ }
+ .books-rightpart {
+     width: 320px;
+ }
+ .books-title {
+     border-bottom: 1px solid #DDDDDD;
+ }
+ .books-title>span {
+     padding-right: 20px;
+     font: 800 19px/30px "Microsoft YaHei";
+ }
+ .books-title>a {
+     color: #3377AA;
+     font: 12px/30px "Microsoft YaHei";
+ }
+ .books-dot {
+     float: right;
+ }
+ .books-dot>i {
+     margin-right: 4px;
+     display: inline-block;
+     cursor: pointer;
+     width: 5px;
+     height: 5px;
+     border-radius: 5px;
+     background-color: #999999;
+ }
+ .books-dot>i:hover {
+     background-color: #DDDDDD;
+ }
+ .books-dot>em {
+     cursor: pointer;
+     display: inline-block;
+     text-align: center;
+     font: 12px/18px "Consolas";
+     color: #fff;
+     width: 18px;
+     height: 18px;
+     background-color: #9B9A8F;
+     border-radius: 9px;
+ }
+ .books-dot>em:hover {
+     background-color: #bbb;
+ }
+ /*newbooks 部分start*/
+ .newbooks-first-ul {
+     position: relative;
+     width: 710px;
+     height: 514px;
+     overflow: hidden;
+ }
+ .newbooks-first-ul>ul {
+     position: relative;
+     left: 0;
+     width: 600%;
+     height: 514px;
+ }
+ .newbooks-first-ul>ul>li {
+     width: 710px;
+     float: left;
+ }
+ .newbooks-first-ul>ul>li>ul>li{
+     float: left;
+     position: relative;
+     padding-top: 16px;
+     width: 115px;
+     height: 237px;
+     padding-right: 25px;
+ }
+ .newbooks-first-ul>ul>li>ul>li a {
+     font: 13px/20px "Microsoft YaHei";
+     color: #3377AA;
+ }
+ .newbooks-first-ul>ul>li>ul>li>img {
+     width: 115px;
+     height: 172px;
+ }
+ .newbooks-first-ul>ul>li>ul>li>i {
+     font: 13px/20px "Microsoft YaHei";
+ }
+ .newbooks-suggest {
+     position: relative;
+     font: 12px/20px "Microsoft YaHei";
+     color: #A29E91;
+     height: 20px;
+     background-color: #F7F3DB;
+ }
+ .newbooks-suggest>img {
+     margin-top: 2px;
+     margin-left: 5px;
+     width: 16px;
+     height: 16px;
+ }
+ .newbooks-suggest>i {
+     position: absolute;
+     left: 35px;
+ }
+ /*newbooks 部分end*/
+
+ /*advertise-pic2 部分start*/
+ .advertise-pic2 {
+     padding-top: 40px;
+     padding-bottom: 20px;
+ }
+ .advertise-pic2>img {
+     cursor: pointer;
+     width: 673px;
+ }
+ /*advertise-pic2 部分end*/
+
+ /*books-info  部分start*/
+ .books-info>.books-title {
+     border: 0;
+ }
+ .books-info-ul {
+     position: relative;
+     width: 675px;
+     height: 195px;
+     overflow: hidden;
+ }
+ .books-info ul {
+     position: absolute;
+     width: 500%;
+ }
+ .books-story {
+     position: relative;
+     float: left;
+     padding: 25px;
+     margin-top: 15px;
+     width: 623px;
+     height: 108px;
+     border: 1px solid #DDDDDD;
+ }
+ .books-story>a {
+     font: 13px/20px "Microsoft YaHei";
+     color: #3377AA;
+ }
+ .books-story>i {
+     font: 12px/25px "Microsoft YaHei";
+     color: #AAAAAA;
+ }
+ .books-story p {
+     font: 12px/20px "Microsoft YaHei";
+     width: 505px;
+     float: left;
+ }
+ .info-cover {
+     position: absolute;
+     top: 20px;
+     right: 20px;
+     float: right;
+     width: 90px;
+     height: 90px;
+ }
+ .info-cover>img {
+     width: 100%;
+ }
+ /*books-info  部分end*/
+
+ /*books-top 部分start*/
+ .books-top {
+     padding-top: 40px;
+ }
+ .books-top>ul {
+     width: 700px;
+     padding-top: 20px;
+ }
+ .books-top li {
+     float: left;
+     width: 313px;
+     height: 207px;
+     padding-right: 24px;
+ }
+ .books-top li img {
+     width: 95px;
+     height: 120px;
+ }
+ .books-top-info {
+     padding-left: 17px;
+     width: 164px;
+ }
+ .books-top li>img,.books-top-info {
+     float: left;
+ }
+ .books-top-info>a {
+     font: 14px/20px "Microsoft YaHei";
+     color: #3377AA;
+ }
+ .books-top-info>i {
+     display: inline-block;
+     width: 77px;
+     height: 11px;
+     background-image: url("../images/movie-star.png");
+     background-size: 77px 121px;
+ }
+ .books-top li>p {
+     padding-top: 15px;
+     font: 13px/20px "Microsoft YaHei";
+     color: #666666;
+ }
+ .books-top li>p>a {
+     color: #3377AA;
+ }
+ .books-top-info>em {
+     font: 500 13px/20px "Microsoft YaHei";
+     color: #FFAC2D;
+ }
+ .books-top-info>span {
+     font: 13px/20px "Microsoft YaHei";
+ }
+ .books-top-info-stars1 {
+     background-position: 0 0;
+ }
+ .books-top-info-stars2 {
+     background-position: 0 -22px;
+ }
+ .books-top-info-stars3 {
+     background-position: 0 -44px;
+ }
+ .books-top-info-stars4 {
+     background-position: 0 -66px;
+ }
+ .books-top-info-stars5 {
+     background-position: 0 -88px;
+ }
+ /*books-top 部分end*/
+
+ /*books-store 部分start*/
+ .books-store {
+     padding-top: 20px;
+ }
+ .books-store-cover {
+     width: 680px;
+     height: 180px;
+ }
+ .books-store-cover>img,.books-cover-info {
+     float: left;
+ }
+ .books-store-cover>img {
+     width: 140px;
+     height: 180px;
+ }
+ .books-cover-info {
+     padding-left: 20px;
+     padding-top: 20px;
+     width: 380px;
+ }
+ .books-cover-info>span {
+     font: 800 21px/30px "Microsoft YaHei";
+ }
+ .books-cover-info>i {
+     padding-left: 25px;
+     font: 13px/30px "Microsoft YaHei";
+     color: #E76648;
+ }
+ .books-cover-info>p {
+     font: 14px/40px "Microsoft YaHei";
+     color: #9B9B9B;
+ }
+ .books-store>ul {
+     width: 730px;
+ }
+ .books-store li {
+     float: left;
+     width: 110px;
+     padding-right: 25px;
+     height: 210px;
+ }
+ .books-store li>a {
+    font: 13px/20px "Microsoft YaHei";
+     color: #3377AA;
+ }
+ .books-store li>span {
+     font: 13px/20px "Microsoft YaHei";
+     color: #4C4C4C;
+ }
+ .books-store li>img {
+     width: 90px;
+     height: 135px;
+ }
+ /*books-store 部分end*/
+
+ /*electric-books 部分start*/
+ .books-introduction .half {
+     position: absolute;
+     top: 50%;
+     margin-top: -1px;
+     left: -1px;
+     width: 6px;
+     height: 17px;
+     background-color: #fff;
+ }
+ .books-introduction>i {
+     position: absolute;
+     left: -11px;
+     color: #aaa;
+     font: 25px/235px "simsun";
+ }
+ .books-introduction {
+     display: none;
+     color: #767676;
+     position: absolute;
+     left: 125px;
+     top: 0;
+     padding: 15px;
+     width: 315px;
+     height: 220px;
+     z-index: 10;
+     background-color: #fff;
+     border: 1px solid #aaa;
+ }
+ .books-introduction>p,.books-introduction>span {
+     font-size: 12px;
+     font-weight: 500;
+ }
+ .books-introduction>span {
+     line-height: 40px;
+ }
+ .books-introduction {
+     font: 600 15px/20px "Microsoft YaHei";
+
+ }
+ .electric-books {
+     padding-top: 20px;
+ }
+ .electric-books>ul {
+     padding-top: 30px;
+     width: 730px;
+ }
+ .electric-books>span {
+     display: inline-block;
+     padding-top: 15px;
+ }
+ .electric-books>a {
+     font: 13px/20px "Microsoft YaHei";
+     color: #3377AA;
+ }
+ .electric-books>ul>li {
+     position: relative;
+     float: left;
+     width: 106px;
+     height: 222px;
+     padding-right: 34px;
+ }
+ .electric-books>ul>li>img {
+     height: 158px;
+     width: 100%;
+ }
+ .electric-books>ul>li>a {
+     color: #3377AA;
+     font: 13px/20px "Microsoft YaHei";
+ }
+ .electric-books>ul>li>span {
+     font: 13px/20px "Microsoft YaHei";
+     color: #4B4B4B;
+ }
+ /*electric-books 部分end*/
+
+ /*books-review 部分start*/
+ .books-review {
+     padding-top: 20px;
+ }
+ .books-review>ul>li {
+     padding-top: 16px;
+     width: 675px;
+     height: 142px;
+     border-bottom: 1px solid #EAEAEA;
+ }
+ .books-review>ul>li>img {
+     float: left;
+     width: 75px;
+     height: 112px;
+ }
+ .books-review-info {
+     padding-left: 11px;
+     float: left;
+     width: 586px;
+     height: 125px;
+ }
+ .books-review-info>a {
+     font: 14px/25px "Microsoft YaHei";
+     color: #3377AA;
+ }
+ .books-review-info>span {
+     font: 13px/20px "Microsoft YaHei";
+     color: #666666;
+ }
+ .books-review-info>i {
+     display: inline-block;
+     width: 55px;
+     height: 11px;
+     background-size: 55px 121px;
+     background-image: url("../images/movie-star.png");
+ }
+ .review-star1 {
+     background-position: 0 0;
+ }
+ .review-star2 {
+     background-position: 0 -11px;
+ }
+ .review-star3 {
+     background-position: 0 -22px;
+ }
+ .review-star4 {
+     background-position: 0 -33px;
+ }
+ .books-review-info>p {
+     font: 13px/20px "Microsoft YaHei";
+ }
+ .books-review-info>p>a {
+     font: 13px/20px "Microsoft YaHei";
+     color: #3377AA;
+ }
+ /*books-review 部分end*/
+
+ /*books-rightpart 部分start*/
+
+ /*rightpart-ads 部分start*/
+ .rightpart-ads img {
+     width: 300px;
+     height: 250px;
+ }
+ .rightpart-ads a:hover {
+     background-color: #fff !important;
+ }
+ /*rightpart-ads 部分end*/
+
+ /*rightpart-signal 部分start*/
+ .rightpart-signal {
+     padding-top: 20px;
+ }
+ .rightpart-signal>ul>li {
+     border-bottom: 1px dashed #DDDDDD;
+     height: 98px;
+ }
+ .rightpart-signal>ul>li>h3 {
+     padding-top: 10px;
+     font: 500 14px/30px "Microsoft YaHei";
+ }
+ .rightpart-signal ul a:hover {
+     color: #3377AA;
+     background-color: #E8E8E8;
+ }
+ .rightpart-signal>ul>li>a {
+     margin-bottom: 5px;
+     font: 13px/22px "Microsoft YaHei";
+     display: inline-block;
+     height: 22px;
+     padding: 0 5px;
+     background-color: #F5F5F5;
+     color: #3377AA;
+ }
+ .signal-last {
+     color: #AAAAAA !important;
+ }
+ /*rightpart-signal 部分end*/
+
+ /*rightpart-books-top 部分start*/
+ .rightpart-books-top {
+     padding-top: 20px;
+ }
+ .rightpart-books-top>span,.rightpart-books-top>a {
+     margin-top: 10px;
+     margin-bottom: 20px;
+     cursor: pointer;
+     display: inline-block;
+     width: 54px;
+     height: 28px;
+     border-radius: 3px;
+     font: 13px/28px "Microsoft YaHei";
+     text-align: center;
+ }
+ .rightpart-books-top>span {
+    color: #fff;
+     background-color: #9B7C5E;
+ }
+ .rightpart-books-top>a {
+     color: #CCC5BF;
+ }
+ .rightpart-books-top>a:hover {
+     background-color: #9B7C5E;
+ }
+ .rightpart-books-top li {
+     height: 51px;
+     border-bottom: 1px dashed #DDDDDD;
+     font: 14px/20px "Times New Roman";
+ }
+ .rightpart-books-top li>a {
+     font: 13px/20px "Microsoft YaHei";
+     color: #3377AA;
+ }
+ .rightpart-books-top li>span {
+     float: right;
+     display: inline-block;
+     line-height: 25px;
+     width: 55px;
+     height: 25px;
+     cursor: pointer;
+     color: #999999;
+     text-align: center;
+     border-radius: 4px;
+     margin-top: 10px;
+     border: 1px solid #fff;
+ }
+ .rightpart-books-top li>span:hover {
+     color: #D4BEA7;
+     border: 1px solid #D4BEA7;
+     background-color: #fff;
+ }
+ .rightpart-books-top li>i {
+     color: #999;
+ }
+ /*rightpart-books-top 部分end*/
+
+ /*rightpart-250 部分start*/
+ .rightpart-250 {
+     padding-top: 20px;
+ }
+ .rightpart-250>ul {
+     padding-top: 20px;
+     width: 330px;
+ }
+ .rightpart-250>ul>li {
+     float: left;
+     width: 85px;
+     height: 182px;
+     padding-right: 22px;
+     text-align: center;
+ }
+ .rightpart-250>ul>li>img {
+     width: 82px;
+     height: 126px;
+ }
+ .rightpart-250>ul>li>a {
+     font: 13px/20px "Microsoft YaHei";
+     color: #3377AA;
+ }
+ /*rightpart-250 部分end*/
+
+ .books-rightpart>p {
+     font: 600 14px/30px "Microsoft YaHei";
+     border-bottom: 1px solid #ddd;
+ }
+ .books-rightpart>p:hover {
+     color: #fff;
+     background-color: #666;
+ }
+ .books-rightpart>ul {
+     padding-top: 18px;
+ }
+ .books-rightpart>ul>li {
+     width: 61px;
+     height: 67px;
+     float: left;
+     text-align: center;
+ }
+ .books-rightpart>ul>li>a {
+     font: 12px/20px "Microsoft YaHei";
+     color: #3377AA;
+ }
+
+ /*rightpart-2017reading 部分start*/
+ .rightpart-2017reading {
+     margin-bottom: 30px;
+     padding: 40px 0 0 0;
+     width: 280px;
+     height: 80px;
+ }
+ .rightpart-2017reading>img {
+     float: left;
+     width: 97px;
+     height: 80px;
+ }
+ .rightpart-2017reading-info {
+     float: left;
+     width: 160px;
+     height: 62px;
+     padding-left: 15px;
+ }
+ .rightpart-2017reading-info>a,.rightpart-2017reading-info>i {
+     font: 13px/18px "Microsoft YaHei";
+     color: #3377AA;
+ }
+ .rightpart-2017reading-info>i {
+     color: #999;
+ }
+ /*rightpart-2017reading 部分end*/
+
+ /*books-rightpart 部分end*/
+
+ /*books 部分end*/
+
+ /*footer 部分start*/
+ .footer {
+     padding-top: 100px;
+ }
+ .footer span {
+     font: 13px/30px "Microsoft YaHei";
+     color: #999999;
+ }
+ .footer>.center {
+     border-top: 1px dashed #DDDDDD;
+ }
+ .footer-other {
+     color: #DDDDDD;
+     float: right;
+ }
+ .footer-other>a {
+     font: 13px/30px "Microsoft YaHei";
+     color: #3377AA;
+ }
+ /*footer 部分end*/
