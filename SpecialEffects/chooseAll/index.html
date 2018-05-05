@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        table {
+            width: 350px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        thead {
+            background-color: #2222bb;
+        }
+        tbody {
+            background-color: #aaa;
+        }
+        tr {
+            border: 1px solid #bbb;
+        }
+        tr:hover {
+            background-color: #ccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>
+                    <input type="checkbox" id="whole">
+                </td>
+                <td>菜名</td>
+                <td>饭店</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>地三鲜</td>
+                <td>田老师</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>西红柿炒鸡蛋</td>
+                <td>田老师</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>水煮鱼</td>
+                <td>田老师</td>
+            </tr>
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        var whole = document.getElementById("whole");
+        var tbody =document.getElementsByTagName("tbody")[0];
+        var inp = tbody.getElementsByTagName("input");
+        whole.onclick = function () {
+            //方法一：先判断whole的checked值时候为true，在进行赋值
+//            if(whole.checked){
+//                for(var i=0;i<inp.length;i++){
+//                    inp[i].checked = true;
+//                }
+//            }else{
+//                for(var i=0;i<inp.length;i++){
+//                    inp[i].checked = false;
+//                }
+//            }
+            //(优化版)方法二：直接将whole的checked值赋给下面的input按钮即可
+            for(var i=0;i<inp.length;i++){
+                inp[i].checked = whole.checked;
+            }
+        }
+        for(var i=0;i<inp.length;i++) {
+            inp[i].onclick = function () {
+                //使用开闭原则
+                var bool = true;
+                for (var j = 0; j < inp.length; j++) {
+                    //只要inp中有一个为false，则将bool值赋为false
+                    if(inp[j].checked === false){
+                        bool = false;
+                    }
+                }
+//                最后直接将bool的值赋给whole.checked即可，这就是开闭原则
+                whole.checked = bool;
+            }
+        }
+    </script>
+</body>
+</html>
