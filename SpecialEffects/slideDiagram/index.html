@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,ul,li {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            margin: 100px auto;
+            /*设置box的宽度要比五个li的宽度和小
+                是因为缓动过程中，运动速度不一样，导致出现白色区域
+                因此让宽度小一点，可以有效解决这个问题*/
+            width: 1150px;
+            height: 460px;
+            overflow: hidden;
+        }
+        ul {
+            width: 1500px;
+        }
+        li {
+            list-style: none;
+            width: 240px;
+            height: 460px;
+            float: left;
+        }
+    </style>
+    <script src="animate.js"></script>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script>
+        window.onload = function () {
+            var box = document.getElementsByClassName("box")[0];
+            var ul = box.children[0];
+            var liArr = ul.children;
+            //需求：1.当鼠标放在某个li上，则缓动画出相应的图片，而其他li宽度变窄
+            for(var i=0;i<liArr.length;i++){
+                liArr[i].style.background = "url(images/"+(i+1)+".jpg) no-repeat";
+                liArr[i].onmouseover = function () {
+                    for(var j=0;j<liArr.length;j++){
+                        animate(liArr[j],{"width":100});
+                    }
+                    animate(this,{"width":800});
+                }
+            }
+            //需求：2.当鼠标离开时，所有的li宽度恢复原样
+            box.onmouseout = function () {
+                for(var i=0;i<liArr.length;i++){
+                    animate(liArr[i],{"width":240});
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
