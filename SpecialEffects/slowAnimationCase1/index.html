@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body,ul,li {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background-color: rgba(0,0,0,.8);
+        }
+        .box {
+            position: relative;
+            width: 800px;
+            height: 42px;
+            margin: 200px auto;
+            border-radius: 6px;
+            background: #fff url("images/wifi.png") center right no-repeat;
+        }
+        span {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 83px;
+            height: 42px;
+            background: url("images/cloud.gif");
+        }
+        ul {
+            list-style: none;
+            position: relative;
+        }
+        li {
+            float: left;
+            width: 83px;
+            height: 42px;
+            text-align: center;
+            font: 16px/42px "SimSun";
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!--复习层级问题
+            1.由于要使span进行缓动运动，所以要设置定位
+            2.而当span设置了position:absolute;之后span不占位置，因此会使得span在ul的上面
+            3.因此ul要提高层级
+            4.由于span设置了定位  ，所以ul也要设置定位
+            5.当两个都设置了定位，（不管是relative，fixed，absolute，除去static）且没有设置z-index值
+                方法一：两者的层级相同，所以谁写在后面谁的层级就高
+                    因此，根据题意要把span放前面，让sul在它上面显示出效果
+                方法二：通过z-index值来决定谁在谁上面
+        -->
+        <span></span>
+        <ul>
+            <li>首页新闻</li>
+            <li>活动策划</li>
+            <li>师资力量</li>
+            <li>企业文化</li>
+            <li>招聘信息</li>
+            <li>公司简介</li>
+            <li>上海校区</li>
+            <li>广州校区</li>
+        </ul>
+    </div>
+
+
+    <script type="text/javascript">
+        //1.获取事件源和相关事件元素
+        var span = document.getElementsByTagName("span")[0];
+        var ul = document.getElementsByTagName("ul")[0];
+        var liArr = ul.children;
+        var liWidth = liArr[0].offsetWidth;
+        var spanIndex = 0;//定义一个计数器，来记录span的位置
+        //需求一：当鼠标放在某个li上，span滑动到该li的位置上，当鼠标离开时，滑动回到从记录的li上
+        //需求二：当鼠标点击某个li时，span滑动到该li的位置上，并停留
+        for(var i=0;i<liArr.length;i++){
+            liArr[i].index = i;
+            liArr[i].onmouseover = function () {
+                //鼠标放在li上，从索引位置滑动到该li上
+                animate(span,this.index*liWidth);
+            }
+        }
+        for(var i=0;i<liArr.length;i++){
+            liArr[i].index = i;
+            liArr[i].onmouseout = function () {
+                //当鼠标离开该li时，span回到索引值的位置上
+                animate(span,spanIndex*liWidth);
+            }
+        }
+        for(var i=0;i<liArr.length;i++){
+            liArr[i].index = i;
+            liArr[i].onclick = function () {
+                //当触动了该事件的发生，spanIndex值就变为了当前li标签的索引值
+                spanIndex = this.index;
+            }
+        }
+
+        function animate(ele,target) {
+            //要设置定时器，要先清除定时器
+            clearInterval(ele.timer);
+            ele.timer = setInterval(function () {
+                //每一次速度都是距离的十分之一，这样速度会越来越慢，达到缓动的效果
+                var speed = (target-ele.offsetLeft)/10;
+                //offset家族的属性都是只读的，不能赋值，且会进行四舍五入
+                //因此要对speed进行取整，否则盒子可能无法运动到目标值
+                //当speed为正值时，要向上取整，取1，speed为负值时，要向下取整，取-1
+                speed = target-ele.offsetWidth>0?Math.ceil(speed):Math.floor(speed);
+                ele.style.left = ele.offsetLeft+speed+"px";
+                console.log(1)
+                //做判断，当要到达目标位置时，清除定时器,并把目标位置赋给ele.style.left
+                if(Math.abs(target-ele.offsetLeft)<Math.abs(speed)){
+                    ele.style.left = target+"px";
+                    clearInterval(ele.timer);
+                }
+            },20);
+        }
+    </script>
+</body>
+</html>
