@@ -1,0 +1,285 @@
+/*jd部分start*/
+.jd {
+    width: 100%;
+}
+/*jd部分end*/
+
+/*jd-header部分start*/
+ .jd-header {
+     padding: 0 50px 0 80px;
+     position: fixed;
+     z-index: 2;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 40px;
+     background-color: rgba(201, 21, 35,0.1);
+ }
+.jd-header-logo {
+    position: absolute;
+    text-indent: -555em;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 20px;
+    /*
+        移动端 的 视网膜屏幕
+        分辨率： 320*568
+        像素点： 640*1136
+        那么说明：
+        分辨率的最小单位： 是2*2（4）个的像素点
+        普通屏：分辨率和像素点相同
+
+        2x的视网膜屏幕：像素点是分辨率的两倍
+            因此：
+            将100*100的图片放进去，会以50*50的样式显示
+            如果将图片放大一倍，会造成失真
+        2x的视网膜屏幕：
+
+
+            而图片缩小，不会失真
+
+        解决办法：
+            采用高精度图片，把图片缩小使用
+    */
+    background-image: url("../images/sprites.png");
+    /*原来图片的尺寸是400*400
+        采取缩小
+        将图片缩小一倍
+    */
+    background-size: 200px 200px;
+    background-position: 0 -108px;
+}
+.jd-header-search {
+    height: 26px;
+    width: 100%;
+    border-radius: 13px;
+    padding-left: 30px;
+    margin-top: 7px;
+}
+.jd-header>span {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 12px;
+    left: 90px;
+    background-image: url("../images/sprites.png");
+    background-position: -60px -110px;
+    background-size: 200px 200px;
+}
+.jd-header-login {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    line-height: 40px;
+    color: #fff;
+}
+/*jd-header部分end*/
+
+/*jd-banner部分start*/
+.jd-banner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow: hidden;
+}
+.jd-banner-pic {
+    transform: translateX(-10%);
+    height: 175px;
+    width: 1000%;
+}
+.jd-banner-pic>li {
+    width: 10%;
+    float: left;
+    height: 100%;
+}
+.jd-banner-pic>li img {
+    height: 100%;
+    width: 100%;
+}
+.jd-banner-dot {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.jd-banner-dot>li {
+    float: left;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    border: 1px solid #fff;
+    margin: 0 4px;
+}
+.jd-banner-dot>li.current {
+    background-color: #fff;
+}
+.jd-banner-dot>li:hover {
+    cursor: pointer;
+}
+/*jd-banner部分end*/
+
+
+/*jd-icons部分start*/
+.jd-icons {
+    background-color: #fff;
+    width: 100%;
+    height: 185px;
+}
+.jd-icons>ul {
+    width: 100%;
+    height: 100%;
+}
+.jd-icons>ul>li {
+    padding: 5px;
+    line-height: 20px;
+    text-align: center;
+    float: left;
+    width: 25%;
+    color: #666666;
+}
+.jd-icons img {
+    width: 60%;
+}
+/*jd-icon部分end*/
+
+
+/*jd-content部分start*/
+.jd-content {
+    margin-top: 5px;
+}
+.main-content {
+    border: 1px solid #E6E6E6;
+    background-color: #fff;
+    margin-bottom: 5px;
+    border-shadow: 0 0 2px 1px #ddd;
+}
+/*jd-content部分end*/
+
+/*main-content1 部分start*/
+.main-content {
+    position: relative;
+}
+.main-content-info {
+    height: 35px;
+}
+.main-content-clock {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 20px;
+    height: 25px;
+    background-size: 20px 25px;
+    background-image: url("../images/seckill-icon.png")
+}
+.main-content-title {
+    float: left;
+    color: #C91523;
+    padding: 7px 0 0 30px;
+}
+.main-content-info>a {
+    float: right;
+    padding: 7px 10px 0 0 ;
+    color: #666;
+}
+.main-content-time {
+    position: absolute;
+    left: 90px;
+    font: 12px/20px "Microsoft YaHei";
+    top: 7px;
+    height: 20px;
+}
+.main-content-time>li {
+    padding: 0 3px;
+    margin: 2px;
+    float: left;
+    color: #fff;
+    background-color: #5D5D5D;
+}
+.main-content-time>li:nth-child(3n) {
+    background-color: #fff;
+    color: #000;
+}
+.details {
+    overflow: hidden;
+}
+.details>li {
+    line-height: 20px;
+    width: 33.333%;
+    float: left;
+    text-align: center;
+}
+.details>li>a {
+    display: block;
+    border-right: 2px solid #ccc;
+}
+.details>li:last-of-type>a {
+    border-right: none;
+}
+.details>li img {
+    margin: 0 auto;
+    display: block;
+    width: 60%;
+}
+.details>li>a+p {
+    color: #C91523;
+}
+.details>li span {
+    text-decoration: line-through;
+    font-size: 12px;
+}
+/*main-content1 部分end*/
+
+/*main-content2，main-content3，main-content4，main-content5，main-content6，main-content7 部分start*/
+.main-content-header {
+    height: 30px;
+}
+.main-content-header>span {
+    color: #7F7F7F;
+    padding-left: 5px;
+    line-height: 30px;
+}
+.main-content-header>span>i {
+    margin-right: 5px;
+    display: inline-block;
+    height: 12px;
+    border-left: 3px solid #C91523;
+
+}
+.bd-left {
+    border-left: 1px solid #ECECEC;
+}
+.bd-top {
+    border-top: 1px solid #ECECEC;
+}
+.bd-bottom {
+    border-bottom: 1px solid #ECECEC;
+}
+.bd-right {
+    border-right: 1px solid #ECECEC;
+}
+.main-content-project {
+    overflow: hidden;
+    width: 100%;
+}
+.main-content-project>a {
+    /*由于将a标签转为块状元素时，会有一个匿名文本
+      这个文本外有一个匿名级盒子，它默认的vertical-align属性值为baseline，而且往往因为上文中的line-height的影响
+      使它有一个line-height，因此就有了一个高度，又由于baseline对齐的原因，这个匿名盒子会下沉，往下撑开一些距离，因此把a撑高了
+      解决办法：
+        1. 消除匿名盒子的高度： line-height: 0;/font-size: 0;
+        2. vertical-align: top,让它top对齐
+        3. 给img以display:block，让它和匿名盒子不在同一个布局上下文即可
+    */
+    width: 50%;
+    font-size: 0;
+    display: block;
+}
+.main-content-project>a>img {
+    display: block;
+    width: 100%;
+}
+
+/*main-content2，main-content3，main-content4，main-content5，main-content6，main-content7 部分end*/
+
+

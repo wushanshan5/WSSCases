@@ -1,0 +1,52 @@
+/*移动端CSS样式初始化*/
+/*取消默认的padding和margin*/
+body,html,ul,li,ol,p,::before,::after,a,div {
+    /*字体*/
+    font-size: 14px;
+    /*统一设置文字
+        移动端一般使用 sans-serif 字体
+    */
+    font-family: 'Microsoft YaHei','sans-serif';
+    /*盒子模型  兼容写法*/
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    /*去除默认的padding和margin*/
+    padding: 0;
+    margin: 0;
+}
+html,body {
+    max-width: 900px;
+    min-width: 300px;
+    /*设置默认背景颜色*/
+    background-color: #eee;
+}
+/*去除默认的小圆点*/
+ul,ol {
+    list-style: none;
+}
+/*去除a链接的下划线*/
+a {
+    text-decoration: none;
+    /*清除手指点击的高亮效果*/
+    -webkit-tap-highlight-color: transparent;
+}
+/*input 的默认样式*/
+input {
+    border: 0;/*扁平化*/
+    -webkit-appearance: none;
+    /*取消聚焦时出现的高亮效果*/
+    outline: none;
+}
+/*左浮动*/
+.f-l {
+    float: left;
+}
+/*右浮动*/
+.f-r {
+    float: right;
+}
+/*清除浮动*/
+.clearfix {
+    clear: both;
+}
