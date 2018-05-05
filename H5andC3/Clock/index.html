@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .clock {
+            margin: 80px auto;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: url("images/bg.jpg");
+            border: 2px solid #000;
+            position: relative;
+        }
+        .second {
+            width: 2px;
+            height: 120px;
+            background-color: #999;
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            margin-left: -1px;
+            transform-origin: bottom;
+            /*让针变尖*/
+            border-radius: 50% 50% 0 0/50% 50% 0 0;
+            animation: rot 60s infinite steps(60) ;
+        }
+        .minute {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            margin-left: -2px;
+            width: 4px;
+            height: 100px;
+            background-color: blue;
+            transform-origin: bottom;
+            /*让针变尖*/
+            border-radius: 50% 50% 0 0/50% 50% 0 0;
+            animation: rot2 3600s infinite steps(60) ;
+        }
+        .hour {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            margin-left: -3px;
+            width: 6px;
+            height: 80px;
+            background-color: red;
+            transform-origin: bottom;
+            /*让针变尖*/
+            border-radius: 50% 50% 0 0/50% 50% 0 0;
+            animation: rot 216000s infinite steps(60) ;
+        }
+        @keyframes rot1 {
+            from {
+                transform: rotate(30deg);
+            }
+            to {
+                transform: rotate(390deg);
+            }
+        }
+        @keyframes rot2 {
+            from {
+                transform: rotate(50deg);
+            }
+            to {
+                transform: rotate(410deg);
+            }
+        }
+        @keyframes rot {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="second"></div>
+        <div class="minute"></div>
+        <div class="hour"></div>
+    </div>
+</body>
+</html>
