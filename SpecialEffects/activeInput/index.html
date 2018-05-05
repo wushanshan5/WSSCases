@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        @keyframes blink {
+            0%,
+            100% {
+                opacity: 1
+            }
+            50% {
+                opacity: 0
+            }
+        }
+
+        @-webkit-keyframes blink {
+            0%,
+            100% {
+                opacity: 1
+            }
+            50% {
+                opacity: 0
+            }
+        }
+
+        @-moz-keyframes blink {
+            0%,
+            100% {
+                opacity: 1
+            }
+            50% {
+                opacity: 0
+            }
+        }
+
+        .wrap {
+            width: 1000px;
+            text-align: center;
+            margin: 100px auto 0;
+        }
+
+        .wrap h1 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 300;
+        }
+
+        .word {
+            font-weight: 700;
+        }
+
+        .typed-cursor {
+            opacity: 1;
+            -webkit-animation: blink .7s infinite;
+            -moz-animation: blink .7s infinite;
+            animation: blink .7s infinite;
+            display: none;
+        }
+
+        .saySection {
+            margin-top: 50px;
+        }
+
+        .saySection input {
+            font-size: 30px;
+        }
+
+        .saySection .txtSay {
+            padding-left: 10px;
+        }
+
+        .saySection .btnSay {
+            display: inline-block;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            //需求1.当页面加载时，一句话呈现动态输入的样子出现在屏幕上，直到结束，光标消失
+            //需求2.当写入一句话，点击say时，原来的句子消失，新的句子，以每个一段时间呈现一个字符的样子出现。
+
+
+
+            //步骤1.当页面加载时，动态输入
+            var str = "红鲤鱼与绿鲤鱼与驴";
+            //要让这句话一个字一个字的输出，则需要先将其转换为数组，每个字变为数组的单个元素来操作
+            //知识点：使用到split()方法
+            var arr = str.split("");//用空字符串来分割
+            var timer = null;
+            var newStr = "";//用来装将要放在word内的文本
+            //通过设置定时器，来达到动态出入的效果
+            timer = setInterval(function () {
+                $(".typed-cursor").show();
+                var aaa = arr.shift();
+                if(aaa === undefined){
+                    $(".typed-cursor").hide();
+                    clearInterval(timer);
+                }else{
+                    newStr += aaa;
+                    $(".word").text(newStr);
+                }
+            },200);
+
+
+            //步骤2.当输入某句话时，动态输入字样变化
+            $("#btnSay").click(function () {
+                var sentences = $("#inValue").val();
+                var newArr = sentences.split("");
+                newStr = "";//newStr也是清空，还有之前的内容在
+                //清空原来的句子
+                $(".word").html("");
+                //将文本框的句子也清空
+                $("#inValue").val("");
+                timer = setInterval(function () {
+                    $(".typed-cursor").show();
+                    var aaa = newArr.shift();
+                    if(aaa === undefined){
+                        $(".typed-cursor").hide();
+                        clearInterval(timer);
+                    }else{
+                        newStr += aaa;
+                        $(".word").text(newStr);
+                    }
+                },200);
+                }
+            );
+        })
+    </script>
+</head>
+<body>
+<!--    涉及到了CSS3的语句 所以这里不写样式-->
+    <div class="wrap">
+        <h1>
+            You want to say ： <span class="word"></span><span class="typed-cursor">|</span> ！
+        </h1>
+
+        <div class="saySection">
+            <input type="text" id="inValue" class="txtSay"/>
+            <input type="button" value="Say" id="btnSay" class="btnSay"/>
+        </div>
+    </div>
+</body>
+</html>
