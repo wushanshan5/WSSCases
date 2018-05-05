@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,ul,li {
+            padding: 0;
+            margin: 0;
+            font-size: 12px;
+        }
+        .wrap {
+            margin: 100px auto;
+            width: 352px;
+            height: 188px;
+            border: 1px solid pink;
+            overflow: hidden;
+        }
+        ul {
+            float: left;
+        }
+        ul li {
+            cursor: pointer;
+            list-style: none;
+            text-align: center;
+        }
+        .center li {
+            width: 150px;
+            height: 188px;
+        }
+        .center img {
+            width: 150px;
+            height: 188px;
+        }
+        .left li {
+            text-align: center;
+            line-height: 20px;
+            width: 100px;
+            height: 20px;
+            border-right: 1px solid pink;
+            border-bottom: 1px solid pink;
+        }
+        .right li {
+            text-align: center;
+            line-height: 20px;
+            width: 100px;
+            height: 20px;
+            border-left: 1px solid pink;
+            border-bottom: 1px solid pink;
+        }
+        .left li:hover,.right li:hover {
+            background: url("images/abg.gif");
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            $(".left>li").mouseenter(function () {
+                //将对应索引值的展示，其他的全部隐藏
+                //$(this).index() 获取索引值
+                $(".center>li").eq($(this).index()).show().siblings("li").hide();
+            });
+            $(".right>li").mouseenter(function () {
+                $(".center>li:eq("+($(this).index()+9)+")").show().siblings("li").hide();
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="left">
+            <li>男靴</li>
+            <li>连衣裙</li>
+            <li>男棉服</li>
+            <li>女包</li>
+            <li>男毛衣</li>
+            <li>毛衣</li>
+            <li>男棉服</li>
+            <li>呢大衣</li>
+            <li>牛仔裤</li>
+        </ul>
+        <ul class="center">
+            <li><img src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.jpg" alt=""></li>
+            <li><img src="images/3.jpg" alt=""></li>
+            <li><img src="images/4.jpg" alt=""></li>
+            <li><img src="images/5.jpg" alt=""></li>
+            <li><img src="images/6.jpg" alt=""></li>
+            <li><img src="images/7.jpg" alt=""></li>
+            <li><img src="images/8.jpg" alt=""></li>
+            <li><img src="images/9.jpg" alt=""></li>
+            <li><img src="images/10.jpg" alt=""></li>
+            <li><img src="images/11.jpg" alt=""></li>
+            <li><img src="images/12.jpg" alt=""></li>
+            <li><img src="images/13.jpg" alt=""></li>
+            <li><img src="images/14.jpg" alt=""></li>
+            <li><img src="images/15.jpg" alt=""></li>
+            <li><img src="images/16.jpg" alt=""></li>
+            <li><img src="images/17.jpg" alt=""></li>
+            <li><img src="images/18.jpg" alt=""></li>
+        </ul>
+        <ul class="right">
+            <li>女包</li>
+            <li>铅笔裤</li>
+            <li>皮带</li>
+            <li>皮衣</li>
+            <li>围巾</li>
+            <li>雪地靴</li>
+            <li>男靴</li>
+            <li>女靴</li>
+            <li>羽绒服</li>
+        </ul>
+    </div>
+</body>
+</html>
