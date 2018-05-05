@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,table,tr,td,th {
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            /*border-collapse 设置表格的边框是否合并为一个单元/
+            border-collapse: collapse 如果可能，边框会合并为一个单一的边框;
+            /*border-collapse: separate; 表示边框会被分开*/
+            border-spacing: 0;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+        }
+        .box {
+            width: 500px;
+            margin: 100px auto;
+        }
+        button {
+            width: 100px;
+            height: 40px;
+            background-color: #eee;
+            font-size: 15px;
+        }
+        thead th,tbody td {
+            padding: 0 20px;
+            height: 30px;
+            border: 1px solid #ccc;
+        }
+        thead th {
+            background-color: #4785cc;
+        }
+        tbody td {
+            background-color: #eee;
+        }
+        tbody tr:hover {
+            background-color: #fff;
+        }
+        .addData {
+            text-align: center;
+            position: absolute;
+            top: 150px;
+            left: 450px;
+            display: none;
+            background-color: #fff;
+            width: 500px;
+            height: 300px;
+        }
+        .addData .title {
+            margin-bottom: 20px;
+            position: relative;
+            height: 40px;
+            background-color: #eee;
+            padding-left: 20px;
+            font: 600 16px/40px "Microsoft YaHei";
+            color: #777;
+        }
+        .addData input {
+            border: 1px solid #ccc;
+            width: 250px;
+            height: 40px;
+            margin: 5px;
+            padding-left: 20px;
+        }
+        .div1 {
+            position: relative;
+        }
+        .close {
+            font: 35px/35px "Consolas";
+            position: absolute;
+            right: 10px;
+            top: 0px;
+            cursor: pointer;
+        }
+        .add {
+            width: 200px;
+            height: 40px;
+            margin: 20px 0;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        <button>添加数据</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>课程名称</th>
+                    <th>所属院系</th>
+                    <th>已学会</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>JAVA</td>
+                    <td>计算机信息与工程学院</td>
+                    <td><a class="get" href="#">GET</a></td>
+                </tr>
+                <tr>
+                    <td>C语言</td>
+                    <td>计算机信息与工程学院</td>
+                    <td><a class="get" href="#">GET</a></td>
+                </tr><tr>
+                    <td>C++</td>
+                    <td>计算机信息与工程学院</td>
+                    <td><a class="get" href="#">GET</a></td>
+                </tr><tr>
+                    <td>Linux</td>
+                    <td>计算机信息与工程学院</td>
+                    <td><a class="get" href="#">GET</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="addData">
+            <div class="title">添加数据
+                <div class="close">×</div>
+            </div>
+            <div class="div1">
+                <label for="inp1">课程名称：</label><input id="inp1" value="" placeholder="请输入课程名称"/>
+            </div>
+            <div>
+                <label for="inp2">所属学院：</label><input id="inp2" value="计算机信息与工程学院">
+            </div>
+            <button class="add">添加</button>
+        </div>
+    </div>
+</body>
+</html>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+    $(function () {
+        $("button").eq(0).click(function () {
+            $("#inp1").val("");
+            $(".addData").show();
+            $("body").css("background","rgba(100,100,100,0.2)");
+
+        });
+        $(".close").click(function () {
+                $(".addData").hide();
+            }
+        );
+        //点击添加按钮，使数据传入到表格中
+        $(".add").click(function () {
+            if($("#inp1").val() === ""){
+                alert("请输入要添加的课程名称！");
+                return;
+            }
+            if($("#inp2").val() === ""){
+                alert("请输入所属院系！");
+                return;
+            }
+            var str = $("tbody").html();
+            //获取input的value值——在jquery中有val()方法
+            str += "<tr><td>"+$("#inp1").val()+"</td><td>"+$("#inp2").val()+"</td><td><a href='#' class='get'>GET</a></td></tr>>";
+            $("tbody").html(str);
+            $("body").css("background","rgba(0,0,0,0)");
+            $(".addData").hide();
+            $("tr").find("a").click(function () {
+                $(this).parent().parent().remove();
+            });
+        });
+        //为使得新添加的a链接也有这个点击事件，因此要在新添加的a链接加上一个get类
+        $("table a.get").click(function () {
+            $(this).parent().parent().remove();
+        });
+    })
+</script>
