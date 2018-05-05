@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+        h2 {
+            text-align: center;
+        }
+        .tv {
+            width: 700px;
+            height: 379px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+        .controls {
+            cursor: pointer;
+            display: none;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 672px;
+            transform: translate(-50%,0);
+            height: 40px;
+            background-color: rgba(255,255,255,0.2);
+        }
+        .controls .play,.controls .whole,.controls .progress,.controls .time {
+            font-size: 20px;
+            color: #fff;
+            position: absolute;
+            top: 10px;
+        }
+        .controls .play {
+            left: 10px;
+        }
+        .controls .whole {
+            right: 15px;
+        }
+        .controls .progress {
+            left: 40px;
+            top: 15px;
+            width: 460px;
+            height: 13px;
+            border-radius: 5px;
+            background-color: rgba(255,255,255,0.2);
+        }
+        .current-progress {
+            width: 0;
+            height: 100%;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .controls .time {
+            top: 13px;
+            right: 50px;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>视频案例</h2>
+    <div class="tv">
+        <video src="video/fun.mp4"></video>
+        <div class="controls">
+            <!--fa fa-pause 暂停类名，要加上两个类名，否则无效-->
+            <div class="play fa fa-play"></div>
+            <div class="whole fa fa-arrows-alt "></div>
+            <div class="progress">
+                <div class="current-progress"></div>
+            </div>
+            <div class="time">
+                <span class="current-time">00:00:00</span>
+                /
+                <span class="whole-time">00:00:00</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            var controls = document.querySelector(".controls");
+            var play = controls.querySelector(".play");
+            var tv = document.querySelector(".tv");
+            var video = tv.querySelector("video");
+            var whole = controls.querySelector(".whole");
+        //  鼠标放在盒子上，controls显示，移开隐藏
+            tv.onmouseover = function () {
+                controls.style.display = "block";
+            }
+            tv.onmouseout = function () {
+                controls.style.display = "none";
+            }
+        //  点击播放，视频播放，并变为播放图标
+            play.onclick = function () {
+                if(video.paused) {
+                    video.play();
+                    this.classList.remove("fa-play")
+                    this.classList.add("fa-pause");
+                } else {
+                    video.pause();
+                    this.classList.remove("fa-pause")
+                    this.classList.add("fa-play");
+                }
+            }
+        //  全屏模式
+            whole.onclick = function () {
+                video.webkitRequestFullScreen();
+            }
+        //  进度条时间
+        //  时间显示
+            var currentTimeSpan = document.querySelector(".current-time");
+            var wholeTimeSpan = document.querySelector(".whole-time");
+        //  ontimeupdate事件在视频播放开始就会触动
+            video.ontimeupdate = function () {
+            //  currentTime是video的一个属性，用于获取视频的播放时间
+            //  console.log(video.currentTime);
+                var wholeTime = video.duration;//获取视频的总时间
+                var currentTime = video.currentTime;//获取视频当前播放的事件
+                //将时间变换格式
+                var wholeHour = Math.floor(wholeTime/3600);//将所有秒数除以3600，并向下取整得小时数
+                var wholeMin = Math.floor(wholeTime%3600/60);//将小时的去掉的除以60得到分钟数
+                var wholeSec = Math.floor(wholeTime%60);//将所有秒数求60的余数，得到秒数
+                var currentHour = Math.floor(currentTime/3600);//将所有秒数除以3600，并向下取整得小时数
+                var currentMin = Math.floor(currentTime%3600/60);//将小时的去掉的除以60得到分钟数
+                var currentSec = Math.floor(currentTime%60);
+            //  三目运算符
+                wholeHour = wholeHour>=10?wholeHour:"0"+wholeHour;
+                wholeMin = wholeMin>=10?wholeMin:"0"+wholeMin;
+                wholeSec = wholeSec>=10?wholeSec:"0"+wholeSec;
+                currentHour = currentHour>=10?currentHour:"0"+currentHour;
+                currentMin = currentMin>=10?currentMin:"0"+currentMin;
+                currentSec = currentSec>=10?currentSec:"0"+currentSec;
+                currentTimeSpan.innerHTML = currentHour+":"+currentMin+":"+currentSec;
+                wholeTimeSpan.innerHTML = wholeHour+":"+wholeMin+":"+wholeSec;
+            //  进度条随时间等比例增长
+                var progressWidth = document.querySelector(".progress").offsetWidth;
+                var progressPercent = wholeTime/progressWidth;
+                var currentProgress = document.querySelector(".current-progress");
+                currentProgress.style.width = (currentTime/progressPercent)+"px";
+            }
+        }
+    </script>
+</body>
+</html>
