@@ -1,0 +1,636 @@
+/* CSS 样式初始化 start */
+html,body {
+    height: 100%;
+    overflow-x: hidden;
+    font-family: Consolas;
+    font-size: 14px;
+    background-color: #eee;
+}
+body,h1,h2,h3,ul,ol,li,span,a,table,td,th,tr,div,section,nav {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    /* box-sizing 的兼容性写法 */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ul,li,ol {
+    list-style: none;
+}
+a,a:hover {
+    text-decoration: none;
+}
+.f-l {
+    float: left;
+}
+.f-r {
+    float: right;
+}
+.clearfix {
+    clear: both;
+}
+/*取消所有表单控件的聚焦时边框样式*/
+input,button {
+    outline: none;
+}
+button {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+.show {
+    display: block !important;
+}
+.hide {
+    display: none !important;
+}
+/* 阿里巴巴矢量图的引用 */
+@font-face {
+  font-family: 'myfont';
+  src: url('../iconfont/iconfont.eot');
+  src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../iconfont/iconfont.woff') format('woff'),
+  url('../iconfont/iconfont.ttf') format('truetype'),
+  url('../iconfont/iconfont.svg#iconfont') format('svg');
+}
+.my-font {
+    font-family: "myfont";
+}
+/* CSS 样式初始化 end */
+
+/* nav部分start*/
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 0 50px;
+    height: 50px;
+    background-color: rgba(212,60,51,0.9);
+}
+.nav-a>a {
+    display: inline-block;
+    line-height: 50px;
+    color: #fff;
+    font-size: 17px;
+    padding: 0 20px;
+}
+.nav-a>a:hover {
+    text-shadow: 1px 1px 1px #fff;
+    color: #fff;
+}
+.nav-logo {
+    height: 100%;
+    margin: 0 10px;
+}
+.nav-logo>a {
+    display: block;
+    height: 100%;
+}
+.nav-logo>a>img {
+    height: 100%;
+    border-radius: 50%;
+}
+.nav-searching {
+    position: relative;
+}
+.nav-searching>input {
+    border: 0;
+    width: 300px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 15px;
+    padding-left: 20px;
+    background: rgba(255,255,255,0.3);
+}
+.nav-searching-btn {
+    border: 0;
+    background-color: transparent;
+    color: rgba(255,255,255,0.3);
+    font-size: 16px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+.nav-searching-his {
+    position: relative;
+}
+.nav-searching-his>.searching-history {
+    line-height: 50px;
+    padding: 0 20px;
+    color: #fff;
+    cursor: pointer;
+}
+.nav-searching-his>ul {
+    opacity: 0;
+    padding: 20px;
+    padding-bottom: 50px;
+    overflow: hidden;
+    color: #fff;
+    position: absolute;
+    z-index: 2;
+    width: 0px;
+    min-height: 300px;
+    max-height: 500px;
+    height: auto;
+    right: -49px;
+    top: 50px;
+    background-color: rgba(0,0,0,0.5);
+}
+.nav-searching-his>ul>h2 {
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    font-weight: 500;
+}
+.nav-searching-his>ul>button {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border: 0;
+    background-color: transparent;
+    color: #fff;
+    font-size: 18px;
+}
+.nav-searching-his>ul>li {
+    line-height: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.6);
+}
+.nav-searching-his>ul>li>a {
+    color: #fff;
+}
+.history-delete {
+    float: right;
+    font-size: 17px;
+    font-family: Arial;
+    cursor: pointer;
+}
+/* nav部分end*/
+
+
+/* banner部分start */
+.banner-box {
+    padding-top: 50px;
+    opacity: 0.7;
+}
+.banner {
+    overflow: hidden;
+    width: 100%;
+    height: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+.banner:hover>span {
+    display: block;
+}
+.banner>span {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 200px;
+    background-color: rgba(0,0,0,0.7);
+    font-size: 70px;
+    color: #fff;
+    text-align: center;
+    line-height: 200px;
+    cursor: pointer;
+}
+.banner>span:hover {
+    background-color: rgba(0,0,0,0.5);
+}
+.banner>span:nth-of-type(1) {
+    left: 0;
+}
+.banner>span:nth-of-type(2) {
+    right: 0;
+}
+.banner>ul {
+    position: absolute;
+    height: 100%;
+    width: 500%;
+}
+.banner>ul>li {
+    height: 100%;
+    width: 20%;
+    float: left;
+}
+/* 将a标签转为块状元素后，会有匿名文本，使得出现莫名的高度
+   解决方案：
+        1. line-height：0，font-size：0；
+        2. vertical-align：top
+        3. 使得a标签内的img元素转为块状元素
+ */
+.banner>ul>li>a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.banner>ul>li>a>img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* banner部分end */
+
+/* list部分start */
+.list {
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    width: 1000px;
+    height: 0px;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+.list>div {
+    position: relative;
+    border-right: 10px solid rgba(0,0,0,0.3);
+    flex: 3;
+}
+.list>ul {
+    position: relative;
+    flex: 2;
+}
+.list .list-title {
+    z-index: 200;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 17px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+}
+.list .list-title>div:nth-child(1) {
+    flex: 3;
+    border-right: 10px solid rgba(0,0,0,0.3);
+}
+.list .list-title>div:nth-child(2) {
+    flex: 2;
+}
+.list-songs {
+    overflow: auto;
+}
+.list-songs>ul {
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+}
+.list-songs>ul>li {
+    padding-left: 10px;
+    cursor: pointer;
+    color: #fff;
+    height: 45px;
+    border-bottom: 1px solid #aaa;
+}
+.list-songs>ul>li>.list-song-pic {
+    margin-top: 5px;
+    height: 80%;
+}
+.list-songs>ul>li>.list-song-pic>img {
+    height: 100%;
+}
+.list-song-info {
+    padding-left: 20px;
+}
+.list-song-info>span:first-child {
+    color: rgba(255,223,61,0.9);
+    display: inline-block;
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.list-song-info>span:last-child {
+    display: inline-block;
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.lyrics-content {
+    height: auto;
+    padding-top: 50px;
+}
+.lyrics-content>div {
+    color: #fff;
+}
+.list .list-close {
+    color: #fff;
+    font-size: 30px;
+    position: absolute;
+    right: 25px;
+    top: 0px;
+    z-index: 201;
+    cursor: pointer;
+}
+/* list部分end */
+
+
+
+/* playing部分start */
+.playing {
+    overflow: hidden;
+    padding-left: 30px;
+    padding-right: 10px;
+    line-height: 60px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    background-color: rgba(0,0,0,0.9);
+    width: 100%;
+}
+.playing-controls>button {
+    width: 35px;
+    height: 35px;
+    margin: 7px 5px 0 5px;
+    font-size: 18px;
+    background-color: transparent;
+    color: rgba(255,255,255,0.8);
+    border: 2px solid rgba(255,255,255,0.8);
+    border-radius: 50%;
+}
+.playing-controls>button:nth-child(2) {
+    width: 45px;
+    height: 45px;
+}
+.playing-controls>button:hover {
+    color: #fff;
+    border-color: #fff;
+}
+.playing-pic {
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 30px;
+    width: 50px;
+    height: 50px;
+}
+.playing-pic>img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+}
+/* 设置动画 */
+@keyframes rot {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.playing-progress {
+    margin-top: 28px;
+    width: 500px;
+    position: relative;
+    padding: 0 70px;
+}
+.playing-progress>span {
+    content: "00:00";
+    color: #fff;
+    position: absolute;
+    top: -28px;
+}
+.playing-progress>span:nth-of-type(1) {
+    left: 20px;
+}
+.playing-progress>span:nth-of-type(2) {
+    right: 20px;
+}
+.playing-progress-bar {
+    cursor: pointer;
+    width: 100%;
+    border-radius: 2px;
+    height: 4px;
+    background-color: rgba(255,255,255,0.5);
+}
+.current-progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: rgba(26, 137, 255,0.9);
+    position: relative;
+}
+.current-progress-bar::before {
+    cursor: pointer;
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 5px;
+    right: 0;
+    top: -2px;
+    background-color: rgba(26, 137, 255,0.9);
+}
+
+.playing-tools>span,.playing-tools>a {
+    color: #fff;
+    font-size: 17px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.playing-tools>span>button {
+    color: #fff;
+}
+.playing-volumn-progress {
+    position: relative;
+    top: -4px;
+    left: 4px;
+    display: inline-block;
+    width: 70px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: rgba(255,255,255,0.2);
+}
+.current-volumn {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255,255,10,0.9);
+}
+.current-volumn::before {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: rgba(255,255,10,0.9);
+    content: "";
+    position: absolute;
+    right: -3px;
+    top: -2px;
+}
+.playing-tools>button {
+    border: 1px solid rgba(212,60,51,0.9);
+    color: rgba(212,60,51,0.9);
+    background-color: rgba(0,0,0,0.9);
+    width: 80px;
+    height: 30px;
+    font-size: 12px;
+    margin: 0 10px;
+    line-height: 30px;
+    text-align: center;
+}
+.playing-author {
+    color: #fff;
+}
+/* playing部分end */
+
+
+
+
+/* ranking 部分start */
+.ranking {
+    padding-bottom: 100px;
+    background-color: #fff;
+    /* 控制伸缩盒子内的元素是否换行 */
+    flex-wrap: wrap;
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    font-family: Consolas;
+}
+.ranking>div {
+    padding-top: 30px;
+    width: 33.3333%;
+}
+.ranking>div h2 {
+    margin: 20px;
+    width: 100%;
+    height: 50px;
+    font-family: Arial;
+    text-align: center;
+}
+.ranking>div h2>img {
+    height: 100%;
+}
+.ranking>div>a {
+    color: #1855eb;
+    line-height: 30px;
+    padding-right: 40px;
+    font-family: "Times New Roman";
+}
+.ranking ul {
+    padding-left: 40px;
+    border-right: 2px solid #eee;
+}
+.ranking ul>li {
+    height: 40px;
+}
+.ranking ul>li:hover {
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.1);
+}
+.ranking ul>li>i {
+    padding-right: 10px;
+    display: inline-block;
+    line-height: 40px;
+    font-style: normal;
+    font-size: 20px;
+}
+.ranking ul>li:nth-child(1)>i,.ranking ul>li:nth-child(2)>i,.ranking ul>li:nth-child(3)>i {
+    color: red;
+}
+.ranking-title {
+    display: inline-block;
+    width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.ranking-author {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100px;
+    padding-right: 20px;
+    padding-top: 7px;
+}
+/* ranking 部分end */
+
+/* 相应部分 媒体查询 */
+@media screen and (max-width: 1300px) {
+    .playing-author {
+        position: absolute;
+        left: 30%;
+        bottom: 0;
+        line-height: 20px;
+    }
+    @media screen and (max-width: 1115px) {
+        .playing {
+            height: 80px;
+        }
+        .playing-tools {
+            line-height: 20px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        @media screen and (max-width: 910px) {
+            .nav-a {
+                display: none;
+            }
+            @media screen and (max-width: 795px) {
+                .playing {
+                    height: 70px;
+                }
+                .playing-tools,.playing-controls {
+                    display: none;
+                }
+                @media screen and (max-width: 650px) {
+                    nav {
+                        padding: 0;
+                    }
+                    .playing-progress {
+                        width: 100%;
+                    }
+                    .playing-pic {
+                        display: none;
+                    }
+                    @media screen and (max-width: 500px) {
+                        .searching-history {
+                            display: none;
+                        }
+                        @media screen and (max-width: 390px) {
+                            .nav-logo {
+                                display: none;
+                            }
+                            nav {
+                                padding: 0 10px;
+                            }
+                            .nav-searching {
+                                width: 100%;
+                                padding: 0 10px;
+                                float: none !important;
+                            }
+                            .nav-searching>input {
+                                width: 100%;
+                                box-sizing: border-box;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+

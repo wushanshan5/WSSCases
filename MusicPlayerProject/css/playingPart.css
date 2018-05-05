@@ -1,0 +1,79 @@
+body {
+    background-color: rgba(0,0,0,0.8);
+}
+/* playing-song 部分start*/
+.playing-song {
+    padding-top: 60px;
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+.playing-song .playing-lyrics {
+    font-size: 20px;
+    line-height: 30px;
+    flex: 3;
+}
+.playing-lyrics .lyrics {
+    padding-top: 50px;
+    width: 90%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+.lyrics .lyrics-content>div {
+    color: rgba(212,60,51,0.9);
+}
+.playing-song .playing-music {
+    flex: 2;
+}
+
+
+/* playing-music 部分start */
+.playing-music {
+    padding-top: 50px;
+}
+.playing-music>.playing-pic {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+}
+.playing-music>.playing-pic>img {
+    border-radius: 50%;
+}
+.playing-music button,.playing-music span,.playing-author {
+    color: #aaa;
+}
+.playing-music .playing-progress-bar,.playing-music .playing-volumn-progress {
+    background-color: #aaa;
+}
+.playing-music .playing-tools>span>button {
+    color: #aaa;
+}
+.playing-music .playing-controls {
+    margin-right: 10px;
+}
+.playing-music .playing-controls>button {
+    width: 40px;
+    height: 40px;
+    font-size: 17px;
+    border: 2px solid #aaa;
+    margin: 0;
+    margin-top: 9px;
+}
+.playing-music .playing-controls>button:hover {
+    color: #aaa;
+}
+.playing-music .playing-progress {
+    padding: 0;
+    width: 350px;
+    padding-left: 10px;
+}
+.playing-music .playing-author {
+    clear: both;
+    padding: 50px 0 50px 20px;
+    line-height: 30px;
+    font-size: 20px;
+}
+/* playing-music 部分end */
+
+/* playing-song 部分end*/

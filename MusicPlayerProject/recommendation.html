@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>推荐歌曲</title>
+
+    <!-- 引入标题图标 -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="fa/css/font-awesome.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/recommendationPart.css">
+
+
+</head>
+<body>
+
+    <!-- 搜索框nav部分 开始-->
+    <nav>
+        <div class="nav-logo f-l">
+            <a href="index.html">
+                <img src="images/logo.jpg" alt="">
+            </a>
+        </div>
+        <div class="nav-a f-l">
+            <a href="index.html">首页</a>
+            <a href="classify.html">分类</a>
+            <a href="singer.html">歌手</a>
+            <a href="recommendation.html">推荐</a>
+            <a href="about.html">关于</a>
+        </div>
+        <div class="nav-searching-his f-r">
+            <div class="searching-history">搜索历史</div>
+            <ul>
+                <h2>清除记录</h2>
+            </ul>
+        </div>
+        <div class="nav-searching f-r">
+            <input type="text" placeholder="找到好音乐！">
+            <button class="nav-searching-btn"><span class="fa fa-search"></span></button>
+        </div>
+    </nav>
+    <!-- 搜索框nav部分 结束-->
+
+    <!-- 推荐列表 recommendation 开始 -->
+        <section class="recommendation">
+            <ul></ul>
+        </section>
+    <!-- 推荐列表 recommendation 结束 -->
+
+    <!-- waiting提示框 -->
+    <div class="waiting">正在加载中...</div>
+
+</body>
+</html>
+
+
+<!-- jQuery  -->
+<script src="js/jquery-3.3.1.js"></script>
+<!-- 引入自己封装的方法 -->
+<script src="js/myFunction.js"></script>
+<!-- 引入自己的Javascript文件 -->
+<script src="js/recommendationPart.js"></script>

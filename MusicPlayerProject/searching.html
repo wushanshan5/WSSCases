@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>搜索音乐</title>
+
+    <!-- 引入标题图标 -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- 引入样式表 -->
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="fa/css/font-awesome.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- 引入本页面的css文件 -->
+    <link rel="stylesheet" href="css/searchingPart.css">
+
+    <!-- 引入js文件 -->
+        <!-- 引入jquery文件 -->
+        <script src="js/jquery-3.3.1.js"></script>
+        <!-- 引入自己定义的方法的文件 -->
+        <script src="js/myFunction.js"></script>
+        <!-- 引入自己的js文件 -->
+        <script src="js/searchingPart.js"></script>
+
+</head>
+<body onselectstart="return false;">
+
+
+    <!-- 搜索框nav部分 开始-->
+    <nav>
+        <div class="nav-logo f-l">
+            <a href="index.html">
+                <img src="images/logo.jpg" alt="">
+            </a>
+        </div>
+        <div class="nav-a f-l">
+            <a href="index.html">首页</a>
+            <a href="classify.html">分类</a>
+            <a href="singer.html">歌手</a>
+            <a href="recommendation.html">推荐</a>
+            <a href="about.html">关于</a>
+        </div>
+        <div class="nav-searching-his f-r">
+            <div class="searching-history">搜索历史</div>
+            <ul>
+                <h2>清除记录</h2>
+            </ul>
+        </div>
+        <div class="nav-searching f-r">
+            <input type="text" placeholder="找到好音乐！">
+            <button class="nav-searching-btn"><span class="fa fa-search"></span></button>
+        </div>
+    </nav>
+    <!-- 搜索框nav部分 结束-->
+
+    <!-- 搜索结果result 部分 开始 -->
+        <section class="result">
+            <ul>
+
+            </ul>
+        </section>
+    <!-- 搜索结果result 部分 结束 -->
+
+    <!-- 音乐playing部分 开始 -->
+        <section class="playing">
+        <div class="playing-controls f-l">
+            <!-- 播放/暂停 切换 fa-play/fa-pause -->
+            <button class="playing-pause fa fa-play"></button>
+        </div>
+        <div class="playing-pic f-l">
+            <img src="images/logo.jpg" alt="">
+        </div>
+        <div class="playing-progress f-l">
+            <span>00:00</span>
+            <div class="playing-progress-bar">
+                <div class="current-progress-bar"></div>
+            </div>
+            <span>00:00</span>
+        </div>
+        <div class="playing-audio" style="display: none;">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+        <div class="playing-tools f-l">
+            <!-- 通过获取audio的currentTime属性得到当前时间 -->
+            <!-- 通过fa-volume-up和fa-volume-off两个类的切换，来切换静音效果 -->
+            <span class="playing-muted">
+                    <button type="button" class="fa fa-volume-up"></button>
+                     <div class="playing-volumn-progress">
+                        <span class="current-volumn"></span>
+                    </div>
+                </span>
+        </div>
+        <div class="playing-author f-r">
+            <span class="playing-author-name">作者</span>
+            :
+            <span class="playing-author-title">歌曲名</span>
+        </div>
+    </section>
+    <!-- 音乐playing部分 结束 -->
+
+
+
+    <!--歌词 lyrics部分 开始 -->
+    <section class="lyrics hide">
+        <div class="lyrics-box">
+            <p>这里是歌词部分</p>
+        </div>
+    </section>
+    <!--歌词 lyrics部分 结束 -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>分类歌曲页面</title>
+
+    <!-- 引入标题图标 -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="fa/css/font-awesome.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!--<link rel="stylesheet" href="css/classify.css">-->
+    <link rel="stylesheet" href="css/tagsonglistPart.css">
+
+</head>
+<!-- 设置html页面文字不被选中，利用onselectstart事件 return false即可 -->
+<body onselectstart="return false;">
+
+    <!-- 搜索框nav部分 开始-->
+    <nav>
+        <div class="nav-logo f-l">
+            <a href="index.html">
+                <img src="images/logo.jpg" alt="">
+            </a>
+        </div>
+        <div class="nav-a f-l">
+            <a href="index.html">首页</a>
+            <a href="classify.html">分类</a>
+            <a href="singer.html">歌手</a>
+            <a href="recommendation.html">推荐</a>
+            <a href="about.html">关于</a>
+        </div>
+        <div class="nav-searching-his f-r">
+            <div class="searching-history">搜索历史</div>
+            <ul>
+                <h2>清除记录</h2>
+            </ul>
+        </div>
+        <div class="nav-searching f-r">
+            <input type="text" placeholder="找到好音乐！">
+            <button class="nav-searching-btn"><span class="fa fa-search"></span></button>
+        </div>
+    </nav>
+    <!-- 搜索框nav部分 结束-->
+
+    <!-- 内容content部分 开始 -->
+    <section class="content">
+        <div class="aside">
+            <div class="kinds-hot">
+                <h2>热门</h2>
+                <div class="kinds-content">
+                    <div><a href="tagsonglist.html?title=热门&tag=新歌" title="新歌">新歌</a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=热歌" title="热歌">热歌</a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=中国好声音" title="中国好声音">中国好声音</a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=经典老歌" title="经典老歌">经典老歌</a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=电视剧" title="电视剧">电视剧</a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=广场舞" title="广场舞">广场舞</a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=DJ舞曲" title="DJ舞曲">DJ舞曲 </a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=网络歌曲" title="网络歌曲">网络歌曲</a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=儿歌" title="儿歌">儿歌 </a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=纯音乐" title="纯音乐">纯音乐</a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=粤语" title="粤语">粤语 </a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=民歌" title="民歌">民歌</a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=钢琴曲" title="钢琴曲">钢琴曲</a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=萨克斯" title="萨克斯">萨克斯</a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=古典音乐" title="古典音乐">古典音乐 </a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=对唱" title="对唱">对唱</a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=佛教音乐" title="佛教音乐">佛教音乐</a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=成名曲" title="成名曲">成名曲 </a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=草原歌曲" title="草原歌曲">草原歌曲</a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=欧美" title="欧美">欧美</a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=80后" title="80后">80后</a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=劲爆" title="劲爆">劲爆</a></div>
+                    <div><a href="tagsonglist.html?title=热门&tag=轻音乐" title="轻音乐">轻音乐</a></div>
+                </div>
+            </div>
+            <div class="kinds-feeling">
+                <h2>心情</h2>
+                <div class="kinds-content">
+                    <div><a href="tagsonglist.html?tag=伤感" title="伤感">伤感</a></div>
+                    <div><a href="tagsonglist.html?tag=激情" title="激情">激情</a></div>
+                    <div><a href="tagsonglist.html?tag=安静" title="安静">安静</a></div>
+                    <div><a href="tagsonglist.html?tag=舒服" title="舒服">舒服</a></div>
+                    <div><a href="tagsonglist.html?tag=甜蜜" title="甜蜜">甜蜜</a></div>
+                    <div><a href="tagsonglist.html?tag=励志" title="励志">励志</a></div>
+                    <div><a href="tagsonglist.html?tag=寂寞" title="寂寞">寂寞</a></div>
+                    <div><a href="tagsonglist.html?tag=想念" title="想念">想念</a></div>
+                    <div><a href="tagsonglist.html?tag=浪漫" title="浪漫">浪漫</a></div>
+                    <div><a href="tagsonglist.html?tag=怀念" title="怀念">怀念</a></div>
+                    <div><a href="tagsonglist.html?tag=喜悦" title="喜悦">喜悦</a></div>
+                    <div><a href="tagsonglist.html?tag=深情" title="深情">深情</a></div>
+                    <div><a href="tagsonglist.html?tag=美好" title="美好">美好</a></div>
+                    <div><a href="tagsonglist.html?tag=怀旧" title="怀旧">怀旧</a></div>
+                    <div><a href="tagsonglist.html?tag=轻松" title="轻松">轻松</a></div>
+                </div>
+            </div>
+            <div class="kinds-style">
+                <h2>风格</h2>
+                <div class="kinds-content">
+                    <div><a href="tagsonglist.html?tag=小清新" title="小清新">小清新</a></div>
+                    <div><a href="tagsonglist.html?tag=DJ 舞曲" title="DJ 舞曲">DJ 舞曲</a></div>
+                    <div><a href="tagsonglist.html?tag=纯净" title="纯净">纯净</a></div>
+                    <div><a href="tagsonglist.html?tag=唯美" title="唯美">唯美</a></div>
+                    <div><a href="tagsonglist.html?tag=轻音乐" title="轻音乐">轻音乐</a></div>
+                    <div><a href="tagsonglist.html?tag=交响乐" title="交响乐">交响乐</a></div>
+                    <div><a href="tagsonglist.html?tag=舒缓" title="舒缓">舒缓</a></div>
+                    <div><a href="tagsonglist.html?tag=劲爆" title="劲爆">劲爆</a></div>
+                    <div><a href="tagsonglist.html?tag=慢摇" title="慢摇">慢摇</a></div>
+                    <div><a href="tagsonglist.html?tag=民歌" title="民歌">民歌</a></div>
+                    <div><a href="tagsonglist.html?tag=青春" title="青春">青春</a></div>
+                    <div><a href="tagsonglist.html?tag=好听" title="好听">好听</a></div>
+                </div>
+            </div>
+            <div class="kinds-theme">
+                <h2>主题</h2>
+                <div class="kinds-content">
+                    <div><a href="tagsonglist.html?tag=成名曲" title="成名曲">成名曲</a></div>
+                    <div><a href="tagsonglist.html?tag=胎教" title="胎教">胎教</a></div>
+                    <div><a href="tagsonglist.html?tag=情歌" title="情歌">情歌 </a></div>
+                    <div><a href="tagsonglist.html?tag=军旅歌曲" title="军旅歌曲">军旅歌曲</a></div>
+                    <div><a href="tagsonglist.html?tag=红歌" title="红歌">红歌 </a></div>
+                    <div><a href="tagsonglist.html?tag=古风" title="古风">古风</a></div>
+                    <div><a href="tagsonglist.html?tag=网络歌曲" title="网络歌曲">网络歌曲</a></div>
+                    <div><a href="tagsonglist.html?tag=中国风" title="中国风">中国风 </a></div>
+                    <div><a href="tagsonglist.html?tag=英文儿歌" title="英文儿歌">英文儿歌 </a></div>
+                    <div><a href="tagsonglist.html?tag=格莱美" title="格莱美">格莱美</a></div>
+                    <div><a href="tagsonglist.html?tag=武侠" title="武侠">武侠</a></div>
+                    <div><a href="tagsonglist.html?tag=流金岁月" title="流金岁月">流金岁月</a></div>
+                    <div><a href="tagsonglist.html?tag=儿歌" title="儿歌">儿歌</a></div>
+                </div>
+            </div>
+            <div class="kinds-century">
+                <h2>年代</h2>
+                <div class="kinds-content">
+                    <div><a href="tagsonglist.html?tag=经典老歌" title="经典老歌">经典老歌</a></div>
+                    <div><a href="tagsonglist.html?tag=欧美经典" title="欧美经典">欧美经典</a></div>
+                    <div><a href="tagsonglist.html?tag=60年代" title="60年代">60年代</a></div>
+                    <div><a href="tagsonglist.html?tag=70年代" title="70年代">70年代</a></div>
+                    <div><a href="tagsonglist.html?tag=90年代" title="90年代">90年代</a></div>
+                    <div><a href="tagsonglist.html?tag=70后" title="70后">70后</a></div>
+                    <div><a href="tagsonglist.html?tag=80后" title="80后">80后</a></div>
+                    <div><a href="tagsonglist.html?tag=90后" title="90后">90后</a></div>
+                    <div><a href="tagsonglist.html?tag=儿歌" title="儿歌">儿歌</a></div>
+                </div>
+            </div>
+            <div class="kinds-instrument">
+                <h2>乐器</h2>
+                <div class="kinds-content">
+                    <div><a href="tagsonglist.html?tag=钢琴曲" title="钢琴曲">钢琴曲</a></div>
+                    <div><a href="tagsonglist.html?tag=古筝" title="古筝">古筝</a></div>
+                    <div><a href="tagsonglist.html?tag=萨克斯" title="萨克斯">萨克斯</a></div>
+                    <div><a href="tagsonglist.html?tag=葫芦丝" title="葫芦丝">葫芦丝</a></div>
+                    <div><a href="tagsonglist.html?tag=小提琴" title="小提琴">小提琴 </a></div>
+                    <div><a href="tagsonglist.html?tag=管弦乐" title="管弦乐">管弦乐 </a></div>
+                    <div><a href="tagsonglist.html?tag=吉他" title="吉他">吉他</a></div>
+                    <div><a href="tagsonglist.html?tag=竖琴" title="竖琴">竖琴</a></div>
+                    <div><a href="tagsonglist.html?tag=长笛" title="长笛">长笛</a></div>
+                    <div><a href="tagsonglist.html?tag=口琴" title="口琴">口琴</a></div>
+                    <div><a href="tagsonglist.html?tag=二胡" title="二胡">二胡</a></div>
+                    <div><a href="tagsonglist.html?tag=纯音乐" title="纯音乐">纯音乐</a></div>
+                </div>
+            </div>
+            <div class="kinds-language">
+                <h2>语言&地域</h2>
+                <div class="kinds-content">
+                    <div><a href="tagsonglist.html?tag=欧美" title="欧美">欧美</a></div>
+                    <div><a href="tagsonglist.html?tag=欧美经典" title="欧美经典">欧美经典</a></div>
+                    <div><a href="tagsonglist.html?tag=国语" title="国语">国语</a></div>
+                    <div><a href="tagsonglist.html?tag=韩语" title="韩语">韩语</a></div>
+                    <div><a href="tagsonglist.html?tag=粤语" title="粤语">粤语</a></div>
+                    <div><a href="tagsonglist.html?tag=闽南语" title="闽南语">闽南语</a></div>
+                    <div><a href="tagsonglist.html?tag=日语" title="日语">日语 </a></div>
+                    <div><a href="tagsonglist.html?tag=印度" title="印度">印度</a></div>
+                    <div><a href="tagsonglist.html?tag=法语" title="法语">法语 </a></div>
+                    <div><a href="tagsonglist.html?tag=拉丁" title="拉丁">拉丁 </a></div>
+                    <div><a href="tagsonglist.html?tag=阿拉伯语" title="阿拉伯语">阿拉伯语</a></div>
+                    <div><a href="tagsonglist.html?tag=东南亚" title="东南亚">东南亚</a></div>
+                    <div><a href="tagsonglist.html?tag=草原歌曲" title="草原歌曲">草原歌曲</a></div>
+                </div>
+            </div>
+            <div class="kinds-scene">
+                <h2>场景</h2>
+                <div class="kinds-content">
+                    <div><a href="tagsonglist.html?tag=广场舞" title="广场舞">广场舞</a></div>
+                    <div><a href="tagsonglist.html?tag=校园" title="校园">校园</a></div>
+                    <div><a href="tagsonglist.html?tag=旅行" title="旅行">旅行</a></div>
+                    <div><a href="tagsonglist.html?tag=背景音乐" title="背景音乐">背景音乐</a></div>
+                    <div><a href="tagsonglist.html?tag=午后" title="午后">午后 </a></div>
+                    <div><a href="tagsonglist.html?tag=酒吧" title="酒吧">酒吧</a></div>
+                    <div><a href="tagsonglist.html?tag=咖啡厅" title="咖啡厅">咖啡厅</a></div>
+                    <div><a href="tagsonglist.html?tag=婚礼" title="婚礼">婚礼</a></div>
+                    <div><a href="tagsonglist.html?tag=汽车" title="汽车">汽车</a></div>
+                </div>
+            </div>
+            <div class="kinds-pop">
+                <h2>流派</h2>
+                <div class="kinds-content">
+                    <div><a href="tagsonglist.html?tag=摇滚" title="摇滚">摇滚</a></div>
+                    <div><a href="tagsonglist.html?tag=古典音乐" title="古典音乐">古典音乐</a></div>
+                    <div><a href="tagsonglist.html?tag=节奏布鲁斯" title="节奏布鲁斯">节奏布鲁斯</a></div>
+                    <div><a href="tagsonglist.html?tag=乡村" title="乡村">乡村</a></div>
+                    <div><a href="tagsonglist.html?tag=民谣" title="民谣">民谣</a></div>
+                    <div><a href="tagsonglist.html?tag=电子" title="电子">电子</a></div>
+                    <div><a href="tagsonglist.html?tag=爵士" title="爵士">爵士</a></div>
+                    <div><a href="tagsonglist.html?tag=流行" title="流行">流行</a></div>
+                    <div><a href="tagsonglist.html?tag=布鲁斯" title="布鲁斯">布鲁斯</a></div>
+                    <div><a href="tagsonglist.html?tag=世界" title="世界">世界音乐</a></div>
+                    <div><a href="tagsonglist.html?tag=新世音乐" title="新世音乐">新世纪</a></div>
+                    <div><a href="tagsonglist.html?tag=雷鬼" title="雷鬼">雷鬼</a></div>
+                    <div><a href="tagsonglist.html?tag=金属" title="金属">金属</a></div>
+                </div>
+            </div>
+            <div class="kinds-movie">
+                 <h2>影视节目</h2>
+                 <div class="kinds-content">
+                     <div><a href="tagsonglist.html?tag=星光大道" title="星光大道">星光大道</a></div>
+                     <div><a href="tagsonglist.html?tag=动漫" title="动漫">动漫</a></div>
+                     <div><a href="tagsonglist.html?tag=电影" title="电影">电影</a></div>
+                     <div><a href="tagsonglist.html?tag=电视剧" title="电视剧">电视剧</a></div>
+                     <div><a href="tagsonglist.html?tag=中国好歌曲" title="中国好歌曲">中国好歌曲</a></div>
+                 </div>
+            </div>
+        </div>
+        <div class="content-songs">
+            <div class="content-songs-title">
+                <p>序号</p>
+                <p>歌曲名称</p>
+                <p>歌手</p>
+                <p>专辑名称</p>
+            </div>
+            <ul>
+            </ul>
+
+            <button type="button" class="previous-page">上一页</button>
+            <div class="btns">
+                <button class="page-num" type="button" data-offset="1">1</button>
+                <button class="page-num" type="button" data-offset="2">2</button>
+                <button class="page-num" type="button" data-offset="3">3</button>
+                <button type="button" title="更多" class="other-btns">···</button>
+            </div>
+            <button type="button" class="next-page">下一页</button>
+        </div>
+    </section>
+    <!-- 内容content部分 结束 -->
+
+
+    <!-- jQuery  -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <!-- 引入自己封装的方法 -->
+    <script src="js/myFunction.js"></script>
+    <script src="js/classifyPart.js"></script>
+    <!-- 引入自己的Javascript文件 -->
+    <script src="js/tagsonglist.js"></script>
+
+</body>
+</html>
+
+

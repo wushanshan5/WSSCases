@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>歌手页面</title>
+
+    <!-- 引入标题图标 -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="fa/css/font-awesome.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <style>
+        body {
+            background-color: #fff;
+        }
+        .singers {
+            width: 1100px;
+            margin:  0 auto;
+            padding-top: 80px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+        .singers>h2 {
+            font-size: 25px;
+            line-height: 80px;
+        }
+        .singers>span {
+            color: #999;
+            font-size: 16px;
+        }
+        .singers>a {
+            color: blue;
+            padding: 0 5px;
+            font-size: 15px;
+        }
+        .singers>a:focus,.singers>a:hover {
+            background-color: blue;
+            color: #fff;
+        }
+        .singer-name {
+            width: 1100px;
+            margin: 0 auto;
+        }
+        .singer-name>div {
+            border-bottom: 1px solid #ddd;
+        }
+        .singer-name h2 {
+            padding-left: 20px;
+            line-height: 50px;
+        }
+        .names>ul {
+            display: flex;
+            width: 100%;
+            padding: 10px 20px;
+            flex-wrap: wrap;
+        }
+        .names>ul>li {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 20%;
+        }
+        .names>ul>li>a {
+            font-size: 16px;
+            line-height: 30px;
+        }
+        .names>ul>li>a:hover {
+            text-decoration: underline;
+        }
+        #TOP {
+            text-align: center;
+        }
+        #TOP li {
+            margin-bottom: 10px;
+        }
+        #TOP li a {
+            font-size: 13px;
+        }
+    </style>
+
+</head>
+<!-- 设置html页面文字不被选中，利用onselectstart事件 return false即可 -->
+<body>
+
+    <!-- 搜索框nav部分 开始-->
+    <nav>
+        <div class="nav-logo f-l">
+            <a href="index.html">
+                <img src="images/logo.jpg" alt="">
+            </a>
+        </div>
+        <div class="nav-a f-l">
+            <a href="index.html">首页</a>
+            <a href="classify.html">分类</a>
+            <a href="singer.html">歌手</a>
+            <a href="recommendation.html">推荐</a>
+            <a href="about.html">关于</a>
+        </div>
+        <div class="nav-searching-his f-r">
+            <div class="searching-history">搜索历史</div>
+            <ul>
+                <h2>清除记录</h2>
+            </ul>
+        </div>
+        <div class="nav-searching f-r">
+            <input type="text" placeholder="找到好音乐！">
+            <button class="nav-searching-btn"><span class="fa fa-search"></span></button>
+        </div>
+    </nav>
+    <!-- 搜索框nav部分 结束-->
+
+    <!-- 歌手singers部分 开始 -->
+    <section class="singers">
+        <h2>全部歌手</h2>
+        <span>索引: </span>
+        <a title="A" href="javascript:void(0)">A</a>
+        <a title="B" href="javascript:void(0)">B</a>
+        <a title="C" href="javascript:void(0)">C</a>
+        <a title="D" href="javascript:void(0)">D</a>
+        <a title="E" href="javascript:void(0)">E</a>
+        <a title="F" href="javascript:void(0)">F</a>
+        <a title="G" href="javascript:void(0)">G</a>
+        <a title="H" href="javascript:void(0)">H</a>
+        <a title="I" href="javascript:void(0)">I</a>
+        <a title="J" href="javascript:void(0)">J</a>
+        <a title="K" href="javascript:void(0)">K</a>
+        <a title="L" href="javascript:void(0)">L</a>
+        <a title="M" href="javascript:void(0)">M</a>
+        <a title="N" href="javascript:void(0)">N</a>
+        <a title="O" href="javascript:void(0)">O</a>
+        <a title="P" href="javascript:void(0)">P</a>
+        <a title="Q" href="javascript:void(0)">Q</a>
+        <a title="R" href="javascript:void(0)">R</a>
+        <a title="S" href="javascript:void(0)">S</a>
+        <a title="T" href="javascript:void(0)">T</a>
+        <a title="U" href="javascript:void(0)">U</a>
+        <a title="V" href="javascript:void(0)">V</a>
+        <a title="W" href="javascript:void(0)">W</a>
+        <a title="X" href="javascript:void(0)">X</a>
+        <a title="Y" href="javascript:void(0)">Y</a>
+        <a title="Z" href="javascript:void(0)">Z</a>
+        <a title="other" href="javascript:void(0)">其他</a>
+    </section>
+    <!-- 歌手singers部分 结束 -->
+
+    <!-- 歌名singer-name部分 开始 -->
+    <section class="singer-name">
+        <div id="TOP">
+            <h2>热门</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="A">
+            <h2>A</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="B">
+            <h2>B</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="C">
+            <h2>C</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="D">
+            <h2>D</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="E">
+            <h2>E</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="F">
+            <h2>F</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="G">
+            <h2>G</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="H">
+            <h2>H</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="I">
+            <h2>I</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="J">
+            <h2>J</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="K">
+            <h2>K</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="L">
+            <h2>L</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="M">
+            <h2>M</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="N">
+            <h2>N</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="O">
+            <h2>O</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="P">
+            <h2>P</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="Q">
+            <h2>Q</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="R">
+            <h2>R</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="S">
+            <h2>S</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="T">
+            <h2>T</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="U">
+            <h2>U</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="V">
+            <h2>V</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="W">
+            <h2>W</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="X">
+            <h2>X</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="Y">
+            <h2>Y</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="Z">
+            <h2>Z</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+        <div id="other">
+            <h2>其他</h2>
+            <div class="names">
+                <ul></ul>
+            </div>
+        </div>
+    </section>
+    <!-- 歌名singer-name部分 结束 -->
+
+
+
+    <!-- jQuery  -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <!-- 引入自己封装的方法 -->
+    <script src="js/myFunction.js"></script>
+    <!-- 引入自己的Javascript代码 -->
+    <script>
+        getAjax(
+            "http://114.67.144.118:6589/artist/list",
+            "get",
+            "json",
+            function (data) {
+                var datalist = data.data;
+                for(var i in datalist) {
+                    for(var j=0;j<$(".singer-name>div").length;j++) {
+                        if(i == $(".singer-name>div")[j].getAttribute("id")) {
+                            var datas = datalist[i];
+                            var str = "";
+                            if(i == "TOP") {
+                                for(var k=0;k<datas.length;k++) {
+                                    str += '<li>\n' +
+                                        '      <img src="'+datas[k].pic+'" alt=""><br>\n' +
+                                        '      <a data-tingid="'+datas[k].id+'" href="info.html">'+datas[k].name+'</a>\n' +
+                                        '   </li>';
+                                }
+                            } else {
+                                for(var k=0;k<datas.length;k++) {
+                                    str += '<li><a data-tingid="'+datas[k].id+'" href="info.html">'+datas[k].name+'</a></li>';
+                                }
+                            }
+                        }
+                    }
+                    $("#"+i).find("div").find("ul").html("").append(str);
+                }
+
+                //为为一个a标签绑定点击事件，存储id值
+                $(".singer-name a").click(function () {
+                    window.sessionStorage.setItem("tingUid",$(this).attr("data-tingid"));
+                });
+
+            }
+        );
+        $(".singers>a").each(function (index,ele) {
+            $(ele).click(function () {
+                var target = $("#"+$(this).attr("title")).get(0).offsetTop-50;
+                var now = document.body.scrollTop;
+                scrollSlow(target,now);
+            });
+        });
+        $(".return").click(function () {
+            scrollSlow(0,document.body.scrollTop);
+        });
+    </script>
+</body>
+</html>

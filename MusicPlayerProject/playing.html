@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>播放页面</title>
+
+    <!-- 引入标题图标 -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="fa/css/font-awesome.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/playingPart.css">
+
+
+
+</head>
+<body>
+
+    <!-- 搜索框nav部分 开始-->
+    <nav>
+        <div class="nav-logo f-l">
+            <a href="index.html">
+                <img src="images/logo.jpg" alt="">
+            </a>
+        </div>
+        <div class="nav-a f-l">
+            <a href="index.html">首页</a>
+            <a href="classify.html">分类</a>
+            <a href="singer.html">歌手</a>
+            <a href="recommendation.html">推荐</a>
+            <a href="about.html">关于</a>
+        </div>
+        <div class="nav-searching-his f-r">
+            <div class="searching-history">搜索历史</div>
+            <ul>
+                <h2>清除记录</h2>
+            </ul>
+        </div>
+        <div class="nav-searching f-r">
+            <input type="text" placeholder="找到好音乐！">
+            <button class="nav-searching-btn"><span class="fa fa-search"></span></button>
+        </div>
+    </nav>
+    <!-- 搜索框nav部分 结束-->
+
+
+    <!-- 播放歌曲playing-song部分 开始 -->
+    <section class="playing-song">
+
+        <!-- 歌词lyrics部分 开始 -->
+        <section class="playing-lyrics">
+            <!-- 歌词部分 -->
+            <div class="lyrics">
+                <div style="display: none;" class="lyrics-time"></div>
+                <div class="lyrics-content">
+                    <p>这是歌词部分</p>
+                </div>
+            </div>
+            <!-- 歌词部分 -->
+        </section>
+        <!-- 歌词lyrics部分 结束 -->
+
+        <!-- 播放playing-music部分 开始 -->
+        <section class="playing-music">
+
+            <div class="playing-pic">
+                <img src="images/favicon.ico" alt="">
+            </div>
+            <div class="playing-controls f-l">
+                <!-- 播放/暂停 切换 fa-play/fa-pause -->
+                <button class="playing-pause fa fa-play"></button>
+            </div>
+            <div class="playing-progress f-l">
+                <span>00:00</span>
+                <div class="playing-progress-bar">
+                    <div class="current-progress-bar"></div>
+                </div>
+                <span>00:00</span>
+            </div>
+            <div class="playing-audio" style="display: none;">
+                <iframe src="" frameborder="0"></iframe>
+            </div>
+            <div class="playing-author">
+                <span class="playing-author-name">作者</span>
+                :
+                <span class="playing-author-title">歌曲名</span>
+            </div>
+        </section>
+        <!-- 播放playing-music部分 结束 -->
+
+
+    </section>
+    <!-- 播放歌曲playing-song部分 结束 -->
+
+
+
+</body>
+</html>
+
+<!-- jQuery  -->
+<script src="js/jquery-3.3.1.js"></script>
+<!-- 引入自己封装的方法 -->
+<script src="js/myFunction.js"></script>
+<!-- 引入自己的Javascript文件 -->
+<script src="js/playingPart.js"></script>

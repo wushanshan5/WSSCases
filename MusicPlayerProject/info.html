@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>歌手介绍页面</title>
+    <!-- 引入标题图标 -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- 引入样式表 -->
+    <link rel="stylesheet" href="fa/css/font-awesome.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/infoPart.css">
+
+</head>
+<!-- 设置html页面文字不被选中，利用onselectstart事件 return false即可 -->
+<body onselectstart="return false;">
+
+    <!-- 搜索框nav部分 开始-->
+    <nav>
+    <div class="nav-logo f-l">
+        <a href="index.html">
+            <img src="images/logo.jpg" alt="">
+        </a>
+    </div>
+    <div class="nav-a f-l">
+        <a href="index.html">首页</a>
+        <a href="classify.html">分类</a>
+        <a href="singer.html">歌手</a>
+        <a href="recommendation.html">推荐</a>
+        <a href="about.html">关于</a>
+    </div>
+    <div class="nav-searching-his f-r">
+        <div class="searching-history">搜索历史</div>
+        <ul>
+            <h2>清除记录</h2>
+        </ul>
+    </div>
+    <div class="nav-searching f-r">
+        <input type="text" placeholder="找到好音乐！">
+        <button class="nav-searching-btn"><span class="fa fa-search"></span></button>
+    </div>
+</nav>
+    <!-- 搜索框nav部分 结束-->
+
+    <!-- 歌手相关信息information部分 开始 -->
+    <section class="information">
+        <div class="information-pic">
+            <img src="" alt="">
+            <span class="information-name"></span>
+            <div class="information-intro"></div>
+            <a class="f-r information-more">点击展开</a>
+        </div>
+
+        <div class="information-tab">
+            <!-- 点击该按钮，异步获取到该歌手的歌曲列表 -->
+            <div class="singer-info">
+                <!--<span></span><br>-->
+                <button type="button">简介</button>
+            </div>
+            <div class="singer-songs">
+                <!--<span></span><br>-->
+                <button type="button">歌曲</button>
+            </div>
+            <div class="current-tab"></div>
+        </div>
+    </section>
+
+    <!-- 歌手相关信息information部分 结束 -->
+
+
+    <!-- 简介introduction部份 开始 -->
+    <section class="introduction">
+        <div class="introduction-basic">
+            <p>基本信息</p>
+            <span class="introduction-name">姓名：<i><i></i></i></span>
+            <span class="introduction-nickname">别名：<i></i></span><br>
+            <span class="introduction-country">籍贯：<i></i></span>
+            <span class="introduction-weight">体重：<i></i></span><br>
+            <span class="introduction-height">身高：<i></i></span>
+            <span class="introduction-birth">生日：<i></i></span><br>
+            <span class="introduction-constellation">星座：<i></i></span>
+            <p>个人简介</p>
+            <div class="introduction-name">姓名：<i><i></i></i></div>
+            <div class="introduction-country">籍贯：<i></i></div>
+            <div class="introduction-weight">体重：<i></i></div>
+            <div class="introduction-height">身高：<i></i></div>
+            <div class="introduction-birth">生日：<i></i></div>
+            <div class="introduction-constellation">星座：<i></i></div>
+            <div class="introduction-company">所在公司：<i></i></div>
+            <div class="introduction-totalSongs">歌曲数目：<i></i></div>
+            <div class="introduction-totalMVs">MV数目：<i></i></div>
+        </div>
+    </section>
+    <!-- 简介introduction部份 结束 -->
+
+    <!-- 歌曲列表songlist部分 开始 -->
+    <section class="songlist">
+        <p>歌曲列表</p>
+        <div class="ul-title">
+            <p>歌曲名称</p>
+            <p>歌曲作者</p>
+            <p>歌曲专辑</p>
+            <p>播放歌曲</p>
+        </div>
+        <ul>
+        </ul>
+    </section>
+    <!-- 歌曲列表songlist部分 结束 -->
+
+
+
+</body>
+</html>
+<!-- 引入js文件 -->
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/myFunction.js"></script>
+<script src="js/info.js"></script>

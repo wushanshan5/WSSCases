@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>关于</title>
+
+    <!-- 引入标题图标 -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- 引入样式 -->
+    <style>
+        /* 关于页面样式 */
+        body {
+            background-color: #fff;
+        }
+        aside {
+            position: fixed;
+            bottom: 100px;
+            right: 50px;
+            width: 120px;
+            height: 150px;
+        }
+        aside>a {
+            color: #555;
+            border: 1px solid #ddd;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            margin-top: -1px;
+        }
+        aside>a:hover {
+            background-color: #eee;
+        }
+        section {
+            width: 1000px;
+            margin: 0 auto;
+        }
+        p {
+            text-indent: 2em;
+            line-height: 30px;
+            font-size: 16px;
+        }
+        footer {
+            text-align: center;
+            height: 50px;
+            border-top: 1px dashed #ddd;
+            border-bottom: 1px dashed #ddd;
+            font-size: 20px;
+            line-height: 50px;
+            color: rgba(212,60,51,0.6);
+        }
+        a {
+            color: rgba(212,60,51,0.9);
+            font: 600 17px/50px "Microsoft YaHei";
+        }
+        .part {
+            padding-top: 50px;
+        }
+        .part>h2 {
+            padding: 10px 0;
+        }
+        .part>.content {
+            padding: 5px 20px;
+        }
+        .part>.content>div {
+            padding: 5px 20px;
+            font-size: 17px;
+        }
+        .part>.content>div>p {
+            font-size: 16px;
+            padding: 0 30px;
+        }
+        p.skill {
+            color: #0e1aeb;
+        }
+        .blog {
+            font: 300 16px/20px "Microsoft YaHei";
+            color: #0e1aeb;
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- 侧边栏部分 开始 -->
+        <aside>
+            <a href="#aboutPro">关于项目</a>
+            <a href="#proIntro">项目详细介绍</a>
+            <a href="#contact">联系方式</a>
+        </aside>
+    <!-- 侧边栏部分 结束 -->
+
+    <!-- 项目相关介绍proIntroduction部分 开始 -->
+        <section id="aboutPro" class="proIntroduction">
+            <div class="part">
+                <h2 >关于项目</h2>
+                <p>本项目是基于百度音乐接口实现的。通过百度音乐api的查询接口、推荐接口、榜单接口、播放接口、歌词接口、歌手信息接口等等，利用Ajax技术，异步获取数据，并将数据处理展现。</p>
+            </div>
+            <div id="proIntro" class="part">
+                <h2>项目详细介绍：</h2>
+                <div class="content">
+                    <a title="index.html" href="index.html">首页：</a>
+                    <div>导航栏部分:
+                        <p>
+                            有图标、首页、分类、歌手、推荐、关于链接，点击对应链接，跳转对应的页面。
+                            并有一个用于搜索歌曲的输入框，为搜索按钮绑定了onclick事件和onkeydown回车事件，在事件中利用sessionStorage.setItem()方法存储歌名，
+                            跳转到搜索页面时，利用sessionStorage的getItem()方法获得歌名，再异步获取到相关歌名的歌曲。
+                        </p>
+                        <p class="skill">用到的技术： sessionStorage存储的getItem()、setItem(),onkeydown事件，ajax()方法等</p>
+                    </div>
+                    <div>
+                        轮播图部分：
+                        <p>
+                            设置了自动轮播，以及左右箭头切换轮播图，并设置了定时器每过两分钟更换图片信息，点击对应的图片跳转到播放页面并开始播放音乐。通过onresize事件来动态设置轮播图的宽度。
+                        </p>
+                        <p class="skill">用到的技术： 定时器setInterval，onresize事件，animate()方法，css()方法,ajax()方法来更新数据等</p>
+                    </div>
+                    <div>
+                        榜单部分：
+                        <p>
+                            通过请求榜单数据，得到各个榜单的Top10，点击查看更多可以获取到对应榜单的全部数据。
+                        </p>
+                        <p class="skill">用到的技术：ajax()方法，并封装了一个方法来处理接受来的数据，填充到榜单ul等</p>
+                    </div>
+                    <div>
+                        列表部分：
+                        <p>
+                            利用伸缩布局，将列表分为了两个部分，左边歌词，右边是当前播放的列表。
+                            左边歌词部分会根据当前歌曲的播放时间，滑动到对应的歌词上（还需完善）。
+                            右边的播放列表可滚动，当滚动到底部时，异步获取更多的歌曲。
+                        </p>
+                        <p class="skill">用到的技术：ajax()方法、onscroll事件，封装了一个处理歌词的方法等</p>
+                    </div>
+                    <div>
+                        底部播放栏部分：
+                        <p>
+                            由上一首、播放、下一首、iframe标签、进度条、音量、列表，歌曲信息等组成。
+                            点击上一首，下一首，判断当前是否有音乐在播放，是则继续判断当前列表，再通过列表中li的data-index属性实现上一首和下一首。
+                            播放按钮：
+                            点击事件，判断按钮的类名，进行更换类名实现图标的替换。
+                            并判断音乐是否正在播放，如果在播放则暂停并清除用于计算当前播放时间的定时器和歌词定时器。
+                            否则播放，开启定时器。
+                            iframe标签：
+                            由于引用的播放url与本域不是同一个域名，因此直接用audio标签，浏览器的防盗链机制将会拦截请求。
+                            解决方法：在内部套一个audio标签。
+                            在该audio标签的src属性放置播放url。
+                            进度条：
+                            可以用于调整音乐的播放时间。
+                            列表：
+                            左侧展示出当前播放的歌曲，右侧展示出当前播放列表
+                            歌曲信息：
+                            显示当前播放歌曲的歌名和歌手。
+                        </p>
+                        <p class="skill">用到的技术：iframe的contentWindow属性，ajax()方法，audio标签的play()方法，pause()方法以及currentTime，volumn等属性</p>
+                    </div>
+                    <a title="classify.html" href="classify.html">分类页面：</a>
+                    <div>
+                        <p>
+                            有若干个table，每个table都代表一种类型。点击对应的类型跳转到标签歌曲列表页面。
+                        </p>
+                    </div>
+                    <a title="singer.html" href="singer.html">歌手页面：</a>
+                    <div>
+                        <p>
+                            显示所有歌手的名字，点击对应歌手跳转到歌手信息页面。
+                        </p>
+                    </div>
+                    <a title="recommendation.html" href="recommendation.html">推荐页面：</a>
+                    <div>
+                        <p>
+                            请求推荐数据，填充得到ul内部，并为document.body绑定onmousewheel事件，滚动到底部时，通过歌曲的偏移值，异步请求新的数据，填充到ul上，当数据长度为0时，弹出提示信息。
+                        </p>
+                    </div>
+                    <a title="searching.html" href="searching.html">搜索页面：</a>
+                    <div>
+                        <p>
+                            首次打开该页面时，会根据sessionStorage的getItem()方法，得到需要搜索的歌名，并异步获取相关歌名的数据，填充到页面下。
+                        </p>
+                        <p>
+                            在该页面进行搜索时，直接异步请求，将ul内的信息替换成新请求的数据。
+                        </p>
+                    </div>
+                    <a title="info.html" href="info.html">歌手信息页面：</a>
+                    <div>
+                        <p>
+                            有歌手的相关信息和介绍并有两个按钮：歌曲和简介，点击对应按钮，展现对应的数据。
+                        </p>
+                    </div>
+                    <a title="playing.html" href="playing.html">播放页面：</a>
+                    <div>
+                        <p>左侧： 歌词部分。</p>
+                        <p>
+                            右侧： 歌曲的图片及进度条，歌名，作者等信息。并有播放按钮可以暂停或播放歌曲。
+                        </p>
+                    </div>
+                    <a title="billboard.html" href="billboard.html">榜单页面：</a>
+                    <div>
+                        <p>
+                            显示所有榜单的歌曲列表，点击不同的榜单链接，异步获取对应的数据，并返回到页面上。
+                        </p>
+                    </div>
+                    <a title="tagsonglist.html" href="tagsonglist.html">标签歌曲列表页面：</a>
+                    <div>
+                        <p>
+                            根据分类页面传来的url，解析出参数值，再异步请求对应分类标签名的所有歌曲。
+                            并为每个歌曲li绑定点击事件，跳转到播放页面，播放歌曲。
+                        </p>
+                        <p>每一个列表下有对应的页数，可以点击页数跳转到向对应的内容，并且，对应的栏目名称会高亮显示。</p>
+                    </div>
+                    <a title="about.html" href="about.html">关于页面：</a>
+                    <div>
+                        <p>介绍项目的相关信息。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- 项目相关介绍proIntroduction部分 结束 -->
+
+    <!-- 联系contact部分 开始 -->
+        <section id="contact" class="contact">
+            <div class="part">
+                <h2>联系方式：</h2>
+                <p>
+                    邮箱：&nbsp;&nbsp;<span>15770640991@163.com</span>
+                </p>
+                <p>
+                    电话：&nbsp;&nbsp;<span>15770640991</span>
+                </p>
+                <p>
+                    博客：&nbsp;&nbsp;<a class="blog" target="_blank" href="https://blog.csdn.net/weixin_41342585">https://blog.csdn.net/weixin_41342585</a>
+                </p>
+                <p>
+
+                </p>
+            </div>
+        </section>
+    <!-- 联系contact部分 结束 -->
+
+    <!-- 页脚footer部分 开始 -->
+        <footer>
+            本项目只用做学习用途，不用做商业用途，谢谢配合！
+        </footer>
+    <!-- 页脚footer部分 结束 -->
+
+
+</body>
+</html>

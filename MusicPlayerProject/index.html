@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>在线音乐首页</title>
+
+    <!-- 引入标题图标 -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="fa/css/font-awesome.css">
+    <link rel="stylesheet" href="css/index.css">
+
+
+
+</head>
+<!-- 设置html页面文字不被选中，利用onselectstart事件 return false即可 -->
+<body onselectstart="return false;">
+
+    <!-- 搜索框nav部分 开始-->
+    <nav>
+        <div class="nav-logo f-l">
+            <a href="index.html">
+                <img src="images/logo.jpg" alt="">
+            </a>
+        </div>
+        <div class="nav-a f-l">
+            <a href="index.html">首页</a>
+            <a href="classify.html">分类</a>
+            <a href="singer.html">歌手</a>
+            <a href="recommendation.html">推荐</a>
+            <a href="about.html">关于</a>
+        </div>
+        <div class="nav-searching-his f-r">
+            <div class="searching-history">搜索历史</div>
+            <ul>
+                <h2>清除记录</h2>
+            </ul>
+        </div>
+        <div class="nav-searching f-r">
+            <input type="text" placeholder="找到好音乐！">
+            <button class="nav-searching-btn"><span class="fa fa-search"></span></button>
+        </div>
+    </nav>
+    <!-- 搜索框nav部分 结束-->
+
+    <!-- 通栏banner部分 开始 -->
+    <section class="banner-box">
+        <section class="banner">
+            <ul>
+                <li><a href="javascript:void(0)"><img src="" alt=""></a></li>
+                <li><a href="javascript:void(0)"><img src="" alt=""></a></li>
+                <li><a href="javascript:void(0)"><img src="" alt=""></a></li>
+                <li><a href="javascript:void(0)"><img src="" alt=""></a></li>
+                <li><a href="javascript:void(0)"><img src="" alt=""></a></li>
+            </ul>
+            <span>&lt;</span>
+            <span>&gt;</span>
+        </section>
+    </section>
+
+    <!-- 通栏banner部分 结束 -->
+
+
+    <!-- 列表list部分 开始 -->
+        <section class="list">
+            <div class="list-title">
+                <div>歌词</div>
+                <div>播放列表</div>
+            </div>
+
+            <!-- 歌词部分 -->
+            <div class="lyrics">
+                <div style="display: none;" class="lyrics-time"></div>
+                <div class="lyrics-content"></div>
+            </div>
+            <!-- 歌词部分 -->
+
+            <!-- 播放列表部分 -->
+            <ul class="list-songs">
+                <ul>
+
+                </ul>
+            </ul>
+            <!-- 播放列表部分 -->
+            <span class="list-close">×</span>
+
+        </section>
+    <!-- 列表list部分 结束 -->
+
+    <!-- 音乐playing部分 开始 -->
+        <section class="playing">
+            <div class="playing-controls f-l">
+                <button class="playing-back fa fa-step-backward"></button>
+                <!-- 播放/暂停 切换 fa-play/fa-pause -->
+                <button class="playing-pause fa fa-play"></button>
+                <button class="playing-for fa fa-step-forward"></button>
+            </div>
+            <div class="playing-pic f-l">
+                <img src="images/logo.jpg" alt="">
+            </div>
+            <div class="playing-progress f-l">
+                <span>00:00</span>
+                <div class="playing-progress-bar">
+                    <div class="current-progress-bar"></div>
+                </div>
+                <span>00:00</span>
+            </div>
+            <div class="playing-audio" style="display: none;">
+                <iframe src="" frameborder="0"></iframe>
+            </div>
+            <div class="playing-tools f-l">
+                <!-- 通过获取audio的currentTime属性得到当前时间 -->
+                <!-- 通过fa-volume-up和fa-volume-off两个类的切换，来切换静音效果 -->
+                <span class="playing-muted">
+                    <button type="button" class="fa fa-volume-up"></button>
+                     <div class="playing-volumn-progress">
+                        <span class="current-volumn"></span>
+                    </div>
+                </span>
+                <span class="playing-loop my-font" data-type="0">&#xe671;</span>
+                <!--<span class="playing-download fa fa-download"></span>-->
+                <span class="playing-list fa fa-list-ul"></span>
+            </div>
+            <div class="playing-author f-r">
+                <span class="playing-author-name">作者</span>
+                :
+                <span class="playing-author-title">歌曲名</span>
+            </div>
+        </section>
+    <!-- 音乐playing部分 结束 -->
+
+
+
+    <!-- 排行榜ranking部分 开始 -->
+        <section class="ranking">
+            <div data-typenum="1" class="ranking-1">
+                <h2><img src="images/new.png" alt=""></h2>
+                <ul>
+                </ul>
+                <a class="f-r" href="billboard.html?type=1">获取更多&gt;&gt;</a>
+            </div>
+            <div data-typenum="2" class="ranking-2">
+                <h2><img src="images/hot.png" alt=""></h2>
+                <ul>
+                </ul>
+                <a class="f-r" href="billboard.html?type=2">获取更多&gt;&gt;</a>
+            </div>
+            <div data-typenum="11" class="ranking-11">
+                <h2><img src="images/roll.png" alt=""></h2>
+                <ul>
+                </ul>
+                <a class="f-r" href="billboard.html?type=11">获取更多&gt;&gt;</a>
+            </div>
+            <div data-typenum="12" class="ranking-12">
+                <h2><img src="images/jue.png" alt=""></h2>
+                <ul>
+                </ul>
+                <a class="f-r" href="billboard.html?type=12">获取更多&gt;&gt;</a>
+            </div>
+            <div data-typenum="21" class="ranking-21">
+                <h2><img src="images/ou.png" alt=""></h2>
+                <ul>
+                </ul>
+                <a class="f-r" href="billboard.html?type=21">获取更多&gt;&gt;</a>
+            </div>
+            <div data-typenum="22" class="ranking-22">
+                <h2><img src="images/lao.png" alt=""></h2>
+                <ul>
+                </ul>
+                <a class="f-r" href="billboard.html?type=22">获取更多&gt;&gt;</a>
+            </div>
+            <div data-typenum="23" class="ranking-23">
+                <h2><img src="images/qing.png" alt=""></h2>
+                <ul>
+                </ul>
+                <a class="f-r" href="billboard.html?type=23">获取更多&gt;&gt;</a>
+            </div>
+            <div data-typenum="24" class="ranking-24">
+                <h2><img src="images/ying.png" alt=""></h2>
+                <ul>
+                </ul>
+                <a class="f-r" href="billboard.html?type=24">获取更多&gt;&gt;</a>
+            </div>
+            <div data-typenum="25" class="ranking-25">
+                <h2><img src="images/wang.png" alt=""></h2>
+                <ul>
+                </ul>
+                <a class="f-r" href="billboard.html?type=25">获取更多&gt;&gt;</a>
+            </div>
+        </section>
+    <!-- 排行榜ranking部分 结束 -->
+
+
+    <!-- jQuery  -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <!-- 引入自己封装的方法 -->
+    <script src="js/myFunction.js"></script>
+    <!-- 引入自己的Javascript文件 -->
+    <script src="js/index.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,55 @@
+body {
+    overflow: auto;
+    background-color: rgba(200,200,200,0.2);
+}
+/* result 部分start */
+.result {
+    padding-top: 60px;
+    width: 1210px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.result>ul {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px;
+    min-height: 600px;
+}
+.result>ul>li {
+    float: left;
+    padding: 10px;
+    width: 20%;
+    height: 350px;
+}
+.result>ul>li>a {
+    padding: 10px;
+    border: 1px solid #fff;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+}
+.result>ul>li>a:hover {
+    border: 1px solid rgba(101,194,242,0.8);
+
+}
+.result>ul>li>a>img {
+    width: 90%;
+}
+.result-title {
+    color: rgba(212,60,51,0.9);
+    font-size: 15px;
+    line-height: 30px;
+}
+.result-author {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 13px;
+    color: #aaa;
+    line-height: 30px;
+}
+.result-MV {
+    color: orangered;
+}
+/* result 部分end */

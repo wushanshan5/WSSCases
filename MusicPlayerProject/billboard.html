@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>在线音乐首页</title>
+
+    <!-- 引入标题图标 -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="fa/css/font-awesome.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <style>
+        body {
+            height: 100%;
+            background-color: #fff;
+        }
+        .billboard {
+            flex-direction: row;
+            flex-wrap: nowrap;
+            padding-top: 70px;
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+        }
+        .billboard-content {
+            flex: 7;
+            padding-bottom: 80px;
+        }
+        .billboard-content>ul {
+            padding: 0 50px;
+        }
+        .billboard-kinds {
+            flex: 2;
+        }
+        .billboard-kinds>a {
+            border: 1px solid #ddd;
+            display: block;
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+            margin-top: -1px;
+        }
+        .billboard-kinds>a:hover {
+            background-color: rgba(100,100,100,0.2);
+        }
+        .billboard-kinds>a>span {
+            font-size: 20px;
+        }
+        .billboard-content li {
+            cursor: pointer;
+            display: flex;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #eee;
+        }
+        .billboard-content li:hover {
+            background-color: rgba(100,100,100,0.1);
+        }
+        .content-song-order {
+            padding-right: 10px;
+            font-size: 20px;
+            color: rgba(212,60,51,0.9);
+        }
+        .content-song-author {
+            flex: 3;
+        }
+        .content-song-title {
+            flex: 3
+        }
+        .content-song-album  {
+            flex: 2;
+        }
+        .content-song-album,.content-song-author,.content-song-title {
+            max-width: 300px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .content-song-title {
+            max-width: 200px;
+        }
+        .current-billboard {
+            background-color: rgba(100,100,100,0.2);
+        }
+        .billboard>button {
+            background-color:  rgba(212,60,51,0.9);
+            padding: 10px;
+            color: #fff;
+            position: absolute;
+            bottom: 20px;
+            left: 80px;
+        }
+        /*waiting提示框*/
+        .waiting {
+            display: none;
+            text-align: center;
+            width: 200px;
+            height: 30px;
+            font-size: 20px;
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #111;
+        }
+    </style>
+
+</head>
+<!-- 设置html页面文字不被选中，利用onselectstart事件 return false即可 -->
+<body onselectstart="return false;">
+
+    <!-- 搜索框nav部分 开始-->
+    <nav>
+        <div class="nav-logo f-l">
+            <a href="index.html">
+                <img src="images/logo.jpg" alt="">
+            </a>
+        </div>
+        <div class="nav-a f-l">
+            <a href="index.html">首页</a>
+            <a href="classify.html">分类</a>
+            <a href="singer.html">歌手</a>
+            <a href="recommendation.html">推荐</a>
+            <a href="about.html">关于</a>
+        </div>
+        <div class="nav-searching-his f-r">
+            <div class="searching-history">搜索历史</div>
+            <ul>
+                <h2>清除记录</h2>
+            </ul>
+        </div>
+        <div class="nav-searching f-r">
+            <input type="text" placeholder="找到好音乐！">
+            <button class="nav-searching-btn"><span class="fa fa-search"></span></button>
+        </div>
+    </nav>
+    <!-- 搜索框nav部分 结束-->
+
+    <!-- 对应榜单billboard部分 开始 -->
+        <section class="billboard">
+            <div class="billboard-kinds">
+                <a id="1" href="billboard.html?type=1">新歌榜 <span>&gt;</span></a>
+                <a id="2" href="billboard.html?type=2">热歌榜 <span>&gt;</span></a>
+                <a id="11" href="billboard.html?type=11">摇滚榜 <span>&gt;</span></a>
+                <a id="12" href="billboard.html?type=12">爵士音乐榜 <span>&gt;</span></a>
+                <a id="21" href="billboard.html?type=21">欧美金曲榜 <span>&gt;</span></a>
+                <a id="22" href="billboard.html?type=22">情歌对唱榜 <span>&gt;</span></a>
+                <a id="23" href="billboard.html?type=23">经典老歌榜 <span>&gt;</span></a>
+                <a id="24" href="billboard.html?type=24">影视金曲榜 <span>&gt;</span></a>
+                <a id="25" href="billboard.html?type=25">网络歌曲榜 <span>&gt;</span></a>
+            </div>
+            <div class="billboard-content">
+                <ul>
+
+                </ul>
+            </div>
+            <button type="button">RETURN TOP</button>
+        </section>
+    <!-- 对应榜单billboard部分 结束 -->
+
+    <!-- waiting提示框 -->
+    <div class="waiting">正在加载中...</div>
+
+
+    <!-- jQuery  -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <!-- 引入自己封装的方法 -->
+    <script src="js/myFunction.js"></script>
+    <!-- 引入自己的Javascript -->
+    <script>
+
+        //返回顶部按钮点击事件
+        $(".billboard>button").click(function () {
+            scrollSlow(0,document.body.scrollTop);
+        });
+
+        //获取页面url
+            var currentTag = document.URL;
+            //获取传来的数据的方法
+            function handleUrl(url) {
+                var index1 = url.lastIndexOf("=");
+                //decodeURI()解码参数
+                return decodeURI(url.substring(index1+1));
+            }
+        //首次打开页面时加载数据
+        var billboardIndex = 0;
+        addSongs(handleUrl(currentTag),0);
+
+        //通过url确定当前的榜单，并添加current-billboard类
+        $("#"+handleUrl(currentTag)).addClass("current-billboard");
+
+        //billboard-kinds内a链接点击事件
+        $(".billboard-kinds>a").each(function (index,ele) {
+            $(ele).click(function () {
+                $(".billboard-kinds>a").each(function (ind,el) {
+                    $(el).removeClass("current-billboard");
+                });
+                $(ele).addClass("current-billboard");
+            });
+        });
+
+
+        //鼠标滚轮事件
+            //滑到底部的次数
+            var billbottomIndex = 0;
+            document.body.onmousewheel = function () {
+                if(document.body.scrollHeight-window.innerHeight != 0) {
+                    var textnum = 0;
+                    //获取scrollTop值，body高度要为100%
+                    // console.log("body总高度"+document.body.scrollHeight+"被卷去的body高度"+document.body.scrollTop+"浏览器的高度"+window.innerHeight)
+                    if(document.body.scrollTop >= (document.body.scrollHeight-window.innerHeight)) {
+                        $(".waiting").css("display","block");
+                        textnum = ++billbottomIndex;
+                        $(".waiting").css("display","block");
+                    }
+                    if(textnum != 0) {
+                        addSongs(handleUrl(currentTag),20*textnum);
+                        return;
+                    }
+                }
+            }
+
+        //请求数据填充li
+        function addSongs(type,offset) {
+            getAjax(
+                "http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.billboard.billList&type="+type+"&size=20&offset="+offset,
+                "get",
+                "jsonp",
+                function (data) {
+                    $(".waiting").css("display","none");
+                    var songList = data.song_list;
+                    if(songList == null) {
+                        $(".waiting").html("");
+//                        $(".waiting").html("歌曲到底了！");
+                    } else {
+                        var str = "";
+                        for(var i=0;i<songList.length;i++) {
+                            billboardIndex++;
+                            str += '<li title="'+songList[i].title+'" data-songid="'+songList[i].song_id+'">\n' +
+                                '                    <span class="content-song-order">'+(billboardIndex)+'.</span>\n' +
+                                '                    <span class="content-song-title">'+songList[i].title+'</span>\n' +
+                                '                    <span class="content-song-author">'+songList[i].author+'</span>\n' +
+                                '                    <span class="content-song-album">'+songList[i].album_title+'</span>\n' +
+                                '                </li>';
+                        }
+                        $(".billboard-content>ul").append(str);
+                        //为每个li绑定点击事件--播放音乐
+                        $(".billboard-content li").each(function (index,ele) {
+                            $(ele).get(0).onclick = function () {
+                                window.sessionStorage.setItem("songId",$(ele).attr("data-songId"));
+                                window.open("playing.html");
+                            }
+                        });
+                    }
+                }
+            );
+        }
+    </script>
+</body>
+</html>
