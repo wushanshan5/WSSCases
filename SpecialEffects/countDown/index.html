@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 500px;
+            font: 800 25px/40px "simsun";
+            margin: 200px auto;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var div = document.getElementsByTagName("div")[0];
+        var aimDate = new Date("2018/11/11 11:11:11");
+        var msSum = aimDate.getTime();//获取目标的总毫秒数
+        var timer = setInterval(function () {
+            var msNow = new Date().getTime();//获取当前时间的总毫秒数
+            var MS = msSum-msNow;//MS为当前时间距离双十一的总毫秒数
+            var days = parseInt(MS/1000/60/60/24);// MS/1000/60/60/24为天数，在对其进行取整
+            var hours = parseInt(MS/1000/60/60%24);// MS/1000/60/60%24为除去天数后的小时数，在对其进行取整
+            var minutes = parseInt(MS/1000/60%60);// MS/1000/60%60为除去天数，小时数，剩下的分钟数，在对其进行取整
+            var seconds = parseInt(MS/1000%60);// MS/1000%60为除去天数，小时数，分钟数，剩下的秒数，在对其进行取整
+            var mseconds = parseInt(MS%1000);// MS/1000%60为除去天数，小时数，分钟数，秒数，剩下的毫秒数，在对其进行取整
+            //对天数，小时数，分钟数，秒数，毫秒数进行长度判断
+            days = days<10?"0"+days:days;
+            hours = hours<10?"0"+hours:hours;
+            minutes = minutes<10?"0"+minutes:minutes;
+            seconds = seconds<10?"0"+seconds:seconds;
+            if(mseconds<10){
+                mseconds = "00"+mseconds;
+            }else if (mseconds < 100){
+                mseconds = "0"+seconds
+            }
+            div.innerHTML = "距离双十一还有："+days+"天"+hours+"时"+minutes+"分"+seconds+"秒"+mseconds+"毫秒";
+            if(seconds == 0){
+                clearInterval(timer);
+            }
+        },100);
+        </script>
+</body>
+</html>
