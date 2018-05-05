@@ -28,6 +28,7 @@ body {
   left: 33px;
   top: 33px;
   display: none;
+  z-index: 100;
 }
 .header .container-fluid .row > div:nth-child(1):hover img {
   display: block;
