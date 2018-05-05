@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body {
+            padding: 0;
+            margin: 0;
+            background: url("images/2.jpg");
+        }
+        .box {
+            width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        img {
+            margin: 5px;
+            width: 150px;
+            height: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="images/2.jpg" alt="" class="img1">
+        <img src="images/3.jpg" alt="" class="img2">
+        <img src="images/4.jpg" alt="" class="img3">
+        <img src="images/5.jpg" alt="" class="img4">
+    </div>
+    <script type="text/javascript">
+        //1.复杂版
+//        onclick="fn1();"
+//        onclick="fn2();"
+//        onclick="fn3();"
+//        onclick="fn4();"
+//        尽量少用getElementByClassName，兼容性不好
+        var imgArr = document.getElementsByTagName("img");
+//        var body = document.getElementsByTagName("body")[0];
+        var body = document.body;//body的获取js内部帮我们优化了。
+        var fn1 = function () {
+            body.style.background = "url(images/2.jpg)";
+        }
+        var fn2 = function () {
+            body.style.background = "url(images/3.jpg)";
+        }
+        var fn3 = function () {
+            body.style.background = "url(images/4.jpg)";
+        }
+        var fn4 = function () {
+            body.style.background = "url(images/5.jpg)";
+        }
+        //2.简单版
+        for(var i=0;i<imgArr.length;i++){
+            imgArr[i].index = i;
+            imgArr[i].onclick = function () {
+//                方法一：直接变化图片路径
+                body.style.background = "url(images/"+(this.index+2)+".jpg)";
+//                方法二：将img的src赋给body的背景路径
+                body.style.background = "url("+(this.src)+")";
+            }
+        }
+    </script>
+</body>
+</html>
