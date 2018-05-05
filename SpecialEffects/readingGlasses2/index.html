@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../scroll.js"></script>
+    <style>
+        .smallImg {
+            position: relative;
+            float: left;
+            width: 400px;
+            height: 300px;
+            margin: 100px;
+            cursor: move;
+            border: 1px solid #000;
+        }
+        .mask {
+            /*在这里不要设置宽高，去js部分按比例来设置宽高*/
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: move;
+            background-color: rgba(255,200,20,.4);
+        }
+        .smallImg>img {
+            width: 100%;
+            height: 100%;
+        }
+        .bigPartImg {
+            border: 1px solid #000;
+            display: none;
+            position: relative;
+            float: left;
+            width: 300px;
+            height: 300px;
+            margin-top: 100px;
+            overflow: hidden;/*被遮住部分，不占位置*/
+        }
+        .bigPartImg>img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <!--放大镜效果二  用一张大图片进行做放大镜的效果-->
+    <div class="smallImg">
+        <img src="images/flower.jpg" alt="">
+        <div class="mask"></div>
+    </div>
+    <div class="bigPartImg">
+        <img src="images/flower.jpg" alt="">
+    </div>
+    <script>
+        window.onload = function () {
+            var smallImg = document.getElementsByClassName("smallImg")[0];
+            var mask = smallImg.children[1];
+            var bigPartImg = document.getElementsByClassName("bigPartImg")[0];
+            var bigImg = bigPartImg.children[0];
+            //设置缩放比例
+            var percent = 4;
+            mask.style.width = parseInt(smallImg.offsetWidth/percent)+"px";
+            mask.style.height = parseInt(smallImg.offsetHeight/percent)+"px";
+            bigImg.style.width = smallImg.offsetWidth*percent+"px";
+            bigImg.style.height = smallImg.offsetHeight*percent+"px";
+
+            //需求1.鼠标放在smallImg上，mask出现，放大区域出现
+            smallImg.onmouseover = function () {
+                //在js上设置mask的宽高可以减少不必要的运算 成比例原则 mask/smallImg=bigPartImg/bigImg
+                mask.style.display = "block";
+                bigPartImg.style.display = "block";
+            }
+            smallImg.onmouseout = function () {
+                mask.style.display = "none";
+                bigPartImg.style.display = "none";
+            }
+            //需求2.mask跟随鼠标，且鼠标一直在mask的中间
+                //（1）鼠标在smallImg中运动时，mask要跟随
+                smallImg.onmousemove = function (eve) {
+                    eve = event || window.event;
+                   //获取鼠标在smallImg中的的坐标
+                    var mouseTop = (eve.pageY || scroll().top+eve.clientY)-smallImg.offsetTop;
+                    var mouseLeft = (eve.pageX || scroll().left+eve.clientX)-smallImg.offsetLeft;
+                    //将鼠标的坐标赋给mask，使其跟随
+                    var maskTop = mouseTop-mask.offsetHeight/2;
+                    var maskLeft = mouseLeft-mask.offsetWidth/2;
+                    //mask不能在smallImg的区域外显示，所以要进行判断
+                    if(maskTop<=0){
+                        maskTop = 0;
+                    }
+                    //mask的运动范围在0-（smallImg-mask）之间
+                    if(maskTop>=smallImg.offsetHeight-mask.offsetHeight){
+                        maskTop = smallImg.offsetHeight-mask.offsetHeight;
+                    }
+                    //同理
+                    if(maskLeft<=0){
+                        maskLeft = 0;
+                    }
+                    if(maskLeft>=smallImg.offsetWidth-mask.offsetWidth){
+                        maskLeft = smallImg.offsetWidth-mask.offsetWidth;
+                    }
+                    mask.style.top = maskTop+"px";
+                    mask.style.left = maskLeft+"px";
+                    // (2)利用缩放比例，让大图片移动，来实现放大的效果 比例= bigPartImg/mask
+                    bigImg.style.top = -percent*maskTop+"px";
+                    bigImg.style.left = -percent*maskLeft+"px";
+                }
+
+
+
+        }
+    </script>
+</body>
+</html>
