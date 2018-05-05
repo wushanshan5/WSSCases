@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        .nav {
+            height: 30px;
+            background-color: #036663;
+        }
+        .nav>a {
+            color: #fff;
+            text-decoration: none;
+            padding-left: 50px;
+            font: 14px/30px "simsun";
+        }
+        .message {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            width: 400px;
+            height: 300px;
+            border: 1px solid #999;
+            box-shadow: 5px 5px 10px #555;
+            padding: 5px;
+            background-color: #EEEEEE;
+        }
+        .content {
+            width: 400px;
+            height: 300px;
+            background-color: #fff;
+        }
+        .title {
+            cursor: move;
+            color: #fff;
+            font-style: italic;
+            height: 25px;
+            background-color: #7C9299;
+            border-bottom: 1px solid #336699;
+        }
+        .title>div {
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+    <script src="scroll.js"></script>
+</head>
+<body>
+    <div class="nav">
+        <a href="#">注册信息</a>
+    </div>
+    <div class="message">
+        <div class="content">
+            <div class="title">&nbsp;&nbsp;注册信息（可以拖拽）
+                <div class="close">【关闭】</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            var message = document.getElementsByClassName("message")[0];
+            var close = document.getElementsByClassName("close")[0];
+            var messageTitle = message.getElementsByClassName("title")[0];
+            close.onclick = function () {
+                message.style.display = "none";
+            }
+            //信息的拖拽事件要分为两个时间来执行
+            //1.鼠标在title部分触动按下事件 2.鼠标发生移动事件
+            messageTitle.onmousedown = function (event) {
+                event = event || window.event;
+                //当鼠标按下时，要记录鼠标的位置
+                var mouseTop = event.pageY || scroll().top+event.clientY;
+                var mouseLeft = event.pageX || scroll().left+event.clientX;
+                //pageX和pageY分别表示鼠标在message内的坐标
+                var pageX = mouseLeft-message.offsetLeft;
+                var pageY = mouseTop-message.offsetTop;
+                //用document就不会出现message脱离鼠标的情况
+                document.onmousemove = function (event) {
+                    //老5步
+                    event = event || window.event;
+                    //移动时获取鼠标的位置
+                    var mouseYY = event.pageY || scroll().top+event.clientY;
+                    var mouseXX = event.pageX || scroll().left+event.clientX;
+                    var xx = mouseXX-pageX;
+                    var yy = mouseYY-pageY;
+                    //使message跟随鼠标运动,且鼠标在message上的位置不能发生改变
+                    message.style.top = yy+"px";
+                    message.style.left = xx+"px"
+                    //当鼠标按下移动时，文字会被选中，因此用getselected来解决
+                    //（禁止文本被选中）如果被选中，则取消选中，要不然，直接将被选中的设为空，这样文字不会被选中
+                    window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+                }
+            }
+            messageTitle.onmouseup = function () {
+                //当鼠标起来时，需要把move事件进行解绑
+                document.onmousemove = null;
+            }
+        }
+    </script>
+</body>
+</html>
