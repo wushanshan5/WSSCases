@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: #eee;
+        }
+        .paragraph {
+            width: 800px;
+            margin: 50px auto;
+        }
+        .word {
+            position: relative;
+            z-index: 2;
+            float: left;
+            font: 90px/100px "Microsoft Yahei";
+            color: #000;
+        }
+        .word::before,.word::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: attr(data-text);
+            font: 90px/100px "Microsoft Yahei";
+            transform: scale(0.95,1);
+            color: rgba(0,0,0,0.3);
+            transform-origin: left top;
+            transition: transform 1s;
+        }
+        .word::after {
+            z-index: 1;
+            color: #fff;
+        }
+        .paragraph:hover .word::after {
+            transform: rotateY(40deg) skew(0,5deg);
+        }
+        .paragraph:hover .word::before {
+            transform: skew(0,20deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="paragraph">
+        <div class="word" data-text="好">好</div>
+        <div class="word" data-text="好">好</div>
+        <div class="word" data-text="学">学</div>
+        <div class="word" data-text="习">习</div>
+        <div class="word" data-text="天">天</div>
+        <div class="word" data-text="天">天</div>
+        <div class="word" data-text="向">向</div>
+        <div class="word" data-text="上">上</div>
+    </div>
+</body>
+</html>
