@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .head {
+            width: 300px;
+            box-shadow: -5px 5px 30px 5px #ccc;
+            height: 290px;
+            border-radius: 140px;
+            border: 2px solid #000000;
+            background-color: rgba(8,184,233,0.9);
+        }
+        .cat {
+            width: 300px;
+            padding-top: 20px;
+            margin: 0 auto;
+        }
+        .face {
+            position: relative;
+            top: 83px;
+            left: 26px;
+            width: 250px;
+            height: 200px;
+            border-radius: 160px/120px;
+            background-color: #fff;
+            box-shadow: 5px -5px 25px 5px #ccc inset;
+        }
+        .right-eye,.left-eye {
+            position: absolute;
+            top: -50px;
+            width: 80px;
+            height: 90px;
+            background-color: #fff;
+            border: 2px solid #000;
+            border-radius: 37px;
+        }
+        .right-eye>i,.left-eye>i {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: #000;
+            border-radius: 8px;
+            top: 44px;
+        }
+        .right-eye>i {
+            left: 8px;
+        }
+        .left-eye>i {
+            left: 53px;
+        }
+        .right-eye {
+            left: 125px;
+        }
+        .left-eye {
+            left: 42px;
+        }
+        .nose {
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            top: 27px;
+            left: 108px;
+            border-radius: 13px;
+            background-color: #C93300;
+            border: 2px solid #000;
+        }
+        .nose::after {
+            content: "";
+            position: absolute;
+            width: 0px;
+            top: 5px;
+            left: 15px;
+            height: 0px;
+            box-shadow: 5px 5px 10px 5px #fff;
+            background-color: #fff;
+        }
+        .whisker {
+            position: absolute;
+            height: 70px;
+            width: 2px;
+            background-color: #000;
+        }
+        .whisker-top-left {
+            top: 40px;
+            left: 48px;
+            /*该属性用于旋转div元素*/
+            transform: rotate(110deg);
+        }
+        .whisker-top-right {
+            top: 40px;
+            right: 48px;
+            transform: rotate(73deg);
+        }
+        .whisker-center-left {
+            top: 65px;
+            left: 48px;
+            transform: rotate(90deg);
+        }
+        .whisker-center-right {
+            top: 65px;
+            right: 48px;
+            /*该属性用于旋转div元素*/
+            transform: rotate(90deg);
+        }
+        .whisker-bottom-left {
+            top: 90px;
+            left: 48px;
+            transform: rotate(73deg);
+        }
+        .whisker-bottom-right {
+            top: 90px;
+            right: 48px;
+            transform: rotate(110deg);
+        }
+        .mouse {
+            position: absolute;
+            bottom: 26px;
+            left: 50%;
+            margin-left: -70px;
+            height: 120px;
+            width: 140px;
+            border-bottom: 3px solid #333;
+            border-radius: 128px/70px;
+        }
+        .straight {
+            width: 3px;
+            height: 112px;
+            position: absolute;
+            top: 59px;
+            left: 123px;
+            background-color: #333333;
+        }
+        .body {
+            margin: 0 auto;
+            position: relative;
+            top: -20px;
+            width: 200px;
+            height: 80px;
+            background-color: rgba(8,184,233,1);
+            border: 2px solid #000;
+            border-top: 0;
+        }
+        .neck {
+            z-index: 4;
+            position: absolute;
+            left: -11px;
+            width: 222px;
+            height: 20px;
+            margin: 0 auto;
+            background-color: #AF2C00;
+            border: 2px solid #000;
+            border-radius: 20px;
+        }
+        .left-hand,.right-hand {
+            z-index: 1;
+            position: absolute;
+            width: 75px;
+            height: 50px;
+            background-color:  rgba(8,184,233,1);
+            border:2px solid #000;
+            border-left: 0;
+            top: 30px;
+        }
+        .left-hand {
+            left: -64px;
+            transform: rotate(144deg);
+        }
+        .right-hand {
+            transform: rotate(35deg);
+            right: -64px;
+        }
+        .left-hand::after,.right-hand::after {
+            content: "";
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid #000;
+            background-color: #fff;
+            border-radius: 30px;
+        }
+        .left-hand::after {
+            top: -6px;
+            left: 37px;
+        }
+        .right-hand::after {
+            top: -7px;
+            right: -25px;
+        }
+            /*footer 部分*/
+        .left-leg,.right-leg {
+            z-index: 3;
+            position: absolute;
+            top: 55px;
+            border-bottom: 2px solid #000;
+            background-color: rgba(8,184,233,1);
+            width: 100px;
+            height: 120px;
+        }
+        .left-leg {
+            left: -2px;
+            border-left: 2px solid #000;
+        }
+        .right-leg {
+            right: -2px;
+            border-right: 2px solid #000;
+        }
+        .left-leg::after,.right-leg::after {
+            position: absolute;
+            bottom: -33px;
+            background-color: #fff;
+            content: "";
+            width: 113px;
+            height: 30px;
+            border-radius: 42px 30px 30px 20px/40px 30px 30px 20px;
+            border: 2px solid #000;
+            box-shadow: 15px -3px 27px -6px #ccc inset;
+        }
+        .left-leg::after {
+            left: -23px;
+            z-index: 5;
+        }
+        .right-leg::after {
+            right: -20px;
+            z-index: 5;
+        }
+        .leg-center {
+            width: 20px;
+            height: 10px;
+            border-top: 2px solid #000;
+            background-color: #fff;
+            z-index: 4;
+            position: absolute;
+            bottom: -97px;
+            left: 50%;
+            margin-left: -10px;
+            border-radius: 10px 10px 0 0;
+
+        }
+        .belly {
+            width: 154px;
+            height: 154px;
+            border: 2px solid #000;
+            position: absolute;
+            top: 0;
+            background-color: #fff;
+            left: 50%;
+            margin-left: -77px;
+            border-radius: 77px;
+            z-index: 3;
+        }
+        .pocket {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            margin-left: -60px;
+            width: 120px;
+            height: 60px;
+            border: 2px solid #000;
+            border-radius:  0 0 60px 60px;
+        }
+        .ring {
+            position: absolute;
+            z-index: 5;
+            left: 50%;
+            top: 8px;
+            margin-left: -18px;
+            width: 36px;
+            height: 36px;
+            border: 2px solid #000;
+            border-radius: 20px;
+            background-color: #EBE31C;
+            overflow: hidden;
+        }
+        .ring>i:first-child {
+            display: block;
+            margin-top: 10px;
+            border-top: 2px solid #333;
+        }
+        .ring>i:nth-child(2) {
+            display: block;
+            margin-top: 2px;
+            border-top: 2px solid #333;
+        }
+        .ring>i:last-child {
+            display: block;
+            width: 0;
+            height: 10px;
+            margin: 0 auto;
+            border-left: 3px solid #333;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            margin: 3px auto 0 auto;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="cat">
+        <div class="head">
+            <div class="face">
+                <div class="left-eye">
+                    <i></i>
+                </div>
+                <div class="right-eye">
+                    <i></i>
+                </div>
+                <div class="nose"></div>
+                <div class="whisker whisker-top-left"></div>
+                <div class="whisker whisker-center-left"></div>
+                <div class="whisker whisker-bottom-left"></div>
+                <div class="whisker whisker-top-right"></div>
+                <div class="whisker whisker-center-right"></div>
+                <div class="whisker whisker-bottom-right"></div>
+                <div class="straight"></div>
+                <div class="mouse"></div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="neck"></div>
+            <div class="left-hand"></div>
+            <div class="right-hand"></div>
+            <div class="left-leg"></div>
+            <div class="leg-center"></div>
+            <div class="right-leg"></div>
+            <div class="ring">
+                <i></i>
+                <i></i>
+                <div class="dot"></div>
+                <i></i>
+            </div>
+            <div class="belly">
+                <div class="pocket"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
