@@ -1,0 +1,62 @@
+/*CSS初始化*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body {
+    height: 100%;
+    background-color: #ddd;
+}
+/*box部分start*/
+.box {
+    width: 600px;
+    margin: 100px auto 0;
+}
+/*textarea部分start*/
+textarea {
+    width: 600px;
+    height: 250px;
+    padding: 10px;
+    font-size: 20px;
+    resize: none;
+}
+/*textarea部分end*/
+
+/*key部分start*/
+.key {
+    width: 100%;
+    height: 300px;
+}
+.row {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+}
+.key>.row>span {
+    font-size: 13px;
+    height: 35px;
+    line-height: 35px;
+    display: inline-block;
+    width: calc(100%/17);
+    text-align: center;
+    background-color: #fff;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.key>.row>span:hover {
+    border: 1px solid #FFF188;
+    background-color: #FFF1C2;
+    cursor: pointer;
+    font-size: 12px;
+}
+.key>.row>span.col-2 {
+    width: calc((100%/15)*1.9);
+}
+.key>.row>span.col-3 {
+    width: calc((100%/15)*2.4);
+}
+.key>.row>span.col-15 {
+    width: 100%;
+}
+/*key部分end*/

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟键盘</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="box">
+        <textarea autofocus name="" id="" cols="30" rows="10"></textarea>
+        <div class="key">
+            <div class="row">
+                <span class="code content">`</span>
+                <span class="code content">1</span>
+                <span class="code content">2</span>
+                <span class="code content">3</span>
+                <span class="code content">4</span>
+                <span class="code content">5</span>
+                <span class="code content">6</span>
+                <span class="code content">7</span>
+                <span class="code content">8</span>
+                <span class="code content">9</span>
+                <span class="code content">0</span>
+                <span class="code content">-</span>
+                <span class="code content">=</span>
+                <span class="col-2">delete</span>
+            </div>
+            <div class="row">
+                <span class="col-2 content-t">tab</span>
+                <span class="letter content">q</span>
+                <span class="letter content">w</span>
+                <span class="letter content">e</span>
+                <span class="letter content">r</span>
+                <span class="letter content">t</span>
+                <span class="letter content">y</span>
+                <span class="letter content">u</span>
+                <span class="letter content">i</span>
+                <span class="letter content">o</span>
+                <span class="letter content">p</span>
+                <span class="code content">[</span>
+                <span class="code content">]</span>
+                <span class="code content">\</span>
+            </div>
+            <div class="row">
+                <span class="col-2 caps-lock">caps lock</span>
+                <span class="letter content">a</span>
+                <span class="letter content">s</span>
+                <span class="letter content">d</span>
+                <span class="letter content">f</span>
+                <span class="letter content">g</span>
+                <span class="letter content">h</span>
+                <span class="letter content">j</span>
+                <span class="letter content">k</span>
+                <span class="letter content">l</span>
+                <span class="code content">;</span>
+                <span class="code content">'</span>
+                <span class="col-2 return">return</span>
+            </div>
+            <div class="row">
+                <span class="col-3 shift">shift</span>
+                <span class="letter content">z</span>
+                <span class="letter content">x</span>
+                <span class="letter content">c</span>
+                <span class="letter content">v</span>
+                <span class="letter content">b</span>
+                <span class="letter content">n</span>
+                <span class="letter content">m</span>
+                <span class="code content">,</span>
+                <span class="code content">.</span>
+                <span class="code content">/</span>
+                <span class="col-3 shift">shift</span>
+            </div>
+            <div class="row">
+                <span class="col-15 content">&nbsp;</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    window.onload = function () {
+        var letterArr = {
+            "`":"~",
+            "1":"!",
+            "2":"@",
+            "3":"#",
+            "4":"$",
+            "5":"%",
+            "6":"^",
+            "7":"&amp;",
+            "8":"*",
+            "9":"(",
+            "0":")",
+            "-":"_",
+            "=":"+",
+            "[":"{",
+            "]":"}",
+            "\\":"|",
+            ";":":",
+            "'":"\"",
+            ",":"&lt;",
+            ".":"&gt;",
+            "/":"?"
+        };
+        var resletterArr = {
+            "~":"`",
+            "!":"1",
+            "@":"2",
+            "#":"3",
+            "$":"4",
+            "%":"5",
+            "^":"6",
+            "&amp;":"7",
+            "*":"8",
+            "(":"9",
+            ")":"0",
+            "_":"-",
+            "+":"=",
+            "{":"[",
+            "}":"]",
+            "|":"\\",
+            ":":";",
+            "\"":"'",
+            "&lt;":",",
+            "&gt;":".",
+            "?":"/"
+        };
+        var letter = document.querySelectorAll(".letter");
+        var code = document.querySelectorAll(".code");
+        var capsLock = document.querySelector(".caps-lock");
+        //capslock的点击事件
+        capsLock.onclick = function () {
+            //利用正则表达式来判断是否是大写还是小写
+            if(/[a-z]/.test(letter[0].innerHTML)) {
+                for(var i=0;i<letter.length;i++) {
+                    letter[i].innerHTML = letter[i].innerHTML.toUpperCase();
+                }
+            } else {
+                for(var i=0;i<letter.length;i++) {
+                    letter[i].innerHTML = letter[i].innerHTML.toLowerCase();
+                }
+            }
+        }
+        //shift的点击事件
+        var shift = document.querySelectorAll(".shift");
+        shift[0].onclick = function () {
+            //利用正则表达式来判断是否是大写还是小写
+            if(/[0-9]/.test(code[2].innerHTML)) {
+                for(var i=0;i<letter.length;i++) {
+                    letter[i].innerHTML = letter[i].innerHTML.toUpperCase();
+                }
+                for(var j=0;j<code.length;j++) {
+                    code[j].innerHTML = letterArr[code[j].innerHTML];
+                }
+            } else {
+                for(var i=0;i<letter.length;i++) {
+                    letter[i].innerHTML = letter[i].innerHTML.toLowerCase();
+                }
+                for(var j=0;j<code.length;j++) {
+                    code[j].innerHTML = resletterArr[code[j].innerHTML];
+                }
+            }
+        }
+        shift[1].onclick = function () {
+            //利用正则表达式来判断是否是大写还是小写
+            if(/[0-9]/.test(code[2].innerHTML)) {
+                for(var i=0;i<letter.length;i++) {
+                    letter[i].innerHTML = letter[i].innerHTML.toUpperCase();
+                }
+                for(var j=0;j<code.length;j++) {
+                    code[j].innerHTML = letterArr[code[j].innerHTML];
+                }
+            } else {
+                for(var i=0;i<letter.length;i++) {
+                    letter[i].innerHTML = letter[i].innerHTML.toLowerCase();
+                }
+                for(var j=0;j<code.length;j++) {
+                    code[j].innerHTML = resletterArr[code[j].innerHTML];
+                }
+            }
+        }
+        //return 的点击事件
+        var ret = document.querySelector(".return");
+        ret.onclick = function () {
+            for(var i=0;i<letter.length;i++) {
+                letter[i].innerHTML = letter[i].innerHTML.toLowerCase();
+            }
+            if(!(/[0-9]/.test(code[2].innerHTML))) {
+                for(var j=0;j<code.length;j++) {
+                    code[j].innerHTML = resletterArr[code[j].innerHTML];
+                }
+            }
+        }
+        //实现输入事件
+        var textarea = document.querySelector(".box>textarea");
+        var content = document.querySelectorAll(".content");
+        for(var k=0;k<content.length;k++) {
+            content[k].onclick = function () {
+                textarea.value += this.innerHTML;
+            }
+        }
+        //tab的点击事件
+        var tabT = document.querySelector(".content-t");
+        tabT.onclick = function () {
+            textarea.value += '\t';
+        }
+
+//        document.querySelector("textarea").onkeypress=function(e) {
+//            var keynum = window.event ? e.keyCode : e.which; //获取键盘码
+//            var keychar = String.fromCharCode(keynum);//获取键盘码对应的字符
+//            alert(keynum);
+//        }
+    }
+</script>
