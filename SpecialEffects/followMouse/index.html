@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 90px;
+            height: 70px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/img.jpg" alt="">
+    <script>
+        //老三步
+        //获取事件源
+        var img = document.getElementsByTagName("img")[0];
+        //绑定事件驱动程序
+        window.onclick = function (event) {
+            //新五步
+            event = event || window.event;
+            //由于pageX的兼容性不好，所以要用兼容性写法
+            var targetX = event.pageX || scroll().left+event.clientX;
+            var targetY = event.pageY || scroll().top+event.clientY;
+            //这里减去img.offsetWidth/2使得鼠标在图片的中间，而不是左上角
+            var xx = targetX-img.offsetWidth/2;
+            var yy = targetY-img.offsetHeight/2;
+            animate(img,xx,yy);
+        }
+        //需要将图片缓动运动到鼠标点击的位置
+        function animate(ele,targetX,targetY) {
+            clearInterval(ele.timer);
+            ele.timer = setInterval(function () {
+                var stepX = (targetX - ele.offsetLeft) / 10;
+                stepX = stepX > 0 ? Math.ceil(stepX) : Math.floor(stepX);
+                ele.style.left = ele.offsetLeft + stepX + "px";
+
+                var stepY = (targetY - ele.offsetTop) / 10;
+                stepY = stepY > 0 ? Math.ceil(stepY) : Math.floor(stepY);
+                ele.style.top = ele.offsetTop + stepY + "px";
+                if (Math.abs(targetX - ele.offsetLeft) <= Math.abs(stepX) && Math.abs(targetY - ele.offsetTop) <= Math.abs(stepY)) {
+                    ele.style.top = targetY + "px";
+                    ele.style.left = targetX + "px";
+                    clearInterval(ele.timer);
+                }
+            }, 20);
+        }
+        //scroll（）方法——兼容性写法
+        function scroll() {
+            if(window.pageXOffset !== undefined){
+                return {"top":window.pageYOffset,
+                    "left":window.pageXOffset};
+            }else if(document.compatMode == "CSS1Compat"){
+                return {"top":document.documentElement.top,
+                    "left":document.documentElement.left};
+            }else {
+                return {"top":document.body.scrollTop,
+                    "left":document.body.scrollLeft};
+            }
+        }
+    </script>
+</body>
+</html>
