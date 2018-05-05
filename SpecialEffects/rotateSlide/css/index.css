@@ -1,0 +1,40 @@
+    body,ul,li {
+        padding: 0;
+        margin: 0;
+    }
+    .box {
+        text-align: center;
+        position: relative;
+        width: 1260px;
+        height: 600px;
+        margin: 0 auto;
+    }
+    ul {
+        width: 800px;
+        margin: 0 auto;
+    }
+    li {
+        list-style: none;
+        position: absolute;
+
+    }
+    li img {
+        width: 100%;
+        height: 100%;
+    }
+    .left {
+        cursor: pointer;
+        position: absolute;
+        z-index: 5;
+        top: 50%;
+        left: 100px;
+        opacity: 0;
+    }
+    .right {
+        cursor: pointer;
+        position: absolute;
+        z-index: 5;
+        top: 50%;
+        right: 100px;
+        opacity: 0;
+    }
