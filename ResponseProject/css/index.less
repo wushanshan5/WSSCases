@@ -1,0 +1,547 @@
+html,body {
+    background-color: rgba(200,200,200,0.1);
+    min-width: 350px;
+}
+* {
+  box-sizing: border-box;
+}
+/*.header部分 start*/
+
+.header {
+    .container-fluid {
+        height: 40px;
+        .row {
+            &>div {
+                text-align: center;
+                border: 1px solid #aaa;
+                line-height: 40px;
+                a {
+                    color: #111;
+                }
+            }
+            &>div:nth-child(1) {
+                position: relative;
+                img {
+                    position: absolute;
+                    width: 150px;
+                    height: 150px;
+                    left: 33px;
+                    top: 33px;
+                    display: none;
+                }
+                }
+                &>div:nth-child(1):hover {
+                img {
+                    display: block;
+                }
+                }           &>div:nth-child(n+3) {
+                a {
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+}
+
+/*.header部分 start*/
+
+/*.my-navbar部分 start*/
+    /* 修改bootstrap内的默认样式
+        方法：
+            找到确定的类名，在bootstrap中全部找出，并修改类名，修改样式
+     */
+.my-navbar {
+  min-height: 80px;
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+}
+.my-navbar .navbar-header {
+    height: 80px;
+}
+.my-navbar .navbar-brand {
+  color: #777;
+}
+.my-navbar .navbar-brand:hover,
+.my-navbar .navbar-brand:focus {
+  color: #5e5e5e;
+  background-color: transparent;
+}
+.my-navbar .navbar-brand>span:first-child {
+    color: red;
+    font-size: 50px;
+    top: -32px;
+    left: -5px;
+}
+.my-navbar .navbar-brand>span:last-child {
+    top: -14px;
+    left: -4px;
+    color: #000;
+    font-size: 85px;
+}
+.my-navbar .navbar-text {
+  color: #777;
+}
+.my-navbar .navbar-nav {
+    /* height: 70px;*/
+}
+.my-navbar .navbar-nav > li > a {
+  line-height: 50px;
+  color: #777;
+}
+.my-navbar .navbar-nav > li > a:hover,
+.my-navbar .navbar-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom: 3px solid red;
+}
+.my-navbar .navbar-nav > .active > a,
+.my-navbar .navbar-nav > .active > a:hover,
+.my-navbar .navbar-nav > .active > a:focus {
+  color: #555;
+  border-bottom: 3px solid red;
+}
+.my-navbar .navbar-nav > .disabled > a,
+.my-navbar .navbar-nav > .disabled > a:hover,
+.my-navbar .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+.my-navbar .navbar-toggle {
+  border-color: #ddd;
+}
+.my-navbar .navbar-toggle:hover,
+.my-navbar .navbar-toggle:focus {
+  background-color: #ddd;
+}
+.my-navbar .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+.my-navbar .navbar-collapse,
+.my-navbar .navbar-form {
+  border-color: #e7e7e7;
+}
+.my-navbar .navbar-nav > .open > a,
+.my-navbar .navbar-nav > .open > a:hover,
+.my-navbar .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+@media (max-width: 767px) {
+  .my-navbar .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+  .my-navbar .navbar-nav .open .dropdown-menu > li > a:hover,
+  .my-navbar .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+    background-color: transparent;
+  }
+  .my-navbar .navbar-nav .open .dropdown-menu > .active > a,
+  .my-navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .my-navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+  }
+  .my-navbar .navbar-nav .open .dropdown-menu > .disabled > a,
+  .my-navbar .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .my-navbar .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+}
+.my-navbar .navbar-link {
+  color: #777;
+}
+.my-navbar .navbar-link:hover {
+  color: #333;
+}
+.my-navbar .btn-link {
+  color: #777;
+}
+.my-navbar .btn-link:hover,
+.my-navbar .btn-link:focus {
+  color: #333;
+}
+.my-navbar .btn-link[disabled]:hover,
+fieldset[disabled] .my-navbar .btn-link:hover,
+.my-navbar .btn-link[disabled]:focus,
+fieldset[disabled] .my-navbar .btn-link:focus {
+  color: #ccc;
+}
+
+/*.my-navbar部分 end*/
+
+
+/*.banner 部分 start*/
+
+.banner {
+    .carousel-inner {
+        .banner-big-item {
+        width: 100%;
+        height: 410px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+            &.banner-big-item1 {
+                background-image: url('../images/slide_01_2000x410.jpg');
+            }
+            &.banner-big-item2 {
+                background-image: url('../images/slide_02_2000x410.jpg');
+            }
+            &.banner-big-item3 {
+                background-image: url('../images/slide_03_2000x410.jpg');
+            }
+            &.banner-big-item4 {
+                background-image: url('../images/slide_04_2000x410.jpg');
+            }
+        }
+    }
+
+}
+
+/*.banner 部分 end*/
+
+/* certify 部分start */
+
+.certify {
+    .container-fluid {
+        a {
+            display: block;
+            color: #666;
+            padding: 40px 20px;
+            &>span {
+                font-size: 50px;
+                float: left;
+                padding: 5px;
+            }
+            &>.certify-content {
+                float: left;
+                &>span {
+                    font-size: 18px;
+                }
+                &>p {
+                    font-size: 15px;
+                }
+            }
+        }
+        a:hover {
+            color: red;
+            &>.certify-content {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+/* certify 部分end */
+
+/* wait部分 start */
+.wait {
+    height: 50px;
+    padding: 0 250px;
+    line-height: 48px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    &>p {
+        float: left;
+        margin: 0;
+        &>a {
+            color: red;
+            border-bottom: 1px dashed red;
+        }
+    }
+    &>a {
+        float: right;
+        color: #666;
+    }
+    &>a:hover {
+        color: red;
+        text-decoration: underline;
+    }
+}
+/* wait部分 end */
+
+
+/* spectial 部分 start*/
+
+.my-nav-tabs {
+    margin: 0 50px;
+  border-bottom: 1px solid #ddd;
+}
+.my-nav-tabs > li {
+  float: left;
+  margin-bottom: -1px;
+}
+.my-nav-tabs > li > a {
+    color: #555;
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+.my-nav-tabs > li > a:hover {
+    background-color: #ddd;
+}
+.my-nav-tabs > li.active > a,
+.my-nav-tabs > li.active > a:hover,
+.my-nav-tabs > li.active > a:focus {
+  color: #555;
+  cursor: default;
+  background-color: #fff;
+  border-bottom: 3px solid red;
+}
+.my-nav-tabs.nav-justified {
+  width: 100%;
+  border-bottom: 0;
+}
+.my-nav-tabs.nav-justified > li {
+  float: none;
+}
+.my-nav-tabs.nav-justified > li > a {
+  margin-bottom: 5px;
+  text-align: center;
+}
+.my-nav-tabs.nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+@media (min-width: 768px) {
+  .my-nav-tabs.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  .my-nav-tabs.nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
+.my-nav-tabs.nav-justified > li > a {
+  margin-right: 0;
+  border-radius: 4px;
+}
+.my-nav-tabs.nav-justified > .active > a,
+.my-nav-tabs.nav-justified > .active > a:hover,
+.my-nav-tabs.nav-justified > .active > a:focus {
+  border: 1px solid #ddd;
+}
+
+.spectial {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #111;
+    ul {
+      margin: 0;
+    }
+    .tab-content {
+        .container {
+            &>div {
+                padding: 20px 10px;
+                &>a {
+                    display: block;
+                    box-shadow: 4px 4px 2px #aaa;
+                    background-color: red;
+                    color: #fff;
+                    font-weight: 600;
+                    height: 150px;
+                    h2 {
+                        text-align: center;
+                        font-size: 15px;
+                    }
+                    &>.container-fluid {
+                        line-height: 20px;
+                        width: 70%;
+                        float: left;
+                        p {
+                            margin: 0;
+                        }
+                    }
+                    &>.spectial-rate {
+                        padding-top: 45px;
+                        border-left: 2px dashed #fff;
+                        height: 100%;
+                        width: 30%;
+                        float: left;
+                        position: relative;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: -10px;
+                            left: -10px;
+                            width: 20px;
+                            height: 20px;
+                            background-color: #eee;
+                            border-radius: 10px;
+                            box-shadow: inset 0px -2px 2px grey;
+                        }
+                        &::after {
+                            position: absolute;
+                            border-radius: 10px;
+                            content: '';
+                            bottom: -10px;
+                            left: -10px;
+                            width: 20px;
+                            height: 20px;
+                            background-color: #eee;
+                             box-shadow: inset 0px 3px 2px grey;
+                        }
+                    }
+                }
+            }
+            &>div:nth-child(n+2) {
+                &>a {
+                    background-color: rgba(200,200,200,0.1);
+                    color: #999;
+                }
+            }
+        }
+    }
+}
+
+
+/* spectial 部分 end*/
+
+
+/* new部分start */
+.new {
+    .container {
+        &>div:first-child {
+                margin-top: 50px;
+                position: relative;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                font-size: 22px;
+                border-bottom: 1px solid #111;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    border-radius: 4px;
+                    bottom: -4px;
+                    right: -4px;
+                    width: 8px;
+                    height: 8px;
+                    border: 1px solid #111;
+                    background-color: #fff;
+                }
+        }
+        .tab-content {
+           ul {
+              list-style: none;
+              margin-top: 70px;
+              li {
+                  width: 100%;
+                  height: 45px;
+                  line-height: 45px;
+                  a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    color: #999;
+                  }
+              }
+           }
+        }
+    }
+}
+
+.my-nav-tabs2 {
+    position: relative;
+    border-bottom: 1px solid #ddd;
+}
+.my-nav-tabs2 > li {
+  margin-bottom: -1px;
+}
+.my-nav-tabs2 > li > a {
+    padding: 0;
+    text-align: center;
+    margin: 30px 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    line-height: 68px;
+    margin-right: 2px;
+    border: 1px solid transparent;
+    background-color: #aaa;
+    &>span {
+        font-size: 40px;
+        color: #fff;
+        line-height: 80px;
+    }
+}
+
+.my-nav-tabs2::before {
+    content: '';
+    border-left: 1px dashed #aaa;
+    position: absolute;
+    width: 0;
+    height: 390px;
+    left: 63px;
+    top: 60px;
+}
+@media screen and (max-width: 991px) {
+  .my-nav-tabs2::before {
+    display: none;
+}
+}
+.my-nav-tabs2 > li > a:hover {
+    background-color: red;
+}
+.my-nav-tabs2 > li.active > a,
+.my-nav-tabs2 > li.active > a:hover,
+.my-nav-tabs2 > li.active > a:focus {
+  cursor: default;
+  background-color: red;
+}
+.my-nav-tabs2.nav-justified {
+  width: 100%;
+  border-bottom: 0;
+}
+.my-nav-tabs2.nav-justified > li {
+  float: none;
+}
+.my-nav-tabs2.nav-justified > li > a {
+  margin-bottom: 5px;
+  text-align: center;
+}
+.my-nav-tabs2.nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+@media (min-width: 768px) {
+  .my-nav-tabs2.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  .my-nav-tabs2.nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
+.my-nav-tabs2.nav-justified > li > a {
+  margin-right: 0;
+  border-radius: 4px;
+}
+.my-nav-tabs2.nav-justified > .active > a,
+.my-nav-tabs2.nav-justified > .active > a:hover,
+.my-nav-tabs2.nav-justified > .active > a:focus {
+  border: 1px solid #ddd;
+}
+
+/* new部分end */
+
+
+/* footer部分start */
+.footer {
+  padding: 0 30px;
+  text-align: center;
+  a {
+    width: 100px;
+    height: 80px;
+    padding-right: 10px;
+    font-size: 80px;
+    color: #aaa;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+
+}
+/* footer部分end */
