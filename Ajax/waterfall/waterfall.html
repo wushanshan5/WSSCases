@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css" media="screen">
+        body {
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+        }
+        .items {
+            position: relative;
+            width: 1100px;
+            margin: 50px auto 0 auto;
+        }
+        button {
+            margin: 40px auto;
+            width: 200px;
+            height: 60px;
+            font: 25px/60px "Microsoft Yahei";
+            color: #fff;
+            background-color: hotpink;
+            border-radius: 5px;
+            border: 0;
+        }
+        .item {
+            position: absolute;
+            width: 250px;
+        }
+        .item>img {
+            height: 300px;
+            width: 100%;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/template-native.js"></script>
+    <script src="js/jquery.fn.waterfall.js"></script>
+    <!-- 定义模板 -->
+    <script type='text/template' id='template'>
+        <% for(var i=0;i<items.length;i++) { %>
+            <div class="item">
+                <img src="<%=items[i].path %>" alt="">
+                <p><%=items[i].text %></p>
+            </div>
+        <% } %>
+    </script>
+</head>
+<body>
+    <h2>利用自定义jquery插件，展示瀑布流</h2>
+    <div class="items"></div>
+    <button>加载更多...</button>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                $.ajax({
+                    url: 'waterfall.php',
+                    type: 'post',
+                    dataType: 'json',//数据类型是json，将会在内部转化成对应的js对象
+                    success: function (data) {
+                        //data 是一个js对象
+                        var obj = {
+                            items: data
+                        };
+                        var str = template('template',obj);
+                        $(".items").append(str).waterfall();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
