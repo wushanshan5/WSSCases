@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        .small {
+            margin: 100px;
+            width: 350px;
+            height: 350px;
+            float: left;
+            position: relative;
+            cursor: move;
+            border: 1px solid #000;
+        }
+        div .mask {
+            position: absolute;
+            width: 175px;
+            height: 175px;
+            background: rgba(255,243,10,.3);
+            top: 0;
+            left: 0;
+            display: none;
+            cursor: move;
+        }
+        .big-part {
+            display: none;
+            height: 400px;
+            width: 400px;
+            float: left;
+            overflow: hidden;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<!--放大镜效果是由一个小图片和一个大图片组成的
+且小图片/mask = 大图片/大图片的部分图 比例相等，否则效果不佳-->
+    <div class="small">
+        <img src="images/001.jpg" alt="">
+        <div class="mask"></div>
+    </div>
+    <div class="big-part">
+        <img src="images/0001.jpg" alt="">
+    </div>
+
+<script>
+    //获取相关事件源
+    var small = document.getElementsByClassName("small")[0];
+    var mask = document.getElementsByClassName("mask")[0];
+    var bigPart = document.getElementsByClassName("big-part")[0];
+    var partImg = bigPart.children[0];
+    var smallTop = small.offsetTop;
+    var smallLeft = small.offsetLeft;
+    small.onmouseover = function () {
+        mask.style.display = "block";
+        bigPart.style.display = "block";
+    }
+    small.onmouseout = function () {
+        mask.style.display = "none";
+        bigPart.style.display = "none";
+    }
+    small.onmousemove = function (event) {
+        //新五步
+            //1.获取事件
+            event = event || window .event;
+            //2.获取鼠标在盒子上的坐标（类似与鼠标跟随）,使用兼容性写法
+                //鼠标在盒子上的坐标 = 鼠标在body上的坐标-盒子在body上的坐标
+            var mouseTop = (event.pageY || scroll().top+event.clientY)-smallTop;
+            var mouseLeft = (event.pageX || scroll().left+event.clientX)-smallLeft;
+            //3.将鼠标的位置赋给mask，使其跟随鼠标移动位置，且要让鼠标在mask的中间,且mask只能在盒子内出现
+            //maskTop和maskLeft表示mask在盒子中的位置
+            var maskTop = mouseTop-mask.offsetHeight/2;
+            var maskLeft = mouseLeft-mask.offsetWidth/2;
+
+            //4.mask不能出现在盒子外面，所以要进行判断
+            if(maskTop<0){
+                maskTop = 0;
+            }
+            if(maskTop>(small.offsetHeight-mask.offsetHeight)){
+                maskTop = small.offsetHeight-mask.offsetHeight;
+            }
+            if(maskLeft<0){
+                maskLeft = 0;
+            }
+            if(maskLeft>(small.offsetWidth-mask.offsetWidth)){
+                maskLeft = small.offsetWidth-mask.offsetWidth;
+            }
+            mask.style.top = maskTop+"px";
+            mask.style.left = maskLeft+"px";
+            //5.鼠标移动，bigPart部分会随之变化，利用margin将图片进行移动
+            //求出缩放的比例 = bigpart/mask  可以看做是mask所占的区域放大到bigpart的大小
+            //得知比例后 再用图片的margin去挤图片，使其移动
+            var percent = bigPart.offsetWidth/mask.offsetWidth;
+            partImg.style.marginTop = -maskTop*percent+"px";
+            partImg.style.marginLeft = -maskLeft*percent+"px";
+            console.log(partImg.style.marginTop)
+    }
+
+
+
+
+    //封装scroll()方法,返回json对象
+    function scroll() {
+        if(window.pageXOffset !== undefined){
+            return {"top":window.pageYOffset,//x和y相对应的不能写错了
+                "left":window.pageXOffset};
+        }else if(document.compatMode === "CSS1Compat"){
+            return {"top":document.documentElement.top,
+                "left":document.documentElement.left};
+        }else {
+            return {"top":document.body.scrollTop,
+                "left":document.body.scrollLeft};
+        }
+    }
+</script>
+</body>
+</html>
