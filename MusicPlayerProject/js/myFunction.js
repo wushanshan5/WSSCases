@@ -877,7 +877,7 @@ function scrollSlow(target,now) {
     var step = 0;
     clearInterval(timer);
     timer = setInterval(function () {
-        step = (target-now)/10;
+    step = (target-now)/10;
         step = step>0?Math.ceil(step):Math.floor(step);
         document.body.scrollTo(0,step+now);
         now = now+step;
