@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <canvas id="cvs" width="600" height="600" style="border: 1px solid red;"></canvas>
+
+    <script>
+        var cvs = document.getElementById("cvs");
+        var ctx = cvs.getContext("2d");
+        var arr = [
+            {
+                value: 20,
+                msg : "吃饭",
+                color: "rgba(255,0,0,0.5)"
+            },
+            {
+                value: 50,
+                msg : "睡觉",
+                color: "rgba(255,0,255,0.5)"
+            },
+            {
+                value: 80,
+                msg : "运动",
+                color: "rgba(0,255,255,0.5)"
+            },
+            {
+                value: 120,
+                msg : "学习",
+                color: "rgba(0,0,255,0.5)"
+            },
+            {
+                value: 30,
+                msg : "娱乐",
+                color: "yellowgreen"
+            }
+        ];
+        function Round(ctx,x,y,r,data) {
+            this.ctx = ctx;
+            this.x = x;
+            this.y = y;
+            this.r = r;
+            this.data = data;
+        }
+        extend(Round.prototype,{
+            changeToRadian : function (num) {
+              return Math.PI/180*num;
+            },
+            calcRadian : function() {
+                var sum = 0;
+                this.data.forEach(function (currentValue) {
+                    sum += currentValue.value;
+                });
+                //计算出每一份所占的度数。
+               return 360/sum;
+            },
+            drawRound : function () {
+                var that = this;
+                var startAngle = 0;
+                var endAngle = 0;
+                var per = that.calcRadian();
+                this.data.forEach(function (currentValue) {
+                    that.ctx.beginPath();
+                    endAngle += that.changeToRadian(per*currentValue.value);
+                    that.ctx.moveTo(that.x,that.y);
+                    that.ctx.fillStyle = currentValue.color;
+                    that.ctx.arc(that.x,that.y,that.r,startAngle,endAngle);
+                    that.ctx.fill();
+                    startAngle = endAngle;
+                    that.drawMessage(that);
+                });
+            },
+            drawMessage : function (that) {
+                var that = that;
+                var startAngle = 0;
+                var endAngle = 0;
+                var centerAngle = 0;
+                var per = that.calcRadian();
+
+                that.data.forEach(function (currentValue) {
+                    that.ctx.beginPath();
+                    //得到角度，利用正弦余弦，求出坐标
+                    endAngle += that.changeToRadian(per*currentValue.value);
+                    centerAngle = (endAngle-startAngle)/2+startAngle;
+                    that.ctx.moveTo(that.x+Math.cos(centerAngle)*that.r*0.9,that.y+Math.sin(centerAngle)*that.r*0.9);
+                    //  x坐标值 等于 x坐标值 + Math.cos(角度)*半径
+                    //  y坐标值 等于 x坐标值 + Math.sin(角度)*半径
+                    that.ctx.lineTo(that.x+Math.cos(centerAngle)*that.r*1.1,that.y+Math.sin(centerAngle)*that.r*1.1);
+                    that.ctx.strokeStyle = "rgba(0,0,0,0.2)";
+                    that.ctx.stroke();
+
+                    /*
+                    * 绘制文字：
+                    *   1. content.fillText(text,x,y[,maxWidth])
+                    *       填充文字
+                    *   2. content.strokeText(text,x,y[,maxWidth])
+                    *       描边文字
+                    * */
+                    that.ctx.beginPath();
+                    that.ctx.fillStyle = currentValue.color;
+                    that.ctx.font = "1rem 微软雅黑";
+                    if(centerAngle*180/Math.PI > 90 && centerAngle*180/Math.PI < 270) {
+                        that.ctx.textBaseline = 'bottom';
+                        that.ctx.textAlign = 'right';
+                    } else {
+                        that.ctx.textBaseline = 'hanging';
+                        that.ctx.textAlign = 'left';
+                    }
+                    that.ctx.fillText(currentValue.msg,that.x+Math.cos(centerAngle)*that.r*1.1,that.y+Math.sin(centerAngle)*that.r*1.1);
+                    startAngle = endAngle;
+                });
+            }
+        });
+        //混入式继承
+        function extend(obj1,obj2) {
+            for(var key in obj2) {
+                //只将obj2自己的属性赋给obj1，实现继承
+                if(obj2.hasOwnProperty(key)) {
+                    obj1[key] = obj2[key];
+                }
+            }
+        }
+
+        var round = new Round(ctx,300,300,200,arr);
+        round.drawRound();
+    </script>
+</body>
+</html>

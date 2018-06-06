@@ -1,0 +1,616 @@
+/*css 初始化*/
+.center {
+    width: 1040px;
+}
+.page a:hover,.footer a:hover {
+    color: #fff;
+    background-color: #3377AA;
+}
+/*nav 部分start*/
+.nav {
+    height: 28px;
+    background-color: #545652;
+}
+.nav-kinds {
+    width: 570px;
+    float: left;
+}
+.nav-login {
+    width: 330px;
+    float: right;
+}
+.nav-kinds>a,.nav-login>a {
+    display: inline-block;
+    padding: 0 12px;
+    color: #D5D5D5;
+    font: 12px/28px "Microsoft YaHei";
+}
+.nav-kinds>a:hover,.nav-login>a:hover {
+    color: #fff;
+}
+.nav-kinds-last {
+    position: relative;
+}
+.nav-kinds-more {
+    display: none;
+    position: absolute;
+    width: 80px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    border: 1px solid #D5D5D5;
+    left: 0px;
+    border-top: 0;
+    background-color: #fff;
+    color: #444;
+}
+.nav-login-firsta {
+    position: relative;
+}
+.nav-doubanApp {
+    z-index: 2;
+    display: none;
+    color: #000;
+    position: absolute;
+    left: -15px;
+    text-align: center;
+    width: 180px;
+    height: 407px;
+    padding: 30px 20px;
+    background-color: #fff;
+    border: 1px solid #D5D5D5;
+    border-top: 0;
+}
+.nav-doubanApp>h3 {
+    font: 700 20px/35px "Microsoft YaHei";
+}
+.nav-doubanApp>p {
+    font: 14px/40px "Microsoft YaHei";
+}
+.nav-doubanApp>i {
+    font: 12px/20px "Microsoft YaHei";
+    color: #3377AA;
+}
+.nav-login>a>em {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 3px solid #D5D5D5;
+    border-left: 3px solid #545652;
+    border-right: 3px solid #545652;
+    border-bottom: 3px solid #545652;
+}
+.nav-my-id {
+    display: none;
+    padding: 10px 0;
+    position: absolute;
+    top: 28px;
+    right: 23px;
+    background-color: #fff;
+    border: 1px solid #E6E6E6;
+    width: 88px;
+    height: 140px;
+}
+.nav-my-id>li {
+    height: 28px;
+    width: 100%;
+    text-align: center;
+    color: #3D3D3D;
+    line-height: 28px;
+}
+.nav-my-id>li:hover {
+    background-color: #EDF4ED;
+}
+/*nav 部分end*/
+
+/*banner 部分start*/
+.banner {
+    background-color: #EDF4ED;
+    height: 74px;
+}
+.banner-douban {
+    float: left;
+    display: inline-block;
+    width: 154px;
+    height: 30px;
+    margin-top: 20px;
+    text-indent: -5555em;
+    background: url("../images/logo.png");
+}
+.banner a:hover {
+    background-color: #EDF4ED;
+}
+.banner-a {
+    padding-left: 20px;
+    float: left;
+}
+.banner-a>a {
+    padding: 0 3px;
+    font: 15px/74px "Microsoft YaHei";
+    color: #007722;
+}
+.banner-a>a:hover {
+    background-color: #007722;
+    color: #fff;
+}
+.banner-a>a>i {
+    margin-top: 25px;
+    display: inline-block;
+    vertical-align: top;
+    width: 17px;
+    height: 7px;
+    background: url("../images/movie-new.gif");
+}
+.banner input {
+    float: right;
+    margin-top: 25px;
+    padding-left: 5px;
+    width: 273px;
+    height: 28px;
+    border: 1px solid #E1E9E1;
+}
+.banner .iconfont {
+    z-index: 1;
+    color: #D5D5D5;
+    position: absolute;
+    right: 175px;
+    top: 59px;
+}
+/*banner 部分end*/
+
+/*page 部分start*/
+.page {
+    padding-top: 60px;
+}
+/*page-leftPart 部分start*/
+.page-leftPart {
+    width: 675px;
+    float: left;
+}
+.page-share {
+    width: 100%;
+}
+.page-share>span {
+    color: #C3C3C3;
+    font-size: 13px;
+    float: right;
+}
+.page-share>span>i {
+    vertical-align: middle;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-image: url(../personal-images/page-share-span.fw.png);
+}
+.page-share>a {
+    padding-right: 7px;
+    font: 14px/20px "Microsoft YaHei";
+    color: #3377AA;
+}
+.page-share-i{
+    vertical-align: middle;
+    display: inline-block;
+    width: 20px;
+    height: 15px;
+    background-image: url("../personal-images/page-share-icon.fw.png");
+}
+.page-share-i1 {
+    background-position: -1px -4px;
+}
+.page-share-i2 {
+    background-position: -1px -125px;
+}
+.page-share-i3 {
+    background-position: -1px -155px;
+}
+.page-share-i4 {
+    background-position: -1px -94px;
+}
+.page-share-i5 {
+    cursor: pointer;
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    background-position: -1px -35px;
+}
+.page-share-i6 {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    background-position: -1px -65px;
+}
+.page-share-life {
+    position: relative;
+}
+.page-share-life>input {
+    outline: none;
+    padding: 0 5px;
+    width: 663px;
+    height: 30px;
+    border: 1px solid #D7D7D7;
+    margin-top: 10px;
+}
+.page-share-life-sign {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 13px;
+    line-height: 30px;
+    color: #aaa;
+}
+.sanjiao {
+    position: absolute;
+    top: -6px;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-top: 1px solid #D7D7D7;
+    border-right: 1px solid #D7D7D7;
+    transform: rotate(-45deg);
+}
+.page-share-life1 .sanjiao {
+    left: 30px;
+}
+.page-share-life2 .sanjiao {
+    left: 100px;
+}
+.page-share-life3 .sanjiao{
+    left: 182px;
+}
+.page-share-life4 .sanjiao{
+    left: 264px;
+}
+.page-share-life1,.page-share-life2,.page-share-life3,.page-share-life4 {
+    display: none;
+    margin-top: 10px;
+    position: relative;
+    background-color: #F4F4F4;
+    width: 673px;
+    height: 153px;
+    border: 1px solid #ccc;
+}
+.page-share-life2 {
+    height: 266px;
+}
+.page-share-life3 {
+    height: 200px;
+}
+.page-share-life2 .page-share-life-content {
+    height: 218px;
+}
+.page-share-life3 .page-share-life-content {
+    height: 150px;
+}
+.page-share-life2 textarea {
+    height: 101px;
+    border-bottom: 1px solid #ccc !important;
+}
+.page-share-life1>a,.page-share-life2>a,.page-share-life3>a,.page-share-life4>a  {
+    line-height: 47px;
+    margin-left: 20px;
+    font-size: 14px;
+    color: #3377AA;
+}
+.page-share-life1>input,.page-share-life2>input,.page-share-life3>input,.page-share-life4>input  {
+    cursor: pointer;
+    margin: 10px 10px 0 0;
+    float: right;
+    width: 40px;
+    border-radius: 3px;
+    background-color: #F0F0F0;
+    height: 29px;
+    border: 1px solid #999999;
+    color: #999999;
+    font: 12px/29px "Microsoft YaHei";
+    text-align: center;
+}
+.page-share-life-content {
+    position: relative;
+    overflow: hidden;
+    width: 673px;
+    font: 13px/20px "Microsoft YaHei";
+    background-color: #fff;
+    height: 105px;
+    border-bottom: 1px solid #ccc;
+}
+.page-share-life-content>textarea {
+    width: 100%;
+    border: 0;
+    /*去除拖到图标*/
+    resize: none;
+    /*去除聚焦边框*/
+    outline: none;
+    padding: 5px;
+}
+.load-file {
+    position: relative;
+    margin: 0 auto;
+    width: 651px;
+    height: 90px;
+    border: 3px dashed #EEEEEE;
+    background-color: #FAFAFA;
+}
+.load-file>p {
+    color: #D1D1D1;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+.load-file>p>i {
+    vertical-align: middle;
+    display: inline-block;
+    background-image: url("../personal-images/load-file-icon.fw.png");
+    width: 20px;
+    height: 20px;
+    background-position: 0 0;
+}
+.load-file>i {
+    position: absolute;
+    top: 20px;
+    left: 45%;
+    display: inline-block;
+    background-image: url("../personal-images/load-file-icon.fw.png");
+    width: 40px;
+    height: 32px;
+    background-position: 0 -26px;
+}
+.load-file>span {
+    position: absolute;
+    top: 50px;
+    left: 44%;
+    color: #999999;
+}
+.load-file>em {
+    color: #D8CECC;
+    position: absolute;
+    bottom: 0;
+    left: 38%;
+}
+.load-file>input {
+    outline: none;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.page-share-life3 .page-share-life-sign {
+    top: 47px;
+}
+.page-share-life3-div {
+    height: 40px;
+    border-bottom: 1px solid #D8CECC;
+}
+.page-share-life3-web {
+    width: 528px;
+    font: 13px/25px "Microsoft YaHei";
+    padding-left: 10px;
+    height: 25px;
+    margin: 7px;
+    border: 1px solid #D8CECC;
+}
+.page-share-life3-web+button {
+    width: 65px;
+    padding: 0;
+    height: 26px;
+    border: 1px solid #D8CECC;
+    text-align: center;
+    font: 12px/25px "Microsoft YaHei";
+    line-height: 25px;
+    background-color: #EAEAEA;
+}
+.page-share-span {
+    position: absolute;
+    top: 72px;
+    font: 14px/20px "Microsoft YaHei";
+    color: #888888;
+}
+.page-share-span1 {
+    left: 13px;
+}
+.page-share-span2 {
+    left: 68px;
+}
+.page-share-span>i {
+    position: static;
+}
+.page-share>ul>li {
+    padding-top: 20px;
+    width: 675px;
+    border-bottom: 1px solid #E5E5E5;
+}
+.page-share>ul>li>img {
+    vertical-align: top;
+    padding-right: 15px;
+    width: 48px;
+    height: 48px;
+}
+.page-ul-info {
+    font-size: 14px;
+    color: #aaa;
+    display: inline-block;
+    width: 607px;
+}
+.page-ul-info>span {
+    color: #555555;
+    font: 800 14px/20px "Microsoft YaHei";
+}
+.page-share-info {
+    margin: 10px 0;
+    background-color: #F9F9F9;
+    padding: 13px;
+    width: 565px;
+}
+.page-share-info>div>a {
+    font: 15px/30px "Microsoft YaHei";
+    color: #3377AA;
+}
+.page-share-info>div>p {
+    padding-bottom: 10px;
+    color: #555;
+}
+.page-share-info>div {
+    display: inline-block;
+    width: 420px;
+    padding-right: 10px;
+}
+.page-share-info>img {
+    width: 122px;
+    height: 69px;
+}
+.page-ul-info>i {
+    line-height: 35px;
+}
+.page-change {
+    width: 373px;
+    padding: 20px 0 80px 0;
+    margin: 0 auto;
+}
+.page-change>a {
+    color: #3377AA;
+    font: 15px/20px "Microsoft YaHei";
+}
+.page-change>span {
+    color: #aaa;
+}
+.page-change-number {
+    margin: 0 3px;
+    padding: 0 3px;
+}
+/*page-leftPart 部分end*/
+
+/*page-rightPart 部分start*/
+.page-rightPart {
+    padding-left: 60px;
+    float: left;
+    width: 300px;
+}
+.douban-happing {
+    width: 260px;
+    padding: 10px 17px;
+    height: 90px;
+    border-radius: 3px;
+    background-color: #F2F7F6;
+}
+.douban-happing>h2 {
+    color: #007722;
+    font: 500 17px/30px "Microsoft YaHei";
+}
+.douban-happing>a {
+    color: #3377AA;
+    font-size: 14px;
+    line-height:30px;
+}
+.douban-timing,.douban-topic {
+    padding-top: 30px;
+}
+.douban-timing>span,.douban-topic>span {
+    color: #007722;
+    font: 500 16px/25px "Microsoft YaHei";
+}
+.douban-timing>a,.douban-topic>a {
+    color: #3377AA;
+    font: 13px/25px "Microsoft YaHei";
+}
+.douban-timing li {
+    margin-top: 20px;
+    font-size: 13px;
+    width: 80px;
+    float: left;
+    text-align: center;
+    margin-right: 44px;
+}
+.douban-timing li>img {
+    width: 80px;
+    margin-bottom: 10px;
+    height: 111px;
+}
+.douban-timing li>a {
+    color: #333333;
+}
+.douban-timing li>span {
+    display: inline-block;
+    padding-top: 10px;
+    color: #999999;
+}
+.douban-topic>ul {
+    padding-top: 15px;
+}
+.douban-topic li {
+    font: 13px/25px "Microsoft YaHei";
+}
+.douban-topic li>a {
+    color: #3377AA;
+}
+.douban-topic li>span {
+    color: #aaa;
+}
+.douban-topic-last {
+    line-height: 80px;
+}
+.douban-newyear {
+    width: 280px;
+    padding: 10px 7px;
+    height: 90px;
+    border-radius: 3px;
+    background-color: #F2F7F6;
+}
+.douban-newyear>img {
+    float: left;
+    vertical-align: middle;
+    width: 95px;
+    height: 80px;
+}
+.douban-newyear>div {
+    padding-left: 20px;
+    float: left;
+    width: 158px;
+}
+.douban-newyear>div {
+    line-height: 30px;
+    font-size: 12px;
+}
+.douban-newyear>div>a {
+    color: #3377AA;
+}
+.douban-newyear>div>span {
+    color: #999999;
+}
+.douban-ads {
+    cursor: pointer;
+    position: relative;
+    padding-top: 30px;
+}
+.douban-ads>i {
+    right: 0;
+    bottom: 4px;
+    position: absolute;
+    width: 40px;
+    font: 12px/20px "Microsoft YaHei";
+    color: #ffffff;
+    text-align: center;
+    height: 20px;
+    background-color: rgba(0,0,0,0.3);
+}
+/*page-rightPart 部分end*/
+
+/*page 部分end*/
+
+
+/* footer 部分start*/
+.footer .center {
+    border-top: 1px dashed #D1D1D1;
+}
+.copy {
+    color: #999999;
+    font: 13px/20px "Microsoft YaHei";
+}
+.list {
+    float: right;
+    color: #999999;
+    width: 515px;
+}
+.list>a {
+    color: #336699;
+    font: 13px/20px "Microsoft YaHei";
+}
+/* footer 部分end*/

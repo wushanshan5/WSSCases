@@ -1,0 +1,106 @@
+/*  fa的引用  */
+@font-face {
+    font-family: 'iconfont';
+    src: url('iconfont.eot');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'iconfont';
+    src: url(data:application/font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPYAA0AAAAACFQAAAOEAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP0ZGVE0cGh4GVgCCUhEICoQgg1QLDgABNgIkAxYEIAWFCAc5Gw4HyB4HuUnzSqzEKUYfHQ/P1/l17ntV6fxKWsBSYyQZGytxZy9bWo0UH35/77kfcsecxLTG/AG199MEpDlEd6Y5LT6vLtVPw4DEbzzzLvubVkBe5CbUC3AEMsFQKY1axQCWChqwmGWCHkvy2mYq4PCkx0LA909OrcOPi+au09cdaGIISEJWCgUSIv8ZtypJ16XPcAtdPjZZEHWSMtMr7nF0mxuN8mv/zZd2L3WgyihGADJMowqCXTACdUyGeaCuLuHctQvW/tvtYsbr3jD8m+E9AoCokVOJhMT8zkC/IaNDRrcrgRpooonnsAlQAKBUyIMG9wxs9iamuZ8TnuRV17+yfwz9O8XFwxtepXmS7kuP98+2VVWn2aqu/+D55xdJtK/fpw6GjoqH3fdqOHrYnXfOzPB7Zz9Hd/fDq7qjyWUPLO3xGze8CRd8t7r1/Zr2j+v2+WFtp/bDD50ff9zn++/b333XOnh6X5Huem7oiOTLnu8Vo8VtMOTSXFdgjuCY1vQuicueUbZnKM2YR0fsLdv5SjVil3Hs2/uR8w8zXXXYaxt9VSKjt/ma9sLypbMuubRe0jCo388zLhE9c/bSZr8R/YY7873hgvO6m5vyqrGL1/U5aeg+Ax2XT3UekP1obL/ygcHvjL1xyirjFh54W/TuU3xcfCJAhIKs/KT8OPdlLzI2bcov5hc2b3qhIF2hAwAvHXL5f7vvGX3b41vSMyTtU2SsgMfzTz/lxy0AwFugx92R3n033QEAwAuZ5mz/fPEV2ur/avgV4jtfpQAIBHtNe+/rQ/ou/q3eKOzAg03u5pX5QFCXQLDTUQVoiGsXkJbFX4025A1mFUxGCdTsiQkSKhW6AAZ4F4DBbAgIdS0EJL2chICs7hoBCnWPC1BqeFeAmroVAlRmxlYIaBgYd8ui6MEMSEjop5kkfRxEsn4ygkIyTkpDHJGafp5IpeOvcsOUOBnP1pI8HNKeHDcLpwI7wCUmypskjUf1XAH37/j/+fg6mVHdHNiLh09GmEMS/h4XbPvgZXaHR1JKwNWiXIkyuO5MfP6ceX2Z7UHF/nFt5yQpWT4V0tK8LLySYiIs2segPMLCEt4iXn1KkIdLWgm8srA8I+urODPtvVLF93PxclH9J2Mejp0+vbhqpUp5J+ZLuJY04TbCdHRvPBJfBZAAFbOnGkJyQKTI5amHZVIexvER) format('woff2'),
+        url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAAXYAA0AAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAFvAAAABoAAAAchAyG10dERUYAAAWcAAAAHgAAAB4AKQAMT1MvMgAAAaAAAABDAAAAVlbmSOZjbWFwAAAB/AAAAEoAAAFS5kvuSGdhc3AAAAWUAAAACAAAAAj//wADZ2x5ZgAAAlgAAAHHAAACIDH08rRoZWFkAAABMAAAADAAAAA2EY6jxmhoZWEAAAFgAAAAHQAAACQHwAOGaG10eAAAAeQAAAAWAAAAFg2+AFFsb2NhAAACSAAAAA4AAAAOAYYA0m1heHAAAAGAAAAAHwAAACABFQBdbmFtZQAABCAAAAFJAAACiCnmEVVwb3N0AAAFbAAAACYAAAA54FbmOnjaY2BkYGAA4iSNQ53x/DZfGbhZGEDguon+czit+n8+8yPmGCCXg4EJJAoAKFsK2XjaY2BkYGBu+N/AEMPCAALMjxgYGVABKwBXvQNPAAAAeNpjYGRgYGBjCGRgZQABJiDmAkIGhv9gPgMAEUgBcwB42mNgZP7BOIGBlYGBqZPpDAMDQz+EZnzNYMTIARRlYGVmwAoC0lxTGBwYKp79YW7438AQw9zA0AAUZgTJAQAzqA1gAAQAAAAAAAAAAVUAAAPpACwEAAAlAIAAAHjaY2BgYGaAYBkGRgYQ8AHyGMF8FgYDIM0BhExAuuKZ0bM///8jWP+7JS9JckJ1gQEjGwOcywjSw8SAChgZaAaYGQYHAAAQ/Q5fAAAAAAAAAAAAAAB2ANIBEAAAeNpNTz1v01AUvfc9Pzt2Ezv+eo6dxoljYoNagnBdZ0BNFwZADJWYkDrAD4CFoQtSIiEkBpAYuiMRJEbUzB071b8g6sTHGIZ2Ri52UVGu7j26R/cc6VxgsHn5nR7TFphwE+7CfdgDQHED+yrpYBCnQ7KBdsBsx1JpHMaBFPaHdAedvmjxJEsjR5REDVX0cStIsnhIYtxOx+QeJryD6La9J8Zg3aAfUWnF/tviEfmMdjdc18a3i4ebu1bSM2sHdcNwDeN9TWSsRoigqfjC4TKTFbH4wjTPPu7eIl2su7H3+Gmj1zaev0tfdgaOjDidotnuqV93dU8v+7XHTcOVmo1ay2uENyw8+LXWMuud6CeUJcDg8hP9QfehDi5EsFV9ChIHJ4NRBLE+xHiMIx8dFSVaju5jkm3raTRaJYTmxQVjqOY5qqJYXOTzpSD8PpovGVvOnzU5Ig84/3a90H1WnJ/mxXnp0fJT1NifSSk8quSVibxB3iw+NLmt46sr0wqrclOYljClAGvgQAgQrAStlpKWAX1ESYx2MM26yC0Cs4UgLGb/8PCE0pPDK8Q7Z7JhyGfy/+NsEVwfS8QHE0FRCkURJqL1F05McHsAeNp9kD1OAzEQhZ/zByQSQiCoXVEA2vyUKRMp9Ailo0g23pBo1155nUg5AS0VB6DlGByAGyDRcgpelkmTImvt6PObmeexAZzjGwr/3yXuhBWO8ShcwREy4Sr1F+Ea+V24jhY+hRvUf4SbuFUD4RYu1BsdVO2Eu5vSbcsKZxgIV3CKJ+Eq9ZVwjfwqXMcVPoQb1L+EmxjjV7iFa2WpDOFhMEFgnEFjig3jAjEcLJIyBtahOfRmEsxMTzd6ETubOBso71dilwMeaDnngCntPbdmvkon/mDLgdSYbh4FS7YpjS4idCgbXyyc1d2oc7D9nu22tNi/a4E1x+xRDWzU/D3bM9JIbAyvkJI18jK3pBJTj2hrrPG7ZynW814IiU68y/SIx5o0dTr3bmniwOLn8owcfbS5kj33qBw+Y1kIeb/dTsQgil2GP5PYcRkAAAB42mNgYoAALgbsgA2IGRmYGKIZmRiZWQsSS4tTWQpyEisBHtsEVQAAAAAAAf//AAIAAQAAAAwAAAAWAAAAAgABAAMABQABAAQAAAACAAAAAHjaY2BgYGQAgqtL1DlA9HUT/ecwGgA7zQXsAAA=) format('woff'),
+        url('iconfont.ttf') format('truetype'),
+        url('iconfont.svg#iconfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon-play::before {
+	content: "\e632";
+}
+.icon-pause::before {
+	 content: "\e6fc"; 
+}
+.my-style {
+	font-size: 30px;
+	line-height: 120rpx;
+	font-family: 'iconfont';
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* pages/playing/playing.wxss */
+page {
+	width: 100%;
+	height: 100%;
+}
+.whole {
+	width: 100%;
+	height: 100%;
+	 overflow: hidden; 
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-color: rgba(0,0,0,0.9);
+	background-origin: border-box
+}
+.whole>view {
+	width: 100%;
+	height: 100%;
+	 background-color: rgba(255,255,255,0.3); 
+}
+
+/*  title部分开始  */
+.title {
+	text-align: center;
+	width: 100%;
+	height: 150rpx;
+	color: #fff;
+}
+
+/*  title部分结束  */
+/*  control部分开始  */
+	.control {
+		position: fixed;
+		z-index: 20;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 120rpx;
+		background-color: rgba(0,0,0,0.9);
+		color: #ffffff;
+	}
+	.control>progress {
+		position: relative;
+		top: -7px;
+		width: 50%;
+		display: inline-block;
+		border-radius: 5px;
+		margin: 0 auto;
+	}
+	.play {
+		padding: 0 10px;
+	}
+	.time {
+		position: relative;
+		top: -5px;
+		font-size: 16px;
+		/* line-height: 100rpx; */
+		padding: 0 10px;
+	}
+/*  control部分结束  */
+
+/*  lyrics部分开始  */
+.lyrics {
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
+	line-height: 40px;
+}
+.lyrics-content {
+	width: 80%;
+	height: 900rpx;
+	color: yellow;
+	margin: 0 auto;
+	overflow: scroll;
+}
+/*  lyrics部分结束  */

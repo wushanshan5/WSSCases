@@ -1,0 +1,55 @@
+<!--  pic部分开始  -->
+	<view style='background-image:url("{{singerPic}}");' class="pic">
+		<view></view>
+	</view>
+<!--  pic部分结束  -->
+
+<!--  info部分开始  -->
+	<view class="info">
+		<text bindtap='infotap1' class="{{currentInfo1}}">
+			单曲
+		</text>
+		<text bindtap='infotap2' class="{{currentInfo2}}">
+			介绍
+		</text>
+		<text bindtap='infotap3' class="{{currentInfo3}}">
+			个人信息
+		</text>
+	</view>
+<!--  info部分结束  -->
+
+<!--  list部分开始  -->
+	<view class="list {{listHide}}">
+		<view wx:for="{{singerSongs}}" wx:key="unique1">
+			<view class="song-item"
+				bindtap='songPlay'
+				data-songid="{{item.song_id}}" 
+				data-title="{{item.title}}" 
+				data-pic="{{item.pic_radio}}"
+				data-lyrics="{{item.lrclink}}"
+				data-author='{{item.author}}'>
+				{{item.title}}
+				<view>{{item.author}}</view>
+			</view>
+		</view>
+	</view>
+<!--  list部分结束  -->
+
+<!--  intro部分开始  -->
+	<view class="intro {{introHide}}">
+		<view wx:for="{{singerInfo}}" wx:key="unique2">
+			{{item}}
+		</view>
+	</view>
+<!--  intro部分结束  -->
+
+<!--  information部分开始  -->
+	<view class="intro {{informationHide}}">
+		<view>姓名： {{singerName}}</view>
+		<view>星座： {{singerConstellation}}</view>
+		<view>国家： {{singerCountry}}</view>
+		<view>身高： {{singerHeight}}cm</view>
+		<view>体重： {{singerWeight}}</view>		
+		<view>所处公司： {{singerCompany}}</view>
+	</view>
+<!--  information部分结束  -->

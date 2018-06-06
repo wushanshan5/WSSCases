@@ -1,0 +1,39 @@
+
+<!--  song部分开始  -->
+<view class="song">
+	<view class="info">音乐列表</view>
+	<view data-songid="{{item.songid}}"
+		bindtap='playsong'
+	 	wx:key="unique1" class="song-item" wx:for="{{songs}}">
+		<text>{{item.songname}}</text>
+		<text>{{item.artistname}}</text>
+	</view>
+</view>
+<!--  song部分结束  -->
+
+<!--  artist部分开始  -->
+<view class="artist">
+	<view class="info">歌手列表</view>
+	<view 
+		bindtap='getsingerinfo'
+		class="song-item" wx:for="{{artists}}" wx:key="unique2" 
+		data-singerid="{{item.artistid}}">
+		<image
+		mode='aspectFill' style='width: 100%;height:200rpx;'  
+		src="{{item.artistpic}}"></image>
+		<text>{{item.artistname}}</text>
+	</view>
+</view>
+<!--  artist部分结束  -->
+
+<!--  album部分开始  -->
+<view class="album">
+	<view class="info">专辑列表</view>
+	<view class="song-item"
+		wx:for="{{albums}}" wx:key="unique3" 
+		data-singerid="{{item.singerid}}">
+		<view class="album-name">专辑： {{item.albumname}}</view>
+		<view class="album-singer">歌手： {{item.artistname}}</view>
+	</view>
+</view>
+<!--  album部分结束  -->

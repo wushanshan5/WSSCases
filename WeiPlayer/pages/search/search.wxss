@@ -1,0 +1,61 @@
+/* pages/search/search.wxss */
+.song,.artist,.album {
+	width: 100%;
+	margin: 10px 0;
+}
+.song {
+	width: 100%;
+}
+.info {
+	font-size: 25px;
+	padding-left: 20px;
+	line-height: 50px;
+	color: #555;
+}
+.song .song-item {
+	margin-left: 30px;
+	margin-right: 20px;
+	border-bottom: 1px solid #ddd;
+}
+.song .song-item>text {
+	display: block;
+}
+.song .song-item>text:nth-of-type(1) {
+	font-size: 16px;
+	line-height: 30px;
+}
+.song .song-item>text:nth-of-type(2) {
+	font-size: 14px;
+	color: #aaa;
+}
+.artist {
+	width: 100%;
+}
+.artist .song-item {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 10px 20px;
+	width: 33%;
+	height: 150px;
+	text-align: center;
+	font-size: 18px;
+	color: blue;
+}
+.artist .song-item>image {
+	width: 80%;
+	margin: 0 auto;
+}
+.album .song-item {
+	margin: 0 20px 0 30px;
+	border-bottom: 1px solid #ddd;
+}
+.album-name {
+	font-size: 18px;
+	line-height: 40px;
+	color: #222;
+}
+.album-singer {
+	font-size: 14px;
+	line-height: 20px;
+	color: #aaa;
+}

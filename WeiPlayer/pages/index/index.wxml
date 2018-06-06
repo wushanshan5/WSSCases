@@ -1,0 +1,97 @@
+<!--pages/index/index.wxml-->
+
+ <view wx:if="{{msgTrue}}">{{msg}}</view> 
+ <view wx:else>
+<!--  search部分开始  --> 
+	<view class="search">
+	<input confirm-type='search' 
+	bindblur='inputBlur'
+	class="search-input" data-index="input" placeholder='歌曲/专辑/歌单' />
+	 <text  bindtap='searching' class="search-icon icon-search my-style"></text> 
+	
+	<text class="search-text" bindtap='singerClassify'>歌手分类</text>	
+</view>
+<!--  search部分结束  -->
+
+<!--  banner部分开始  -->
+<view class="banner">
+	<swiper indicator-dots='true' circular='true' autoplay='true'>
+		<swiper-item wx:for-item="item" wx:for="{{swiperInfo}}" wx:key="unique">
+			<view 
+				bindtap='swiperPlay'
+				data-songid="{{item.song_id}}" 
+				data-title="{{item.title}}" 
+				data-pic="{{item.pic_radio}}"
+				data-lyrics="{{item.lrclink}}"
+				data-author='{{item.author}}'>
+				<image mode='aspectFill' style='width: 100%;height: 400rpx;' src="{{item.pic_radio}}"></image>
+			</view>
+		</swiper-item>
+	</swiper>
+</view>
+<!--  banner部分结束  -->
+
+<!--  list部分开始  -->
+<view class='list'>
+	<view class="list-item">
+		<image mode='widthFix' src='images/hot.png'></image>
+		<view 
+			wx:for-index="i"
+			wx:for="{{songType1}}" wx:key="unique" 
+			bindtap='swiperPlay'
+			data-songid="{{item.song_id}}" 
+			data-title="{{item.title}}" 
+			data-pic="{{item.pic_radio}}"
+			data-lyrics="{{item.lrclink}}"
+			data-author='{{item.author}}'>
+			<text>{{i+1}}. {{item.title}}</text>
+		</view>
+	</view>
+	<view class="list-item" >
+		<image mode='widthFix' src='images/new.png'></image>
+		<view 
+			wx:for-index="i"
+			wx:for="{{songType11}}" wx:key="unique"
+			bindtap='swiperPlay'
+			data-songid="{{item.song_id}}" 
+			data-title="{{item.title}}" 
+			data-pic="{{item.pic_radio}}"
+			data-lyrics="{{item.lrclink}}"
+			data-author='{{item.author}}'>
+			<text>{{i+1}}. {{item.title}}</text>
+		</view>
+	</view>
+	<view class="list-item">
+		<image mode='widthFix' src='images/ou.png'></image>
+		<view 
+			wx:for-index="i"
+			wx:for="{{songType2}}" wx:key="unique" 
+			bindtap='swiperPlay'
+			data-songid="{{item.song_id}}" 
+			data-title="{{item.title}}" 
+			data-pic="{{item.pic_radio}}"
+			data-lyrics="{{item.lrclink}}"
+			data-author='{{item.author}}'>
+			<text>{{i+1}}. {{item.title}}</text>
+		</view>
+	</view>
+	<view class="list-item" >
+		<image mode='widthFix' src='images/roll.png'></image>
+		<view 
+			wx:for-index="i"
+			wx:for="{{songType25}}" wx:key="unique"
+			bindtap='swiperPlay'
+			data-songid="{{item.song_id}}" 
+			data-title="{{item.title}}" 
+			data-pic="{{item.pic_radio}}"
+			data-lyrics="{{item.lrclink}}"
+			data-author='{{item.author}}'>
+			<text>{{i+1}}. {{item.title}}</text>
+		</view>
+	</view>
+</view>
+<!--  list部分结束  -->
+ </view>
+
+
+

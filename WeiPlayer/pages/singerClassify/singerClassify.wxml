@@ -1,0 +1,227 @@
+<!--pages/singerClassify/singerClassify.wxml-->
+<view class="wholeClass">
+	<text data-index="A" bindtap="scrollto">A</text>
+	<text data-index="B" bindtap="scrollto">B</text>
+	<text data-index="C" bindtap="scrollto">C</text>
+	<text data-index="D" bindtap="scrollto">D</text>
+	<text data-index="E" bindtap="scrollto">E</text>
+	<text data-index="F" bindtap="scrollto">F</text>
+	<text data-index="G" bindtap="scrollto">G</text>
+	<text data-index="H" bindtap="scrollto">H</text>
+	<text data-index="I" bindtap="scrollto">I</text>
+	<text data-index="J" bindtap="scrollto">J</text>
+	<text data-index="K" bindtap="scrollto">K</text>
+	<text data-index="L" bindtap="scrollto">L</text>
+	<text data-index="M" bindtap="scrollto">M</text>
+	<text data-index="N" bindtap="scrollto">N</text>
+	<text data-index="O" bindtap="scrollto">O</text>
+	<text data-index="P" bindtap="scrollto">P</text>
+	<text data-index="Q" bindtap="scrollto">Q</text>
+	<text data-index="R" bindtap="scrollto">R</text>
+	<text data-index="S" bindtap="scrollto">S</text>
+	<text data-index="T" bindtap="scrollto">T</text>
+	<text data-index="U" bindtap="scrollto">U</text>
+	<text data-index="V" bindtap="scrollto">V</text>
+	<text data-index="W" bindtap="scrollto">W</text>
+	<text data-index="X" bindtap="scrollto">X</text>
+	<text data-index="Y" bindtap="scrollto">Y</text>
+	<text data-index="Z" bindtap="scrollto">Z</text>
+	<text data-index="#" bindtap="scrollto">#</text>
+</view>
+<!--  classify部分开始  -->
+<view class="classify">
+	<view>
+		<view id="A" class="classify-title">A</view>
+		<view class="classify-item">
+			<text wx:key="unique1" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{A}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="B" class="classify-title">B</view>
+		<view class="classify-item">
+			<text wx:key="unique2" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{B}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="C" class="classify-title">C</view>
+		<view class="classify-item">
+			<text wx:key="unique2" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{C}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="D" class="classify-title">D</view>
+		<view class="classify-item">
+			<text wx:key="unique3" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{D}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="E" class="classify-title">E</view>
+		<view class="classify-item">
+			<text wx:key="unique4" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{E}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="F" class="classify-title">F</view>
+		<view class="classify-item">
+			<text wx:key="unique5" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{F}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="G" class="classify-title">G</view>
+		<view class="classify-item">
+			<text wx:key="unique6" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{G}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="H" class="classify-title">H</view>
+		<view class="classify-item">
+			<text wx:key="unique7" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{H}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="I" class="classify-title">I</view>
+		<view class="classify-item">
+			<text wx:key="unique8" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{I}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="J" class="classify-title">J</view>
+		<view class="classify-item">
+			<text wx:key="unique9" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{J}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="K" class="classify-title">K</view>
+		<view class="classify-item">
+			<text wx:key="unique10" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{K}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="L" class="classify-title">L</view>
+		<view class="classify-item">
+			<text wx:key="unique11" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{L}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="M" class="classify-title">M</view>
+		<view class="classify-item">
+			<text wx:key="unique12" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{M}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="N" class="classify-title">N</view>
+		<view class="classify-item">
+			<text wx:key="unique13" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{N}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="O" class="classify-title">O</view>
+		<view class="classify-item">
+			<text wx:key="unique14" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{O}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="P" class="classify-title">P</view>
+		<view class="classify-item">
+			<text wx:key="unique15" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{P}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="Q" class="classify-title">Q</view>
+		<view class="classify-item">
+			<text wx:key="unique16" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{Q}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="R" class="classify-title">R</view>
+		<view class="classify-item">
+			<text wx:key="unique17" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{R}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="S" class="classify-title">S</view>
+		<view class="classify-item">
+			<text wx:key="unique18" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{S}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="T" class="classify-title">T</view>
+		<view class="classify-item">
+			<text wx:key="unique19" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{T}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="U" class="classify-title">U</view>
+		<view class="classify-item">
+			<text wx:key="unique20" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{U}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="V" class="classify-title">V</view>
+		<view class="classify-item">
+			<text wx:key="unique21" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{V}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="W" class="classify-title">W</view>
+		<view class="classify-item">
+			<text wx:key="unique22" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{W}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="X" class="classify-title">X</view>
+		<view class="classify-item">
+			<text wx:key="unique23" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{X}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="Y" class="classify-title">Y</view>
+		<view class="classify-item">
+			<text wx:key="unique24" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{Y}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="Z" class="classify-title">Z</view>
+		<view class="classify-item">
+			<text wx:key="unique25" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{Z}}">
+				{{item.name}}
+			</text>
+		</view>
+		<view id="#" class="classify-title">#</view>
+		<view class="classify-item">
+			<text wx:key="unique26" bindtap='singerTap' 
+			data-singerid="{{item.id}}" wx:for="{{other}}">
+				{{item.name}}
+			</text>
+		</view>
+		
+	</view>
+	
+</view>
+<!--  classify部分结束  -->

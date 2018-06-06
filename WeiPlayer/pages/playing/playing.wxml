@@ -1,0 +1,37 @@
+<view style='background-image:url("{{songPic}}");' class="whole">
+	<view>
+		<!--  title部分开始  -->
+		<view class="title">
+			<view>{{title}}</view>
+			<text data-singerid="{{singerid}}" bindtap='singInfo'>
+				—— {{author}} ——
+			</text>
+		</view>
+
+		<!--  title部分结束  -->
+
+
+		<!--  lyrics部分开始  -->
+		 <view class="lyrics">
+            <view style="display: none;" class="lyrics-time">{{time}}</view>
+            <view class="lyrics-content">
+				<view wx:for="{{lyrics}}" wx:key="unique1">{{item}}</view>
+			</view>
+		</view> 
+		<!--  lyrics部分结束  -->
+
+
+		<!--  control部分开始  -->
+		<view class="control">
+			<text bindtap='playing' class="my-style {{playIcon}} play">{{iconText}}</text>
+			<text class="time control-play">{{currentTime}}</text>
+			<progress active-mode='forwards' percent='{{timePercent}}' active='true' activeColor='#11A6DD' stroke-width='5'></progress>
+			<text class=" time whole-time">{{duration}}</text>
+		</view>
+		<!--  control部分结束  -->
+	</view>
+</view>
+
+
+
+
