@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            overflow: hidden;
+            position: relative;
+            width: 800px;
+            height: 300px;
+            border: 5px solid #000;
+        }
+        .item1,.item2,.item3,.item4 {
+            transform-origin: 0 0;
+            transition: all 0.5s;
+            opacity: 0;
+            position: absolute;
+            width: 0;
+            height: 0;
+            z-index: 1;
+        }
+        .item1 {
+            top: 0;
+        }
+        .item2 {
+            bottom: 0;
+        }
+        .item3 {
+            top: 0;
+        }
+        .item4 {
+            bottom: 0;
+        }
+        .personal.animated-item {
+            transition: all 0.5s;
+            transform-origin: 0% 100%;
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+        }
+        .item1>img,.item2>img,.item3>img,.item4>img,.item>img {
+            width: 100%;
+            height: 100%;
+        }
+        .right {
+            width: 250px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            z-index: 2;
+        }
+        .item {
+            cursor: pointer;
+            background-color: rgba(0,0,0,0.8);
+            width: 100%;
+            height: 25%;
+            line-height: 25%;
+        }
+        .item.current {
+            background-color: rgba(100,100,100,0.9);
+        }
+        .item>img {
+            display: inline-block;
+            margin-top: 18px;
+            margin-left: 10px;
+            float: left;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .item .content {
+            padding-left: 15px;
+            width: 180px;
+            color: #fff;
+            display: inline-block;
+        }
+
+        .item p {
+            line-height: 20px;
+            font-size: 15px;
+        }
+        .item span {
+            font-size: 13px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="personal item1 animated-item">
+            <img src="images/1.jpg" alt="">
+        </div>
+        <div class="personal item2">
+            <img src="images/2.jpg" alt="">
+        </div>
+        <div class="personal item3">
+            <img src="images/3.jpg" alt="">
+        </div>
+        <div class="personal item4">
+            <img src="images/4.jpg" alt="">
+        </div>
+        <div class="right">
+            <div data-index="1" class="item current">
+                <img src="images/01.jpg" alt="">
+                <div class="content">
+                    <p>精心挑选，倾情推荐</p>
+                    <span>推荐精品应用，享受多彩上网</span>
+                </div>
+            </div>
+            <div  data-index="2" class="item">
+                <img src="images/02.jpg" alt="">
+                <div class="content">
+                    <p>精心挑选，倾情推荐</p>
+                    <span>推荐精品应用，享受多彩上网</span>
+                </div>
+            </div>
+            <div data-index="3" class="item">
+                <img src="images/03.jpg" alt="">
+                <div class="content">
+                    <p>精心挑选，倾情推荐</p>
+                    <span>推荐精品应用，享受多彩上网</span>
+                </div>
+            </div>
+            <div data-index="4" class="item">
+                <img src="images/04.jpg" alt="">
+                <div class="content">
+                    <p>精心挑选，倾情推荐</p>
+                    <span>推荐精品应用，享受多彩上网</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var items = document.querySelectorAll(".item");
+        for(var i=0;i<items.length;i++) {
+            items[i].onclick = function () {
+                var ind = this.getAttribute("data-index");
+                document.querySelector(".current").classList.remove("current");
+                this.classList.add("current");
+                document.querySelector(".animated-item").classList.remove("animated-item");
+                document.querySelector(".item"+ind).classList.add("animated-item");
+            }
+        }
+    </script>
+</body>
+</html>
