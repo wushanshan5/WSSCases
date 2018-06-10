@@ -11,6 +11,8 @@ $(function () {
         $(".live2-li-title7").offset().top,
         $(".more-shopping").offset().top,
     ];
+
+
     var nowScroll = $(window).scrollTop();
     if(nowScroll >= 700) {
         $(".fixed-nav").slideDown(500);
