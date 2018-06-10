@@ -271,11 +271,14 @@
                     return;
                 }
                 if(getAudio($(".playing-audio iframe")).paused) {
+                    console.log(1)
+                    $(".playing-pic").css("animation","rot 4s linear infinite");
                     getAudio($(".playing-audio iframe")).play();
                     //处理时间
                     playingTimer = playingInterval();
                     playingLyricsTimer = playingLyricsInterval($(this).attr("data-lyrics"));
                 } else {
+                    $(".playing-pic").css("animation","");
                     getAudio($(".playing-audio iframe")).pause();
                     clearInterval(playingTimer);
                     clearInterval(playingLyricsTimer);
