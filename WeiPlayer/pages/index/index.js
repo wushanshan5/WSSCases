@@ -1,4 +1,4 @@
-// pages/index/index.js
+
 function randomNum(num, max) {
 	var randomNumArr = [];
 	var ranArr = [];
