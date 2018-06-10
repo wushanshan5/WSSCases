@@ -2,6 +2,10 @@ window.onload = function() {
 //    使用原生态编写移动端js
 
 // jd-header 部分start
+
+
+
+
     //滑动页面时，导航栏的透明度改变
     var jdHeader = document.querySelector('.jd-header');
     var mainContentTop = document.querySelector('.main-content1').offsetTop;
