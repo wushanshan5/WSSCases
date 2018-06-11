@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <style>
+        .box {
+            position: relative;
+            width: 260px;
+            height: 450px;
+            border: 1px solid #ddd;
+            box-shadow: 0px 0px 4px 0px #333;
+            margin: 20px auto;
+            overflow: hidden;
+            background-image: url("1.jpg");
+            background-size: 100% 100%;
+        }
+        .cover {
+            position: relative;
+            top: 100px;
+            left: -40px;
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .cover-none {
+            position: relative;
+            top: 100px;
+            left: -40px;
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
+            background-color: transparent;
+        }
+        .ball {
+            position: absolute;
+            top: 50%;
+            cursor: pointer;
+            left: 50%;
+            margin-left: -20px;
+            margin-top: -20px;
+            background-color: rgba(255,255,255,0.6);
+            border-radius: 15px;
+            width: 16px;
+            height: 16px;
+            border: 7px solid rgba(10,10,10,0.3);
+        }
+        .ball.ball-cover {
+            background-color: rgb(240,240,240);
+            text-align: center;
+            line-height: 30px;
+            font-size: 32px;
+            color: grey;
+            border: 0;
+            width: 30px;
+            height: 30px;
+            z-index: 2;
+        }
+        .cover span {
+            transition: all 0.3s;
+            position: absolute;
+            z-index: 1;
+            font-size: 16px;
+        }
+        .cover span:nth-of-type(1) {
+            top: 7px;
+            left: 48px;
+        }
+        .cover span:nth-of-type(2) {
+            top: 20px;
+            left: 82px;
+        }
+        .cover span:nth-of-type(3) {
+            font-size: 18px;
+            top: 48px;
+            left: 95px;
+        }
+        .cover span:nth-of-type(4) {
+            top: 88px;
+            left: 82px;
+        }
+        .cover span:nth-of-type(5) {
+            top: 99px;
+            left: 48px;
+        }
+        .cover-none span {
+            position: absolute;
+            z-index: 1;
+            font-size: 16px;
+            top: 46px;
+            left: 47px;
+            color: transparent;
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body onselect="return false">
+    <div class="box">
+        <div class="cover-none inner">
+            <div class="ball"></div>
+            <span class="iconfont icon-round"></span>
+            <span id="span2" class="iconfont icon-lock"></span>
+            <span id="span3" class="iconfont icon-icon_clean"></span>
+            <span id="span4" class="iconfont icon-zanting"></span>
+            <span class="iconfont icon-zhuye"></span>
+        </div>
+    </div>
+
+
+    <script>
+            document.querySelector(".ball").onclick = function (e) {
+                if(this.parentNode.classList.contains("cover-none")) {
+                    this.classList.add("ball-cover");
+                    this.classList.add("icon-error");
+                    this.classList.add("iconfont");
+                    this.parentNode.classList.remove("cover-none");
+                    this.parentNode.classList.add("cover");
+                } else {
+                    this.parentNode.classList.add("cover-none");
+                    this.parentNode.classList.remove("cover");
+                    this.classList.remove("ball-cover");
+                    this.classList.remove("icon-error");
+                    this.classList.remove("iconfont");
+                }
+            }
+            document.querySelector(".ball").onmousedown = function (event) {
+                event = event || window.event;
+                var mouseTop = event.pageY;
+                var mouseLeft = event.pageX;
+                var pageX = mouseLeft-document.querySelector(".inner").offsetLeft;
+                var pageY = mouseTop-document.querySelector(".inner").offsetTop;
+                document.onmousemove = function (event) {
+                    event = event || window.event;
+                    var mouseYY = event.pageY;
+                    var mouseXX = event.pageX;
+                    var xx = mouseXX-pageX;
+                    var yy = mouseYY-pageY;
+                    document.querySelector(".inner").style.top = yy+"px";
+                    document.querySelector(".inner").style.left = xx+"px";
+                }
+            }
+            document.querySelector(".ball").onmouseup = function () {
+                document.onmousemove = null;
+                if( document.querySelector(".inner").offsetLeft < 100) {
+                    document.querySelector(".inner").style.left = -40+"px";
+                    document.querySelector("#span2").style.left = "82px";
+                    document.querySelector("#span3").style.left = "95px";
+                    document.querySelector("#span4").style.left = "82px";
+                } else {
+                    document.querySelector(".inner").style.left = 190+"px";
+                    document.querySelector("#span2").style.left = "20px";
+                    document.querySelector("#span3").style.left = "5px";
+                    document.querySelector("#span4").style.left = "20px";
+                }
+            }
+    </script>
+</body>
+</html>
