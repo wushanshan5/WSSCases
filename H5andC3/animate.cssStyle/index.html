@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="animate.css">
+    <style>
+        .center {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .box {
+            float: left;
+            margin: 80px 20px;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+        #item {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 50px auto;
+        }
+        ul,li {
+            float: left;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        h3 {
+            margin: 0;
+            padding: 0;
+        }
+        .left,.right {
+            padding: 0 20px;
+            width: 420px;
+            float: left;
+        }
+        .clearfix {
+            clear: both;
+        }
+        li {
+            padding: 2px;
+        }
+        button {
+            width: 130px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="left">
+            <h3 class="clearfix">special</h3>
+            <ul>
+                <li><button>bouce</button></li>
+                <li><button>flash</button></li>
+                <li><button>pulse</button></li>
+                <li><button>rubberBand</button></li>
+                <li><button>shake</button></li>
+                <li><button>headShake</button></li>
+                <li><button>swing</button></li>
+                <li><button>tada</button></li>
+                <li><button>wobble</button></li>
+                <li><button>jello</button></li>
+                <li><button>hinge</button></li>
+                <li><button>jackInTheBox</button></li>
+            </ul>
+
+            <h3 class="clearfix">bounce</h3>
+            <ul>
+                <li><button>bounceIn</button></li>
+                <li><button>bounceInDown</button></li>
+                <li><button>bounceInLeft</button></li>
+                <li><button>bounceInRight</button></li>
+                <li><button>bounceInUp</button></li>
+                <li><button>bounceOut</button></li>
+                <li><button>bounceOutDown</button></li>
+                <li><button>bounceOutLeft</button></li>
+                <li><button>bounceOutRight</button></li>
+                <li><button>bounceOutUp</button></li>
+            </ul>
+
+            <h3 class="clearfix">fade</h3>
+            <ul>
+                <li><button>fadeIn</button></li>
+                <li><button>fadeInDown</button></li>
+                <li><button>fadeInDownBig</button></li>
+                <li><button>fadeInLeft</button></li>
+                <li><button>fadeInLeft</button></li>
+                <li><button>fadeInLeftBig</button></li>
+                <li><button>fadeInRight</button></li>
+                <li><button>fadeInRightBig</button></li>
+                <li><button>fadeInUp</button></li>
+                <li><button>fadeInUpBig</button></li>
+                <li><button>fadeOut</button></li>
+                <li><button>fadeOutDown</button></li>
+                <li><button>fadeOutDownBig</button></li>
+                <li><button>fadeOutLeft</button></li>
+                <li><button>fadeOutLeftBig</button></li>
+                <li><button>fadeOutRight</button></li>
+                <li><button>fadeOutRightBig</button></li>
+                <li><button>fadeOutUp</button></li>
+                <li><button>fadeOutUpBig</button></li>
+            </ul>
+
+
+
+        </div>
+        <div class="box">
+            <div id="item" class="animated bounce"></div>
+        </div>
+        <div class="right">
+            <h3 class="clearfix">light</h3>
+            <ul>
+                <li><button>lightSpeedIn</button></li>
+                <li><button>lightSpeedOut</button></li>
+            </ul>
+
+            <h3 class="clearfix">rotate</h3>
+            <ul>
+                <li><button>rotateIn</button></li>
+                <li><button>rotateInDownLeft</button></li>
+                <li><button>rotateInDownRight</button></li>
+                <li><button>rotateInUpLeft</button></li>
+                <li><button>rotateInUpRight</button></li>
+                <li><button>rotateOut</button></li>
+                <li><button>rotateOutDownLeft</button></li>
+                <li><button>rotateOutDownRight</button></li>
+                <li><button>rotateOutUpLeft</button></li>
+                <li><button>rotateOutUpRight</button></li>
+            </ul>
+
+            <h3 class="clearfix">roll、zoom</h3>
+            <ul>
+                <li><button>rollIn</button></li>
+                <li><button>rollOut</button></li>
+                <li><button>zoomIn</button></li>
+                <li><button>zoomInDown</button></li>
+                <li><button>zoomInLeft</button></li>
+                <li><button>zoomInRight</button></li>
+                <li><button>zoomInUp</button></li>
+                <li><button>zoomOut</button></li>
+                <li><button>zoomOutDown</button></li>
+                <li><button>zoomOutLeft</button></li>
+                <li><button>zoomOutRight</button></li>
+                <li><button>zoomOutUp</button></li>
+            </ul>
+
+            <h3 class="clearfix">slide</h3>
+            <ul>
+                <li><button>slideInDown</button></li>
+                <li><button>slideInLeft</button></li>
+                <li><button>slideInRight</button></li>
+                <li><button>slideInUp</button></li>
+                <li><button>slideOutDown</button></li>
+                <li><button>slideOutLeft</button></li>
+                <li><button>slideOutRight</button></li>
+                <li><button>slideOutUp</button></li>
+                <li><button>slideOutUp</button></li>
+            </ul>
+
+            <h3 class="clearfix">flip</h3>
+            <ul>
+                <li><button>flip</button></li>
+                <li><button>flipInX</button></li>
+                <li><button>flipInY</button></li>
+                <li><button>flipOutX</button></li>
+                <li><button>flipOutY</button></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        var btns = document.querySelectorAll("ul>li>button");
+        for(var i=0;i<btns.length;i++) {
+            btns[i].onclick = function (e) {
+                var newClass = this.innerHTML;
+                document.querySelector("#item").className = "";
+                document.querySelector("#item").classList.add("animated");
+                document.querySelector("#item").classList.add(newClass);
+            }
+        }
+    </script>
+</body>
+</html>
