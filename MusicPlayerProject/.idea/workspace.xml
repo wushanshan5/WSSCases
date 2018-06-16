@@ -217,7 +217,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WeiPlayer" />
+    <property name="last_opened_file_path" value="E:/WebStromCase/vueCases" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -310,12 +310,12 @@
       <workItem from="1528425873838" duration="2099000" />
       <workItem from="1528467663458" duration="42000" />
       <workItem from="1529064508150" duration="683000" />
-      <workItem from="1529110569628" duration="241000" />
+      <workItem from="1529110569628" duration="570000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="388874000" />
+    <option name="totallyTimeSpent" value="389203000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
