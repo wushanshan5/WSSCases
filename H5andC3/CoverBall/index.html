@@ -126,6 +126,7 @@
                 }
             }
             document.querySelector(".ball").onmousedown = function (event) {
+                console.log(event)
                 event = event || window.event;
                 var mouseTop = event.pageY;
                 var mouseLeft = event.pageX;
