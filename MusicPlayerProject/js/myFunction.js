@@ -14,6 +14,7 @@
         $.ajax({
             url: url,
             type: type,
+            cache : true,
             dataType: datatype,
             success: success
         });
